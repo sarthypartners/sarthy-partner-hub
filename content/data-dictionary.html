@@ -1,0 +1,66 @@
+<p class="callout">One shared definition for every piece of partner data this program touches - so "status," "balance," or "active" means exactly the same thing whether it's in a conversation, a spreadsheet, or eventually the app itself. Every field traces back to a specific Partnership SOP v1.0 section.</p>
+
+<h2>Partner</h2>
+<table class="dtable">
+<tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
+<tr><td>partner_id</td><td>Text</td><td>Unique identifier, assigned at onboarding</td><td>SOP §5</td></tr>
+<tr><td>programme</td><td>India / International</td><td>Locked permanently at sign-up, never changes</td><td>SOP §5</td></tr>
+<tr><td>status</td><td>Applicant / Active / At-Risk / Dormant / Frozen / Exited</td><td>See the status definitions below - this is not the same as the Segmentation Framework's Giver/Taker tiers, which describe behavior, not account state</td><td>SOP §5, §8, §21</td></tr>
+<tr><td>onboarding_notes</td><td>Free text</td><td>Discovery-call read on service relevance, client diversity, professional standing, initial Giver/Taker impression</td><td>SOP §5, §11</td></tr>
+<tr><td>segmentation_tier</td><td>1-5</td><td>Current priority tier from the Segmentation Framework, recalculated from wallet trend, not set manually</td><td>Segmentation Framework</td></tr>
+<tr><td>last_lead_shared_date</td><td>Date</td><td>Drives the 3-month dormancy calculation</td><td>SOP §21</td></tr>
+</table>
+
+<h2>Status definitions - precise, not casual</h2>
+<table class="dtable">
+<tr><th>Status</th><th>Means exactly this</th></tr>
+<tr><td>Applicant</td><td>Applied, not yet through evaluation or fee payment</td></tr>
+<tr><td>Active</td><td>Onboarded, wallet balance above -2,997, has shared at least one lead in the last 3 months</td></tr>
+<tr><td>At-Risk</td><td>Active, but balance trending toward -2,997 or 4+ consecutive declines flagged - a warning state, not a restriction</td></tr>
+<tr><td>Dormant</td><td>3+ months with no lead shared - removed from public listing, blocked from receiving new leads, but not frozen for balance reasons</td></tr>
+<tr><td>Frozen</td><td>Balance has hit -2,997 - blocked from receiving new leads until topped up to +999. Distinct from Dormant, and a partner could technically be both</td></tr>
+<tr><td>Exited</td><td>Account closed, by the partner's choice or Sarthy's, per the guardrails in SOP §13</td></tr>
+</table>
+
+<h2>Credit Wallet</h2>
+<table class="dtable">
+<tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
+<tr><td>balance</td><td>Integer (can be negative)</td><td>Current credit balance, floor -2,997, no upper cap</td><td>SOP §6, §8</td></tr>
+<tr><td>paid_credits</td><td>Integer</td><td>Portion of balance that came from real payment - never expires</td><td>SOP §6</td></tr>
+<tr><td>goodwill_credits</td><td>Integer, with expiry_date</td><td>Portion issued by Sarthy as a coupon - expires 30 days from issue</td><td>SOP §6</td></tr>
+<tr><td>ledger_entry</td><td>Record: amount, reason, timestamp</td><td>Every single add or deduction, permanently logged - reasons: fee_payment, lead_received, conversion_earned, topup, withdrawal</td><td>SOP §6, §7</td></tr>
+</table>
+
+<h2>Lead</h2>
+<table class="dtable">
+<tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
+<tr><td>lead_id</td><td>Text</td><td>Unique identifier</td><td>SOP §7</td></tr>
+<tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it</td><td>SOP §7</td></tr>
+<tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - always partner-chosen, not system-assigned by default</td><td>SOP §7</td></tr>
+<tr><td>lead_status</td><td>Submitted / Validated / Introduced / Acknowledged / Converted / Rejected / Unresolved</td><td>See stage definitions - matches the BRD §5 pipeline exactly</td><td>SOP §7, BRD §5</td></tr>
+<tr><td>submitted_at, acknowledged_at, resolved_at</td><td>Timestamps</td><td>Used to calculate the 5-working-day validation window and the 1-week acknowledgment/rejection window</td><td>SOP §7</td></tr>
+<tr><td>duplicate_flag</td><td>Boolean</td><td>Set automatically at upload if it matches an existing lead</td><td>SOP §7, BRD §5</td></tr>
+</table>
+
+<h2>Deal (post-closure)</h2>
+<table class="dtable">
+<tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
+<tr><td>deal_id</td><td>Text</td><td>Unique identifier, linked to the originating lead_id</td><td>SOP §20</td></tr>
+<tr><td>deal_value, deal_duration</td><td>Currency, months</td><td>Reported by the receiving partner on closure</td><td>SOP §20</td></tr>
+<tr><td>referral_fee_entitlement</td><td>Currency</td><td>10% of deal_value, before Sarthy's cut</td><td>SOP §20</td></tr>
+<tr><td>referral_fee_net</td><td>Currency</td><td>91% of the entitlement - what the referring partner actually accrues</td><td>SOP §20</td></tr>
+<tr><td>first_engagement_date</td><td>Date</td><td>Starts the 1-year entitlement window</td><td>SOP §20</td></tr>
+<tr><td>payout_status</td><td>Accruing / Paid</td><td>Paid only at the annual March 31st settlement</td><td>SOP §20</td></tr>
+</table>
+
+<h2>Dispute</h2>
+<table class="dtable">
+<tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
+<tr><td>dispute_id</td><td>Text</td><td>Unique identifier, linked to a lead_id or deal_id</td><td>SOP §9</td></tr>
+<tr><td>raised_at</td><td>Timestamp</td><td>Starts the 24-hour admin-response clock</td><td>SOP §9</td></tr>
+<tr><td>evidence_notes</td><td>Free text</td><td>Includes startup-confirmation input where used - mechanism still being designed, see BRD §11</td><td>SOP §7, BRD §11</td></tr>
+<tr><td>resolution</td><td>Upheld / Reversed</td><td>Admin's final call - not appealable further, per SOP §9</td><td>SOP §9</td></tr>
+</table>
+
+<h2>What this document deliberately doesn't cover yet</h2>
+<p>Gamification fields for the dormancy/activity system (SOP §21) aren't defined here since that mechanic itself isn't designed yet. This dictionary gets extended, not rewritten, whenever a new SOP section resolves - see the <a href="#" onclick="showDoc('guide');return false;" class="xlink">dependency map</a>.</p>

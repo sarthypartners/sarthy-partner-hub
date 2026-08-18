@@ -1,0 +1,131 @@
+<p class="callout">This is the To-Be system - what the marketplace app should do, written from Partnership SOP v1.0's rules, not from what's already built. This is deliberately not scoped to today's Alpha build - it's the target state. Once there's real portal access, the existing app gets compared against this document for a proper gap analysis, module by module.</p>
+
+<h2>1. Purpose and how to use this</h2>
+<p>Every requirement below traces back to a specific Partnership SOP v1.0 section - if the rule changes there, this document needs to change too (see the dependency map on the <a href="#" onclick="showDoc('guide');return false;" class="xlink">Start Here</a> page). Anything still marked open in the SOP shows up here as an open requirement too - this document doesn't invent answers the SOP doesn't have yet.</p>
+
+<h2>2. Who uses the system</h2>
+<ul>
+<li><strong>Referring partner</strong> - submits leads, tracks their own credit balance, requests withdrawals</li>
+<li><strong>Receiving partner</strong> - gets matched leads, acknowledges or declines them, updates progress toward conversion</li>
+<li><strong>Startup / lead</strong> - the actual prospect being referred; may need to confirm engagement at points where trust needs verifying (see Section 8 below)</li>
+<li><strong>Admin (Sarthy)</strong> - validates leads, confirms conversions, resolves disputes, reviews flagged accounts, manages the whole system's integrity</li>
+</ul>
+
+<h2>3. Onboarding and fees</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 5</a></p>
+<ul>
+<li>The system must support two programme types (India, International), each with its own fixed fee (₹999 + GST, or $49) and identical starting credit grant (999 credits)</li>
+<li>The system must lock a partner's programme choice permanently at sign-up - no switching later</li>
+<li>The system must support digital signature capture for the referral agreement as part of onboarding</li>
+<li>The system must let admin record onboarding evaluation notes (service relevance, client diversity, professional standing, Giver/Taker read) against a partner's profile</li>
+<li>The system must activate the credit wallet with 999 opening credits immediately on fee payment confirmation</li>
+</ul>
+
+<h2>4. The credit wallet</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 6</a></p>
+<ul>
+<li>The system must maintain a running credit ledger per partner - every add and deduction, with a timestamp and a reason (fee payment, lead received, conversion earned, withdrawal, top-up)</li>
+<li>The system must distinguish between credits a partner paid for (never expire) and credits Sarthy issued as goodwill (expire 30 days from issue) - and must actually enforce that expiry automatically, not rely on manual tracking</li>
+<li>The system must not cap total balance for now, consistent with Section 6</li>
+<li>The system must display a partner's current balance clearly, including how much of it is expiring soon</li>
+</ul>
+
+<h2>5. Lead submission and referral flow</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
+<ul>
+<li>The system must let a partner submit a lead with enough detail for admin to validate it - contact info, service need, urgency</li>
+<li>The system must check every new submission against existing leads and automatically flag likely duplicates <strong>at the point of upload</strong>, before it reaches admin - not after</li>
+<li>The system must show a partner a list of existing open leads, to reduce accidental duplicate submissions</li>
+<li>The system must let a referring partner cancel a submission any time before the receiving partner acknowledges it</li>
+<li>The system must track a lead through defined stages: Submitted → Validated (admin, within 5 working days) → Introduced → Acknowledged → In Progress → Converted / Rejected / Unresolved</li>
+<li>The system must give a receiving partner 1 week to acknowledge and either accept or explicitly reject a new lead. Explicit rejection within that week fully reverses the 999-credit deduction. No resolution by the end of the week makes the deduction final - no refund.</li>
+<li>The system must deduct 999 credits from the receiving partner's wallet the moment they acknowledge a lead - not before, not after</li>
+<li>The system must let the admin manually reverse a deduction past the 1-week window in disputed cases, based on the merits - see Section 9 below for the evidence mechanism still being designed</li>
+<li>The system must flag any partner with 4 or more consecutive declines to admin for manual review</li>
+<li>The system must allow a lead to be re-referred an unlimited number of times, but must block simultaneous referral of the same lead to two partners offering the same type of service</li>
+<li>The system must always let the referring partner choose the receiving partner directly - matching is not automatic by default</li>
+<li><strong>Not yet scoped for build, flagged for later:</strong> a backend matchmaking layer that surfaces and promotes good potential matches to partners as a catalyst - not a replacement for partner choice, more like an active recommendation. Needs its own design pass before it's a real requirement.</li>
+</ul>
+
+<h2>6. Conversion and disputes</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 9</a></p>
+<ul>
+<li>The system must support the same conversion standard for every service category - proof of first payment plus a digitally signed agreement, captured in-platform</li>
+<li>The system must credit the referring partner 999 credits minus the 9% fee (about 909 net) the moment admin confirms conversion - see Section 7 below for the fee mechanic</li>
+<li>The system must let a partner formally dispute a conversion decision within 14 days of it being made, in writing, through the platform</li>
+<li>The system must notify admin immediately when a dispute is raised, with a target response time of 24 hours</li>
+<li><strong>Still open:</strong> whether there's any escalation path beyond the admin if a partner remains unsatisfied - see <a href="#" onclick="showDoc('phase0');return false;" class="xlink">Phase 0 Discussion Doc</a></li>
+</ul>
+
+<h2>7. Withdrawal and the credit wallet's money mechanics</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 10</a></p>
+<ul>
+<li>The system must treat membership as ongoing - no cycle-end event, no forced settlement date</li>
+<li>The system must enforce a minimum reserve of 999 credits at all times - a partner cannot withdraw below that floor</li>
+<li>The system must support quarterly withdrawal requests for anything above the reserve</li>
+<li>The system must apply the 9% fee once, at the point credit transfers to a referring partner on conversion - not again at withdrawal, since it's already been taken at the source</li>
+<li>The system must convert credits to real currency using the live exchange rate on the day of withdrawal, not the rate from sign-up - <strong>still open:</strong> which specific rate source counts as official</li>
+<li><strong>Still open, applies here too:</strong> whether the 9% fee also applies to the older, separate 10% direct referral-fee flow from Partner 1.0-era agreements - a genuinely different question from the credit system above, not yet answered</li>
+</ul>
+
+<h2>8. Post-closure referral fee tracking</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 20</a></p>
+<ul>
+<li>The system must let a receiving partner record deal value and duration once a referred lead closes into a signed agreement</li>
+<li>The system must notify Sarthy and the original referring partner when this happens</li>
+<li>The system must calculate the referring partner's entitlement as 10% of deal value, then deduct Sarthy's 9% cut of that 10%, crediting the referring partner the remaining 91% (9.1% of total deal value)</li>
+<li>The system must accumulate this amount in the referring partner's account separately from their 999-point credit wallet - this is a different pool, on a different payout schedule</li>
+<li>The system must pay out the accumulated referral-fee balance once annually, at financial year-end (March 31st)</li>
+<li>The system must track a 1-year expiry from the lead's first engagement date, after which no further referral-fee entitlement accrues to the original referring partner on that relationship</li>
+</ul>
+
+<h2>9. Partner activity requirement (dormancy)</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 21</a></p>
+<ul>
+<li>The system must track the date of a partner's last shared lead</li>
+<li>The system must automatically mark a partner dormant after 3 consecutive months with no lead shared</li>
+<li>The system must remove a dormant partner from the public portal listing and block them from receiving new leads until they resume activity</li>
+<li><strong>Not yet scoped for build, flagged for later:</strong> gamification elements (leaderboards, streaks, recognition) to encourage consistent giving - a real direction Sarthy wants to pursue, not yet designed</li>
+</ul>
+
+<h2>10. Negative balances</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 8</a></p>
+<ul>
+<li>The system must allow a partner's balance to run negative down to -2,997 credits</li>
+<li>The system must automatically freeze a partner's ability to receive new leads once their balance hits -2,997</li>
+<li>The system must support a top-up payment (4x the entry fee - ₹3,996 or $196) that adds 3,996 credits back to a frozen wallet, bringing the balance from -2,997 to exactly +999</li>
+</ul>
+
+<h2>11. Trust and evidence - the dispute-reversal mechanism</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
+<p>This is flagged separately because it's a genuinely open design problem, not just an unconfirmed number. The Lead's proposal: for cases disputed past the standard 1-week window, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
+<ul>
+<li><strong>Not yet a firm requirement, open for discussion:</strong> the system would need a way to contact the startup lead directly (a short form or message) and capture their confirmation or denial</li>
+<li><strong>Still open:</strong> whether that confirmation is mandatory before any reversal can happen, or just one input among several the admin weighs</li>
+<li><strong>Still open:</strong> what happens if the startup doesn't respond either - does the case default to favoring the receiving partner, the referring partner, or just stay open longer</li>
+</ul>
+
+<h2>12. Guardrails and admin tools</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 13</a></p>
+<ul>
+<li>The system must give admin visibility into referral patterns across the whole network, to spot suspicious coordination between just one or two partners</li>
+<li>The system must flag partners with consistently low conversion rates for admin review</li>
+<li>The system must support admin manually freezing or exiting a partner's account in cases of confirmed abuse</li>
+</ul>
+
+<h2>13. Reporting</h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 19</a></p>
+<ul>
+<li>The system must be able to report, at minimum monthly: leads matched per month, average time from submission to match, percentage of leads validated versus rejected or stalled, and spread of matches across the partner base</li>
+<li>The system must support recording written recommendations coming out of that reporting, and whether they were acted on</li>
+</ul>
+
+<h2>14. Open decisions log</h2>
+<p>Carried forward from Partnership SOP v1.0 and the Phase 0 Discussion Doc - nothing below should get quietly assumed by whoever eventually builds this:</p>
+<ul>
+<li>Which exchange rate source counts as official for withdrawal conversion</li>
+<li>The full design of the startup-confirmation mechanism for disputed reversals</li>
+<li>Whether a partner can appeal beyond the admin on disputes</li>
+<li>Exact gamification mechanics for the dormancy/activity system</li>
+<li>The live feature inventory of what's actually built in the current Alpha - once portal access is confirmed, this document gets checked against that reality for a real gap analysis</li>
+</ul>

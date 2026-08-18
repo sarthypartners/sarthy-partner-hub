@@ -1,0 +1,167 @@
+[
+  {
+    "id": "guide",
+    "content_file": "guide.html",
+    "cat": "Start Here",
+    "status": "done",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Both",
+    "title": "How to use this hub",
+    "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
+  },
+  {
+    "id": "roadmap",
+    "content_file": "roadmap.html",
+    "cat": "Strategic Planning",
+    "status": "done",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Project Roadmap",
+    "desc": "The full project plan - each phase, who owns it, and rough timing"
+  },
+  {
+    "id": "sequence",
+    "content_file": "sequence.html",
+    "cat": "Strategic Planning",
+    "status": "done",
+    "version": "1.1",
+    "updated": "Revised after Partnership SOP v1.0 restructure",
+    "type": "Internal",
+    "title": "Master Execution Sequence",
+    "desc": "The to-do list in order - what gets done next, and why"
+  },
+  {
+    "id": "playbook",
+    "content_file": "playbook.html",
+    "cat": "Partnership SOP v1.0",
+    "status": "draft",
+    "version": "3.1",
+    "updated": "Sections 11, 14, 16, 17, 18 now link to real documents instead of pending placeholders",
+    "type": "Both",
+    "title": "Partnership SOP v1.0",
+    "desc": "The complete rulebook - fully absorbs Sarthy's original Playbook 2.0, nothing lives outside this anymore"
+  },
+  {
+    "id": "phase0",
+    "content_file": "phase0.html",
+    "cat": "Decision Records",
+    "status": "done",
+    "version": "1.4",
+    "updated": "Resolved the 9%-vs-10% referral fee question - open since the very first draft",
+    "type": "Sarthy-facing",
+    "title": "Phase 0 Discussion Doc",
+    "desc": "Questions to go through with Sarthy before we start building anything"
+  },
+  {
+    "id": "deliverables",
+    "content_file": "deliverables.html",
+    "cat": "Tracking & Governance",
+    "status": "done",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Deliverables Register",
+    "desc": "A list of every document in this project and what each one is for"
+  },
+  {
+    "id": "interview-guide",
+    "content_file": "interview-guide.html",
+    "cat": "Scripts & Templates",
+    "status": "done",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Alpha Partner Interview Guide",
+    "desc": "Questions to ask the first live partners, to learn what's working"
+  },
+  {
+    "id": "current-state",
+    "content_file": "current-state.html",
+    "cat": "Evidence & Assessment",
+    "status": "done",
+    "version": "1.1",
+    "updated": "Added activity nuance for existing Alpha users",
+    "type": "Both",
+    "title": "Current-State Assessment",
+    "desc": "A summary of how things work today, based on interviews and data"
+  },
+  {
+    "id": "brd",
+    "content_file": "brd.html",
+    "cat": "Technical Handoff",
+    "status": "draft",
+    "version": "1.1",
+    "updated": "Two new sections added to match the SOP; acknowledgment window and negative-balance numbers corrected",
+    "type": "Sarthy-facing",
+    "title": "Business Requirements Document",
+    "desc": "The To-Be system requirements - what the app should do, per the SOP's confirmed and drafted rules"
+  },
+  {
+    "id": "gap-register",
+    "content_file": "gap-register.html",
+    "cat": "Evidence & Assessment",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Gap & Risk Register",
+    "desc": "A list of problems we found, each with a suggested fix"
+  },
+  {
+    "id": "segmentation",
+    "content_file": "segmentation.html",
+    "cat": "Operational Tools",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Partner Segmentation Framework",
+    "desc": "A way to group partners so we know who to focus on first"
+  },
+  {
+    "id": "journey-map",
+    "content_file": "journey-map.html",
+    "cat": "Evidence & Assessment",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Partner Journey Map",
+    "desc": "The full step-by-step partner experience, start to finish"
+  },
+  {
+    "id": "comms-library",
+    "content_file": "comms-library.html",
+    "cat": "Scripts & Templates",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Communication Template Library",
+    "desc": "Ready-made messages for WhatsApp, email, and phone calls"
+  },
+  {
+    "id": "graduation-criteria",
+    "content_file": "graduation-criteria.html",
+    "cat": "Tracking & Governance",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Alpha to Beta Graduation Criteria",
+    "desc": "The targets we need to hit before opening the app to more partners"
+  },
+  {
+    "id": "data-dictionary",
+    "content_file": "data-dictionary.html",
+    "cat": "Operational Tools",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Data Dictionary / SSOT Schema",
+    "desc": "One clear definition for every piece of partner data we track"
+  }
+]

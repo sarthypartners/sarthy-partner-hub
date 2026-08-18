@@ -1,0 +1,82 @@
+[
+  {
+    "date": "v1.0",
+    "title": "Hub created",
+    "desc": "Consolidated 5 completed documents into one version-controlled reference: Roadmap, Master Execution Sequence, Partnership SOP v1.0 skeleton, Phase 0 Discussion Doc, Deliverables Register."
+  },
+  {
+    "date": "v1.1",
+    "title": "Split into separate pages",
+    "desc": "Converted from a single-page app into one HTML file per document, sharing one sidebar and style system, for easier navigation and sharing of individual documents."
+  },
+  {
+    "date": "v2.1",
+    "title": "Alpha Partner Interview Guide drafted",
+    "desc": "Item 3 in the Master Execution Sequence is now live - moved from queued to drafted, status green."
+  },
+  {
+    "date": "v2.2",
+    "title": "Current-State Assessment drafted",
+    "desc": "Item 4 in the Master Execution Sequence is now live. Per the dependency map, this feeds Gap & Risk Register, Segmentation Framework, and Journey Map - none of those are written yet, so no downstream edit needed this round, but flagged for when they are."
+  },
+  {
+    "date": "v3.0",
+    "title": "Renamed and rewritten in plain English",
+    "desc": "Hub renamed to 'Strategic Partners Playbook 3.0' (overarching name). The document formerly called 'Playbook 3.0' is now 'Partnership SOP v1.0', since it's one part of the Playbook, not the whole thing. Every page's content rewritten in simpler, everyday language - facts, figures, and named parties kept exactly as documented, only the phrasing changed."
+  },
+  {
+    "date": "v4.0",
+    "title": "Merged Partnership SOP v1.0 with Process & SOPs; added real internal links",
+    "desc": "The four planned 'Process & SOPs' documents (onboarding, engagement, reactivation, escalation) are no longer separate - they're written directly as Partnership SOP v1.0 sections, removing duplicate work. The 'Process & SOPs' category is retired since nothing separate lives there anymore. Sarthy's original Playbook 2.0 stays external and cited, not merged in, to preserve the line between what Sarthy proposed and what's actually confirmed. Journey Map and Segmentation Framework stay separate analytical documents by decision, feeding summarized conclusions into the SOP rather than being absorbed. Master Execution Sequence and Deliverables Register updated to match. Added real clickable links between documents (underlined text) in place of plain text mentions, in the guide, sequence, deliverables, current-state, playbook, and interview guide pages."
+  },
+  {
+    "date": "v5.0",
+    "title": "Sarthy's Playbook 2.0 fully absorbed and retired",
+    "desc": "Partnership SOP v1.0 expanded from 13 to 21 sections, pulling in the complete content of Sarthy's original Playbook 2.0 - the credit wallet system, the six credit rules, the full lead referral flow, conversion and dispute logic, partner responsibilities, abuse guardrails, the FAQ, and the closing note. That source document is now retired; nothing about the program's design lives outside this SOP anymore. Genuinely unresolved numbers (withdrawal deduction timing, cycle length, negative balance policy) are flagged inline and linked to the Phase 0 Discussion Doc rather than left ambiguous. Updated the guide's dependency map to match the new section numbers."
+  },
+  {
+    "date": "v6.0",
+    "title": "Working assumptions recorded across most open questions",
+    "desc": "Lead answered most of the open Phase 0 questions as working assumptions (explicitly not yet confirmed by Sarthy). Updated: fees/GST (Section 5), credit expiry and cap (Section 6), lead validation timing, cancellation, duplicates, repeated declines, re-referral limits (Section 7), negative balance policy (Section 8), conversion criteria (Section 9), and a full rework of withdrawal logic from a fixed-cycle model to ongoing membership with a minimum reserve and quarterly withdrawal (Section 10). Proposed concrete measures for the two undefined KPIs - Match-Making and Research & Reports (Section 19). Flagged one bigger structural idea (automatic lead-pool matching instead of partner-to-partner referral) as a separate future decision, not folded into the current rules. Phase 0 Discussion Doc updated to point to each recorded assumption rather than showing stale fully-open questions."
+  },
+  {
+    "date": "v6.1",
+    "title": "Money mechanics tightened up",
+    "desc": "Corrected the 9% fee to apply at credit-transfer time (on conversion), not at withdrawal - flows through Sections 6, 7, 8, and 10 consistently. Programme switching locked permanently at sign-up. Goodwill/coupon credits now expire at exactly 30 days. Negative balance can run to -3,000 before the account freezes, requiring replenishment to +999 to unfreeze. Credit count resolved as currency-neutral - 999 never reprices; real currency only enters at the point of withdrawal, using that day's live exchange rate."
+  },
+  {
+    "date": "v6.2",
+    "title": "Lead-tracking windows, rollout target, and admin ownership confirmed",
+    "desc": "Acknowledgment window set to 3 days, stall window to 1 week (Section 7) - what happens at a stall is still open, re-clarified with the Lead. Section 18 now has Sarthy's real rollout target: 10 active partners within 2 weeks of full launch. Current-State Assessment refined to note existing Alpha users are infrequent, not active. Phase 0 doc updated: dispute handling and bug/feature routing both go to admin, with follow-up detail still needed on each. Feature inventory (live vs. planned) deferred as an action item pending portal access, not guessed at."
+  },
+  {
+    "date": "v7.0",
+    "title": "Business Requirements Document drafted; more money mechanics closed",
+    "desc": "Pulled the BRD forward in the sequence and drafted its first version - a full To-Be requirements list built directly from Partnership SOP v1.0, organized by module, with an open-decisions log carried forward. Resolved: 9% fee charged once at transfer, not again at withdrawal. Negative-balance top-up priced at 3x entry fee (2,997 credits) - flagged a real numbers gap at the -3,000 floor rather than smoothing over it. Dispute SLA set to 24-hour admin response. Stall-handling recorded as an open proposal (admin discretion plus startup confirmation as evidence), not a final decision. Clarified the 9% fee's relationship to the older 10% direct referral-fee flow, left open. Broadened the dependency map so the BRD is checked against any SOP change, not just confirmations."
+  },
+  {
+    "date": "v8.0",
+    "title": "Second reward track discovered and documented - deal-closure referral fee",
+    "desc": "The Lead clarified there are two separate reward systems: the 999-point lead-share credit (Sections 5-10) and a previously-undocumented 10% deal-closure referral fee, paid annually, with a 1-year tail. Added as new Section 20 (referral fee) and Section 21 (dormancy rule - 3 months inactive), pushing FAQ to 22 and Closing to 23. This resolved the oldest open question in the project: the 9% facilitation fee applies to both tracks, on the 10% entitlement for referral fees. Fixed a real inconsistency: Sections 15 and 17 had empty placeholders while their actual content had been written into Section 7 - moved it to the right place. Corrected the negative-balance numbers (-2,997 floor, 4x999 top-up) which now land exactly on +999, fixing the math gap flagged two rounds ago. Simplified the acknowledgment/stall system from two separate windows (3 days, 1 week) to one unified 1-week window. Updated the BRD to match throughout, adding its own new Sections 8-9 for the same two topics."
+  },
+  {
+    "date": "v9.0",
+    "title": "Five documents drafted in one push - Gap & Risk Register, Segmentation, Journey Map, Comms Library, Graduation Criteria",
+    "desc": "Per the Lead's decision to keep building rather than wait on the Sarthy meeting. Fixed a real bookkeeping gap along the way: Partner Journey Map had been referenced throughout the hub since the very beginning but was never actually added to the queued list - added retroactively before drafting it. Partnership SOP v1.0 Sections 11, 14, 16, 17, and 18 all updated from pending placeholders or generic mentions to real links, now that the documents they were waiting on exist. 14 of 19 total documents now drafted."
+  },
+  {
+    "date": "v9.1",
+    "title": "Data Dictionary drafted",
+    "desc": "Defined every entity used across the SOP and BRD - Partner, Credit Wallet, Lead, Deal, Dispute - with precise status definitions (the difference between At-Risk, Dormant, and Frozen matters and wasn't spelled out clearly before). 15 of 19 documents now drafted. Pacing deliberately from here rather than drafting the remaining four in one push."
+  },
+  {
+    "date": "v10.0",
+    "title": "Switched to a collapsible left sidebar",
+    "desc": "Replaced the two-tier top navigation with a left sidebar where each category expands and collapses independently - handles the growing document count (19 total now) much better than wrapping tabs. The category containing whatever document is open stays expanded automatically; others start collapsed. Tooltips now appear to the side instead of below, to fit the narrower layout."
+  },
+  {
+    "date": "v10.1",
+    "title": "Sidebar now hover-out, with a pin option",
+    "desc": "The sidebar tucks away to a thin 14px edge strip by default and slides fully into view on hover - no longer takes up permanent screen width. Added a pin button (top of the sidebar) for anyone who wants it to stay open without holding the mouse there. On mobile/touch screens, where hover doesn't apply, it falls back to the normal static stacked layout instead."
+  }
+]

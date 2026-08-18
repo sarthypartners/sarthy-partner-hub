@@ -1,0 +1,22 @@
+[
+  {
+    "cat": "Operational Tools",
+    "title": "Interim Operating System",
+    "desc": "A simple working tool to manage partners until the platform is ready"
+  },
+  {
+    "cat": "Technical Handoff",
+    "title": "Low-Level System Specification",
+    "desc": "The detailed technical spec, built from the approved BRD"
+  },
+  {
+    "cat": "Tracking & Governance",
+    "title": "Migration Wave Plan",
+    "desc": "The order in which partner groups move onto the platform"
+  },
+  {
+    "cat": "Tracking & Governance",
+    "title": "Reporting Dashboard",
+    "desc": "A simple view of progress, measured against Sarthy's own KPIs"
+  }
+]
