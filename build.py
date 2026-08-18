@@ -41,13 +41,8 @@ CSS = """
 }
 *{box-sizing:border-box;}
 body{margin:0;font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);}
-.sidebar{position:fixed;top:0;left:0;height:100vh;width:290px;background:var(--sidebar);z-index:50;overflow-y:auto;padding-bottom:1rem;transform:translateX(calc(-100% + 14px));transition:transform .22s ease;box-shadow:6px 0 28px rgba(0,0,0,.28);}
-.sidebar:hover,.sidebar.pinned{transform:translateX(0);}
-.sidebar-edge{position:absolute;top:0;right:0;width:14px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:linear-gradient(180deg,#2A2F26,#20241F);border-left:1px solid #343930;}
-.sidebar-edge .dot-hint{width:3px;height:3px;border-radius:50%;background:#6B7060;}
-.pin-btn{position:absolute;top:14px;right:22px;width:22px;height:22px;border-radius:6px;background:#2A2F26;color:var(--sidebar-text-dim);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;border:1px solid #3E4438;}
-.pin-btn:hover{color:#F2F0E7;}
-.pin-btn.active{background:#8CA478;color:#1B1F17;border-color:#8CA478;}
+.app{display:flex;min-height:100vh;}
+.sidebar{position:sticky;top:0;height:100vh;width:290px;flex-shrink:0;background:var(--sidebar);overflow-y:auto;padding-bottom:1rem;}
 .sidebar-header{padding:1.5rem 2rem 1rem 1.25rem;border-bottom:1px solid var(--sidebar-line);}
 .brand{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:#F2F0E7;cursor:pointer;line-height:1.3;}
 .progress-mini{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--sidebar-text-dim);margin-top:4px;}
@@ -75,7 +70,7 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--paper);color:var(-
 .dot-pending{background:#6B6F60;}
 .changelog-link{display:flex;align-items:center;gap:8px;padding:11px 1.25rem;font-size:12.5px;color:var(--sidebar-text-dim);cursor:pointer;border-top:1px solid var(--sidebar-line);margin-top:6px;}
 .changelog-link:hover{color:#F2F0E7;}
-.main{margin-left:30px;max-width:840px;padding:3rem 2rem 5rem;}
+.main{flex:1;max-width:840px;padding:3rem 2rem 5rem;}
 .crumb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;}
 .doc-header{border-bottom:1px solid var(--line);padding-bottom:1.25rem;margin-bottom:1.75rem;}
 .doc-title{font-family:'Fraunces',serif;font-size:30px;font-weight:600;margin:0 0 8px;line-height:1.15;}
@@ -108,7 +103,7 @@ table.dtable td:first-child,table.dtable th:first-child{color:var(--ink);font-we
 [data-tip]{position:relative;}
 [data-tip]:hover::after{content:attr(data-tip);position:absolute;top:50%;left:100%;transform:translateY(-50%);margin-left:10px;z-index:20;background:#12140F;color:#E9E7DD;font-family:'Inter',sans-serif;font-size:12px;font-weight:400;line-height:1.45;padding:8px 11px;border-radius:8px;width:max-content;max-width:220px;white-space:normal;box-shadow:0 4px 14px rgba(0,0,0,.28);pointer-events:none;}
 [data-tip]:hover::before{content:"";position:absolute;top:50%;left:100%;transform:translateY(-50%);margin-left:2px;border:5px solid transparent;border-right-color:#12140F;z-index:20;pointer-events:none;}
-@media(max-width:900px){.sidebar{position:static;height:auto;width:100%;transform:none;box-shadow:none;}.sidebar-edge,.pin-btn{display:none;}.main{margin-left:0;padding:2rem 1.25rem 4rem;max-width:none;}[data-tip]:hover::after,[data-tip]:hover::before{display:none;}}
+@media(max-width:900px){.app{flex-direction:column;}.sidebar{position:static;height:auto;width:100%;}.main{padding:2rem 1.25rem 4rem;max-width:none;}[data-tip]:hover::after,[data-tip]:hover::before{display:none;}}
 """
 
 docs_js = json.dumps(docs)
@@ -128,12 +123,12 @@ html = f"""<!DOCTYPE html>
 <style>{CSS}</style>
 </head>
 <body>
+<div class="app">
 <nav class="sidebar" id="sidebar">
-  <div class="sidebar-edge"><span class="dot-hint"></span><span class="dot-hint"></span><span class="dot-hint"></span></div>
-  <div class="pin-btn" id="pinBtn" onclick="togglePin()" title="Keep menu open">&#128204;</div>
   <div id="sidebarContent"></div>
 </nav>
 <main class="main" id="main"></main>
+</div>
 
 <script>
 const DOCS = {docs_js};
@@ -204,13 +199,6 @@ function buildSidebar(activeId){{
 
   html += `<div class="changelog-link" onclick="showChangelog()">Version history</div>`;
   document.getElementById('sidebarContent').innerHTML = html;
-}}
-
-function togglePin(){{
-  const sb = document.getElementById('sidebar');
-  const btn = document.getElementById('pinBtn');
-  sb.classList.toggle('pinned');
-  btn.classList.toggle('active');
 }}
 
 function toggleCat(cat){{
