@@ -88,5 +88,15 @@
     "date": "v10.3",
     "title": "Interim Operating System drafted",
     "desc": "Moved out of the queue and drafted - a simple five-table structure (Partners, Leads, Deals, Wallet Ledger, Disputes) built directly on the Data Dictionary's field definitions, plus the Associate's daily call queue ordered by Segmentation tier. Meant as scaffolding until the real platform can take over, not a permanent parallel system."
+  },
+  {
+    "date": "v10.4",
+    "title": "Category document lists now permanently expanded",
+    "desc": "Removed the click-to-expand/collapse behavior entirely - every category's document list stays visible at all times, no toggling."
+  },
+  {
+    "date": "v11.0",
+    "title": "Content cleanup - redundancy and staleness pass",
+    "desc": "Reviewed all 16 documents for redundant and stale content. Fixed: guide.html's navigation instructions described the old top-nav interface, not the current static sidebar. Phase 0 doc trimmed 59% (1011 to 416 words) - most of it was resolved items now fully duplicated in the SOP; also caught two genuinely stale items (currency conversion and programme switching were marked 'still open' but had actually been resolved rounds ago). Sequence page dropped its redundant status column (the sidebar's dots already show this) and fixed a stale entry claiming SOP sections were still queued when they'd been written. Deliverables Register trimmed a redundant intro explanation. BRD's matchmaking bullet trimmed to a link instead of re-explaining. Checked and ruled out: Current-State vs Playbook history tables looked duplicate but serve different purposes (evidence vs. rules comparison) - kept both. BRD's overall density was reviewed and found appropriately lean, not bloated as initially estimated from word count alone."
   }
 ]
