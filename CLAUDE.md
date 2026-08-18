@@ -14,7 +14,7 @@ Read these two files in full - they are not optional background reading, they ar
 - `content/` - every document's actual content, plus `manifest.json` (drafted docs), `queued.json` (not yet written), `categories.json`, `changelog.json`
 - `meta/` - the two files above, plus `custom-domain.txt`
 - `build.py` - reads everything in `content/` and generates `dist/index.html`, the actual hub. **Never hand-edit `dist/index.html` directly** - it's overwritten on every build.
-- `.github/workflows/deploy.yml` - auto-republishes `dist/` to GitHub Pages on every push to `main`, once that's set up (see README.md)
+- `wrangler.jsonc` - Cloudflare Pages config; deploys `dist/` as static assets. This replaced the old GitHub Pages workflow.
 
 ## Standing rules
 
