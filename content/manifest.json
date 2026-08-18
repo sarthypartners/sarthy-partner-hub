@@ -163,5 +163,16 @@
     "type": "Internal",
     "title": "Data Dictionary / SSOT Schema",
     "desc": "One clear definition for every piece of partner data we track"
+  },
+  {
+    "id": "interim-system",
+    "content_file": "interim-system.html",
+    "cat": "Operational Tools",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Interim Operating System",
+    "desc": "A simple working tool to manage partners until the platform is ready"
   }
 ]

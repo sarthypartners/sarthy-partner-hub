@@ -1,10 +1,5 @@
 [
   {
-    "cat": "Operational Tools",
-    "title": "Interim Operating System",
-    "desc": "A simple working tool to manage partners until the platform is ready"
-  },
-  {
     "cat": "Technical Handoff",
     "title": "Low-Level System Specification",
     "desc": "The detailed technical spec, built from the approved BRD"

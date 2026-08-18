@@ -78,5 +78,15 @@
     "date": "v10.1",
     "title": "Sidebar now hover-out, with a pin option",
     "desc": "The sidebar tucks away to a thin 14px edge strip by default and slides fully into view on hover - no longer takes up permanent screen width. Added a pin button (top of the sidebar) for anyone who wants it to stay open without holding the mouse there. On mobile/touch screens, where hover doesn't apply, it falls back to the normal static stacked layout instead."
+  },
+  {
+    "date": "v10.2",
+    "title": "Sidebar back to static, always-visible",
+    "desc": "Reverted from the hover-out drawer to a fixed-width sidebar sitting permanently alongside the content - no longer needs a hover or a pin button. Category expand/collapse behavior stays the same."
+  },
+  {
+    "date": "v10.3",
+    "title": "Interim Operating System drafted",
+    "desc": "Moved out of the queue and drafted - a simple five-table structure (Partners, Leads, Deals, Wallet Ledger, Disputes) built directly on the Data Dictionary's field definitions, plus the Associate's daily call queue ordered by Segmentation tier. Meant as scaffolding until the real platform can take over, not a permanent parallel system."
   }
 ]
