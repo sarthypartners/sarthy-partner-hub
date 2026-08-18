@@ -49,16 +49,11 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--paper);color:var(-
 .progress-track{height:3px;background:#343930;border-radius:3px;overflow:hidden;margin-top:8px;}
 .progress-fill{height:100%;background:#8CA478;border-radius:3px;}
 .cat-block{border-bottom:1px solid #2A2E26;}
-.cat-header{display:flex;align-items:center;gap:9px;padding:11px 1.25rem;cursor:pointer;font-size:13px;font-weight:500;color:#E4E7D8;user-select:none;}
-.cat-header:hover{background:#262B22;}
+.cat-header{display:flex;align-items:center;gap:9px;padding:11px 1.25rem;font-size:13px;font-weight:500;color:#E4E7D8;user-select:none;}
 .cat-header.active-cat{background:#262B22;}
-.chevron{font-size:9px;color:var(--sidebar-text-dim);transition:transform .15s ease;width:10px;flex-shrink:0;}
-.chevron.open{transform:rotate(90deg);}
 .tab-num{font-family:'JetBrains Mono',monospace;font-size:10px;background:#343930;color:#A8AC9B;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cat-header.active-cat .tab-num{background:#8CA478;color:#1B1F17;}
 .cat-count{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sidebar-text-dim);}
-.cat-body{overflow:hidden;max-height:0;transition:max-height .18s ease;}
-.cat-body.open{max-height:600px;}
 .doc-link{display:flex;align-items:center;gap:8px;padding:8px 1.25rem 8px 2.5rem;font-size:12.5px;color:var(--sidebar-text-dim);cursor:pointer;}
 .doc-link:hover{background:#262B22;color:var(--sidebar-text);}
 .doc-link.active{background:#262B22;color:#F2F0E7;border-left:2px solid #8CA478;padding-left:calc(2.5rem - 2px);}
@@ -138,7 +133,6 @@ const CATS_ORDER = {cats_js};
 const CAT_DESC = {cat_desc_js};
 
 let activeCat = "Strategic Planning";
-let expandedCats = new Set(["Strategic Planning"]);
 
 function statusBadge(status){{
   if(status==="done") return '<span class="badge badge-done">Confirmed</span>';
@@ -168,18 +162,16 @@ function buildSidebar(activeId){{
     const total_in_cat = docsInCat.length + queuedInCat.length;
     if(total_in_cat===0) return;
     catNum++;
-    const isOpen = expandedCats.has(cat);
     const isActiveCat = cat===activeCat;
     const tip = (CAT_DESC[cat] || '').replace(/"/g, '&quot;');
 
     html += `<div class="cat-block">
-      <div class="cat-header ${{isActiveCat?'active-cat':''}}" data-tip="${{tip}}" onclick="toggleCat('${{cat}}')">
-        <span class="chevron ${{isOpen?'open':''}}">&#9656;</span>
+      <div class="cat-header ${{isActiveCat?'active-cat':''}}" data-tip="${{tip}}">
         <span class="tab-num">${{catNum}}</span>
         <span>${{cat}}</span>
         <span class="cat-count">${{docsInCat.length}}/${{total_in_cat}}</span>
       </div>
-      <div class="cat-body ${{isOpen?'open':''}}">`;
+      <div class="cat-body">`;
 
     let docNum = 0;
     docsInCat.forEach(d=>{{
@@ -201,13 +193,6 @@ function buildSidebar(activeId){{
   document.getElementById('sidebarContent').innerHTML = html;
 }}
 
-function toggleCat(cat){{
-  if(expandedCats.has(cat)) expandedCats.delete(cat);
-  else expandedCats.add(cat);
-  activeCat = cat;
-  buildSidebar(currentDocId);
-}}
-
 let currentDocId = null;
 
 function renderEmpty(cat){{
@@ -219,7 +204,6 @@ function showDoc(id){{
   if(!d) return;
   activeCat = d.cat;
   currentDocId = id;
-  expandedCats.add(d.cat);
   buildSidebar(id);
   document.getElementById('main').innerHTML = `
     <div class="crumb">${{d.cat}}</div>
