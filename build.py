@@ -42,15 +42,21 @@ CSS = """
 *{box-sizing:border-box;}
 body{margin:0;font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);}
 .app{display:flex;min-height:100vh;}
-.sidebar{position:sticky;top:0;height:100vh;width:290px;flex-shrink:0;background:var(--sidebar);overflow-y:auto;padding-bottom:1rem;}
-.sidebar-header{padding:1.5rem 2rem 1rem 1.25rem;border-bottom:1px solid var(--sidebar-line);}
+.sidebar{width:290px;flex-shrink:0;background:var(--sidebar);position:sticky;top:0;height:100vh;overflow-y:auto;padding-bottom:1rem;}
+.sidebar-header{padding:1.5rem 1.25rem 1rem;border-bottom:1px solid var(--sidebar-line);}
+.search-box{width:100%;margin-top:12px;padding:7px 10px;background:#2A2F26;border:1px solid #3E4438;border-radius:7px;color:#E4E7D8;font-size:12.5px;font-family:'Inter',sans-serif;}
+.search-box::placeholder{color:var(--sidebar-text-dim);}
+.search-box:focus{outline:none;border-color:#8CA478;}
+.no-match{padding:10px 1.25rem;font-size:12px;color:var(--sidebar-text-dim);font-style:italic;}
 .brand{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:#F2F0E7;cursor:pointer;line-height:1.3;}
 .progress-mini{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--sidebar-text-dim);margin-top:4px;}
 .progress-track{height:3px;background:#343930;border-radius:3px;overflow:hidden;margin-top:8px;}
 .progress-fill{height:100%;background:#8CA478;border-radius:3px;}
 .cat-block{border-bottom:1px solid #2A2E26;}
-.cat-header{display:flex;align-items:center;gap:9px;padding:11px 1.25rem;font-size:13px;font-weight:500;color:#E4E7D8;user-select:none;}
+.cat-header{display:flex;align-items:center;gap:9px;padding:11px 1.25rem;cursor:pointer;font-size:13px;font-weight:500;color:#E4E7D8;user-select:none;}
+.cat-header:hover{background:#262B22;}
 .cat-header.active-cat{background:#262B22;}
+.chevron{font-size:9px;color:var(--sidebar-text-dim);width:10px;flex-shrink:0;transform:rotate(90deg);}
 .tab-num{font-family:'JetBrains Mono',monospace;font-size:10px;background:#343930;color:#A8AC9B;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cat-header.active-cat .tab-num{background:#8CA478;color:#1B1F17;}
 .cat-count{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sidebar-text-dim);}
@@ -65,7 +71,7 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--paper);color:var(-
 .dot-pending{background:#6B6F60;}
 .changelog-link{display:flex;align-items:center;gap:8px;padding:11px 1.25rem;font-size:12.5px;color:var(--sidebar-text-dim);cursor:pointer;border-top:1px solid var(--sidebar-line);margin-top:6px;}
 .changelog-link:hover{color:#F2F0E7;}
-.main{flex:1;max-width:840px;padding:3rem 2rem 5rem;}
+.main{flex:1;max-width:840px;padding:3rem 2rem 5rem;min-width:0;}
 .crumb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;}
 .doc-header{border-bottom:1px solid var(--line);padding-bottom:1.25rem;margin-bottom:1.75rem;}
 .doc-title{font-family:'Fraunces',serif;font-size:30px;font-weight:600;margin:0 0 8px;line-height:1.15;}
@@ -90,6 +96,26 @@ table.dtable td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);verti
 table.dtable td:first-child,table.dtable th:first-child{color:var(--ink);font-weight:500;}
 .callout{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 16px;margin:0 0 1.25rem;font-size:13.5px;color:#3F4D36;}
 .pending-box{background:var(--panel);border:1px dashed var(--line-strong);border-radius:var(--radius);padding:1.5rem;text-align:center;color:var(--ink-faint);font-size:13.5px;}
+.example-box{background:#EDF2F7;border-left:3px solid #3E6B96;border-radius:0 8px 8px 0;padding:14px 16px;margin:0 0 1.25rem;font-size:13.5px;color:var(--ink-soft);}
+.example-box strong:first-child{color:#3E6B96;}
+.amt-pos{color:var(--green);font-weight:600;}
+.amt-neg{color:var(--red);font-weight:600;}
+.amt-fee{color:var(--amber);font-weight:600;}
+.toc-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:0 0 1.75rem;}
+.toc-box h3{margin:0 0 .6rem;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-faint);font-weight:600;}
+.toc-list{columns:2;column-gap:1.5rem;list-style:none;padding:0;margin:0;font-size:13px;}
+.toc-list li{margin-bottom:5px;break-inside:avoid;}
+.toc-list a{color:var(--ink-soft);text-decoration:none;}
+.toc-list a:hover{color:var(--accent);text-decoration:underline;}
+.gantt{margin:1rem 0 1.5rem;}
+.gantt-row{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.gantt-label{width:170px;flex-shrink:0;font-size:12.5px;color:var(--ink);font-weight:500;}
+.gantt-track{flex:1;height:26px;background:var(--paper);border-radius:5px;position:relative;border:1px solid var(--line);}
+.gantt-bar{position:absolute;top:0;height:100%;border-radius:5px;display:flex;align-items:center;padding:0 8px;font-size:10.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;}
+.gantt-done{background:var(--green);}
+.gantt-progress{background:var(--amber);}
+.gantt-todo{background:var(--line-strong);color:var(--ink-faint);}
+.gantt-axis{display:flex;gap:12px;margin:0 0 6px;padding-left:182px;font-size:10px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;}
 .status-pill{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle;}
 .cl-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);}
 .cl-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint);width:100px;flex-shrink:0;padding-top:2px;}
@@ -119,10 +145,10 @@ html = f"""<!DOCTYPE html>
 </head>
 <body>
 <div class="app">
-<nav class="sidebar" id="sidebar">
-  <div id="sidebarContent"></div>
-</nav>
-<main class="main" id="main"></main>
+  <nav class="sidebar" id="sidebar">
+    <div id="sidebarContent"></div>
+  </nav>
+  <main class="main" id="main"></main>
 </div>
 
 <script>
@@ -133,6 +159,7 @@ const CATS_ORDER = {cats_js};
 const CAT_DESC = {cat_desc_js};
 
 let activeCat = "Strategic Planning";
+let searchTerm = "";
 
 function statusBadge(status){{
   if(status==="done") return '<span class="badge badge-done">Confirmed</span>';
@@ -153,6 +180,7 @@ function buildSidebar(activeId){{
     <div class="brand" onclick="showDoc('guide')">Strategic Partners Playbook 3.0</div>
     <div class="progress-mini">${{done}} of ${{total}} drafted (${{pct}}%)</div>
     <div class="progress-track"><div class="progress-fill" style="width:${{pct}}%"></div></div>
+    <input type="text" class="search-box" id="searchBox" placeholder="Search documents..." value="${{searchTerm}}" oninput="filterDocs(this.value)" onclick="event.stopPropagation()">
   </div>`;
 
   let catNum = 0;
@@ -167,23 +195,26 @@ function buildSidebar(activeId){{
 
     html += `<div class="cat-block">
       <div class="cat-header ${{isActiveCat?'active-cat':''}}" data-tip="${{tip}}">
+        <span class="chevron">&#9656;</span>
         <span class="tab-num">${{catNum}}</span>
         <span>${{cat}}</span>
         <span class="cat-count">${{docsInCat.length}}/${{total_in_cat}}</span>
       </div>
-      <div class="cat-body">`;
+      <div class="cat-body" data-cat="${{cat}}">`;
 
     let docNum = 0;
     docsInCat.forEach(d=>{{
       docNum++;
       const cls = d.id===activeId ? 'doc-link active' : 'doc-link';
       const dtip = (d.desc || '').replace(/"/g, '&quot;');
-      html += `<div class="${{cls}}" data-tip="${{dtip}}" onclick="showDoc('${{d.id}}')"><span class="tab-num-sm">${{docNum}}</span><span class="dot ${{dotClass(d.status)}}"></span>${{d.title}}</div>`;
+      const search = (d.title + ' ' + (d.desc||'')).toLowerCase().replace(/"/g, '&quot;');
+      html += `<div class="${{cls}}" data-tip="${{dtip}}" data-search="${{search}}" onclick="showDoc('${{d.id}}')"><span class="tab-num-sm">${{docNum}}</span><span class="dot ${{dotClass(d.status)}}"></span>${{d.title}}</div>`;
     }});
     queuedInCat.forEach(q=>{{
       docNum++;
       const dtip = (q.desc || '').replace(/"/g, '&quot;');
-      html += `<div class="doc-link disabled" data-tip="${{dtip}}"><span class="tab-num-sm">${{docNum}}</span><span class="dot dot-pending"></span>${{q.title}}</div>`;
+      const search = (q.title + ' ' + (q.desc||'')).toLowerCase().replace(/"/g, '&quot;');
+      html += `<div class="doc-link disabled" data-tip="${{dtip}}" data-search="${{search}}"><span class="tab-num-sm">${{docNum}}</span><span class="dot dot-pending"></span>${{q.title}}</div>`;
     }});
 
     html += `</div></div>`;
@@ -191,6 +222,21 @@ function buildSidebar(activeId){{
 
   html += `<div class="changelog-link" onclick="showChangelog()">Version history</div>`;
   document.getElementById('sidebarContent').innerHTML = html;
+  if(searchTerm) filterDocs(searchTerm, true);
+}}
+
+function filterDocs(val, skipStore){{
+  if(!skipStore) searchTerm = val;
+  const term = val.toLowerCase().trim();
+  document.querySelectorAll('.cat-block').forEach(block => {{
+    let anyVisible = false;
+    block.querySelectorAll('.doc-link').forEach(link => {{
+      const match = !term || (link.getAttribute('data-search')||'').includes(term);
+      link.style.display = match ? '' : 'none';
+      if(match) anyVisible = true;
+    }});
+    block.style.display = anyVisible ? '' : 'none';
+  }});
 }}
 
 let currentDocId = null;

@@ -6,6 +6,41 @@
 
 <h2>Field 1: Account status - unchanged from the Data Dictionary</h2>
 <p>This is the same <code>status</code> field defined there - Applicant, Active, At-Risk, Dormant, Frozen, Exited. It controls what the account can actually do on the platform. This document doesn't redefine it, just uses it.</p>
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11.5">
+    <rect x="270" y="15" width="160" height="46" rx="8" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="350" y="43" text-anchor="middle" fill="var(--ink)" font-weight="600">Active</text>
+
+    <line x1="350" y1="61" x2="350" y2="90" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <text x="360" y="80" fill="var(--ink-faint)" font-size="10">wallet trending down</text>
+
+    <rect x="270" y="92" width="160" height="46" rx="8" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="350" y="120" text-anchor="middle" fill="var(--ink)" font-weight="600">At-Risk</text>
+
+    <line x1="290" y1="138" x2="150" y2="175" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <text x="120" y="160" fill="var(--ink-faint)" font-size="10">3 months, no lead</text>
+
+    <line x1="130" y1="61" x2="560" y2="175" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow2)" stroke-dasharray="3,2"/>
+    <text x="460" y="120" fill="var(--ink-faint)" font-size="10">balance hits -2,997</text>
+    <text x="460" y="133" fill="var(--ink-faint)" font-size="10">(independent trigger)</text>
+
+    <rect x="55" y="178" width="150" height="46" rx="8" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="130" y="206" text-anchor="middle" fill="var(--ink)" font-weight="600">Dormant</text>
+
+    <rect x="495" y="178" width="150" height="46" rx="8" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="570" y="206" text-anchor="middle" fill="var(--ink)" font-weight="600">Frozen</text>
+
+    <line x1="205" y1="201" x2="495" y2="201" stroke="var(--ink-faint)" stroke-width="1.2" stroke-dasharray="2,3"/>
+    <text x="350" y="196" text-anchor="middle" fill="var(--ink-faint)" font-size="10">can occur together</text>
+
+    <text x="130" y="245" text-anchor="middle" fill="var(--green)" font-size="10.5">↺ send a lead → back to Active</text>
+    <text x="570" y="245" text-anchor="middle" fill="var(--green)" font-size="10.5">↺ top up → back to Active</text>
+  </g>
+</svg>
+<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.5rem 0 1.25rem;">If both apply at once: pay the top-up first, then send a lead - see the Data Dictionary for the exact recovery rule.</p>
 
 <h2>Field 2: Giving pattern - new, only applies when status is Active</h2>
 <p>Not a fixed label - read from wallet trend over time:</p>

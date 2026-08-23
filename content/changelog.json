@@ -108,5 +108,20 @@
     "date": "v13.1",
     "title": "Fixed 9 unlinked document mentions, caught by Claude Code",
     "desc": "Claude Code flagged that 'Interim Operating System' appeared as plain text in 3 spots instead of a real link - traced it to the guide.html mention predating that document's drafting, and two fresh mentions in segmentation.html's full rewrite that were never linked. Did a broader sweep and found 6 more of the same pattern (Current-State Assessment, Communication Template Library, Data Dictionary mentioned as plain text in gap-register.html, guide.html, playbook.html, interim-system.html, and segmentation.html) - all fixed."
+  },
+  {
+    "date": "v14.0",
+    "title": "Readability improvements, phase 1 of 2",
+    "desc": "Added a jump-to-section table of contents at the top of Partnership SOP (23 sections now have real anchor links). Introduced colour-coded amounts throughout - green for credits in, red for deductions, amber for Sarthy's fee - applied to the wallet table, the credit rules, and the referral-fee math. Added two new worked examples (hitting and recovering from the credit freeze; a real \u20b95L deal walked through the referral-fee split) using a new 'example' box style, visually distinct from the existing 'still open' and 'key context' boxes. Converted the six credit rules and the FAQ from lists/paragraphs into tables for faster scanning. Phase 2 (diagrams, glossary page, search, Gantt chart page) to follow as a separate checkpoint."
+  },
+  {
+    "date": "v15.0",
+    "title": "Glossary added, search/filter added to sidebar",
+    "desc": "New Glossary page under Start Here - defines the four meanings of 999, giving_pattern vs status, the two reward tracks, the 9% fee principle, status pill colours, and role definitions, each linking back to full detail. Added a live search box at the top of the sidebar - typing filters both category and document lists in real time, matching against title and description text. Search term persists as you navigate between documents."
+  },
+  {
+    "date": "v16.0",
+    "title": "Readability improvements, phase 2 complete - diagrams and project plan",
+    "desc": "Added two more hand-built SVG diagrams: the referral-fee split (Section 20 - a visual waterfall of the 10% entitlement splitting into Sarthy's 9% and the referrer's 91%), and a partner account-status state diagram (Segmentation Framework - showing how Active leads to At-Risk, Dormant, and Frozen, and the recovery paths back to Active, including the combined-state rule). Added a new Project Plan (Gantt View) page under Strategic Planning - a CSS-based horizontal timeline of all 6 roadmap phases, honestly distinguishing documentation-complete from real-world rollout-not-yet-started, using relative week numbers since real calendar dates were never tracked. This completes both phases of the readability improvement effort requested."
   }
 ]
