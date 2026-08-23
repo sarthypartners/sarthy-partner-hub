@@ -1,0 +1,70 @@
+<p class="callout">Real-world action items that block progress - distinct from documentation gaps in the Gap & Risk Register. These need a person to actually do something outside this hub (a legal review, a phone call, a decision), not a content edit. Colour shows status; the chain below shows what's actually blocking what, so it's visible how stuck the project is at a glance.</p>
+
+<h2>Critical path - what's blocking what</h2>
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <rect x="255" y="10" width="190" height="44" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="350" y="36" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">Real Sarthy meeting</text>
+
+    <line x1="350" y1="54" x2="350" y2="78" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+    <rect x="20" y="80" width="150" height="44" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="95" y="98" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Legal review of</text>
+    <text x="95" y="112" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">existing contracts</text>
+
+    <rect x="192" y="80" width="150" height="44" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="267" y="98" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Regulatory review</text>
+    <text x="267" y="112" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">(RBI/PPI, TDS)</text>
+
+    <rect x="364" y="80" width="150" height="44" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="439" y="98" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Portal access</text>
+    <text x="439" y="112" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">from Sarthy</text>
+
+    <rect x="536" y="80" width="150" height="44" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="611" y="98" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Payment gateway</text>
+    <text x="611" y="112" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">+ e-sign selection</text>
+
+    <line x1="95" y1="124" x2="95" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+    <line x1="267" y1="124" x2="200" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+    <rect x="20" y="152" width="330" height="44" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="185" y="170" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Data migration - template built,</text>
+    <text x="185" y="184" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">then old records imported</text>
+
+    <line x1="439" y1="124" x2="439" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+    <rect x="364" y="152" width="322" height="44" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="525" y="170" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Migration Wave Plan +</text>
+    <text x="525" y="184" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Low-Level System Spec</text>
+
+    <line x1="185" y1="196" x2="350" y2="230" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+    <line x1="525" y1="196" x2="400" y2="230" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+    <rect x="220" y="232" width="260" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="350" y="252" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Real Phase 5 rollout -</text>
+    <text x="350" y="267" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">actual partners onboarded</text>
+
+    <text x="20" y="315" fill="var(--ink-faint)" font-size="10">Red = blocked, needs external action. Amber = in progress or partially unblocked. Grey = downstream, waiting on the above.</text>
+  </g>
+</svg>
+
+<h2>Full tracker</h2>
+<table class="dtable">
+<tr><th>Item</th><th>Owner</th><th>Status</th><th>Blocks</th></tr>
+<tr><td>Legal review - do existing partner contracts cover the new dual-track model?</td><td>Sarthy legal</td><td><span class="badge badge-pending">Not started</span></td><td>Migrating any real partner to the new model</td></tr>
+<tr><td>Regulatory review - does the credit wallet trigger RBI/PPI obligations? TDS on referral payouts?</td><td>Sarthy finance/legal</td><td><span class="badge badge-pending">Not started</span></td><td>Public launch of the wallet, first annual payout</td></tr>
+<tr><td>Real Sarthy meeting to confirm remaining working assumptions</td><td>Lead</td><td><span class="badge badge-pending">Not scheduled</span></td><td>Everything still marked "pending Sarthy sign-off" across the hub</td></tr>
+<tr><td>Portal access (admin + partner login, tracker edit rights)</td><td>Sarthy</td><td><span class="badge badge-draft">Waiting</span></td><td>Real feature inventory, BRD gap-mapping against the actual Alpha build</td></tr>
+<tr><td>Data migration template - column format for the old tracker's records</td><td>Lead</td><td><span class="badge badge-draft">In progress</span></td><td>Actually importing historical partner data</td></tr>
+<tr><td>Data migration - populate the template with real records</td><td>Lead / Associate</td><td><span class="badge badge-pending">Not started</span></td><td>Real Phase 5 rollout using actual history</td></tr>
+<tr><td>Payment gateway selection (fee collection, withdrawal payouts)</td><td>Lead + Sarthy</td><td><span class="badge badge-pending">Not started</span></td><td>BRD Sections 3, 7, 10 - can't be built without this</td></tr>
+<tr><td>E-signature provider selection</td><td>Lead + Sarthy</td><td><span class="badge badge-pending">Not started</span></td><td>BRD Section 9's digital-signature requirement</td></tr>
+<tr><td>Real Alpha partner interviews actually conducted</td><td>Lead</td><td><span class="badge badge-pending">Not started</span></td><td>Validating requirements against real partner experience, not just SOP rules</td></tr>
+<tr><td>Migration Wave Plan drafted</td><td>Lead</td><td><span class="badge badge-pending">Queued</span></td><td>Real rollout sequencing</td></tr>
+<tr><td>Low-Level System Specification drafted</td><td>Lead</td><td><span class="badge badge-pending">Queued</span></td><td>Actual development starting</td></tr>
+<tr><td>Sarthy to designate a specific named person/role for formal BRD sign-off (process itself is resolved - written approval required, informal agreement isn't enough)</td><td>Sarthy leadership</td><td><span class="badge badge-pending">Not started</span></td><td>Development starting at all</td></tr>
+<tr><td>Development budget and resourcing confirmed with Sarthy</td><td>Sarthy + Lead</td><td><span class="badge badge-pending">Not started</span></td><td>Any real development timeline commitment</td></tr>
+</table>

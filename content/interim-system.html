@@ -3,6 +3,17 @@
 <h2>What this replaces</h2>
 <p>The old Growth Partnerships tracker - 16 tabs, inconsistent columns, different team members' shorthand scattered across years. This is one clean structure instead, using the fields already defined in the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>.</p>
 
+<h2>Migrating existing records - bulk import, predefined format</h2>
+<p>Decided approach: a spreadsheet template with one row per existing partner, columns matching the Partner fields already defined in the Data Dictionary - built and populated manually, not automated. Tracked as an open action item on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>.</p>
+<table class="dtable">
+<tr><th>Column</th><th>Source</th></tr>
+<tr><td>partner_id</td><td>Assign fresh, or reuse the existing code (e.g. SPA001) if still meaningful</td></tr>
+<tr><td>programme</td><td>India or International - from the original signed agreement</td></tr>
+<tr><td>status</td><td>Read from the old tracker's activity - most will start as Dormant or At-Risk, not Active, given the "Part of Platform" gap</td></tr>
+<tr><td>giving_pattern</td><td>Leave blank initially - this is meant to be calculated from real wallet activity, which doesn't exist yet for a migrated partner</td></tr>
+<tr><td>last_lead_shared_date</td><td>Best available from the old tracker's call logs, or blank if unknown</td></tr>
+</table>
+
 <h2>Core structure - one table per entity</h2>
 <table class="dtable">
 <tr><th>Table</th><th>One row per...</th><th>Key fields (see Data Dictionary for full list)</th></tr>

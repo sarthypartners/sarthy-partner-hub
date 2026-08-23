@@ -1,4 +1,4 @@
-<p class="callout">This is the To-Be system - what the marketplace app should do, written from Partnership SOP v1.0's rules, not from what's already built. This is deliberately not scoped to today's Alpha build - it's the target state. Once there's real portal access, the existing app gets compared against this document for a proper gap analysis, module by module.</p>
+<p class="callout">This is the To-Be system - what the marketplace app should do, written from Partnership SOP v1.0's rules, not from what's already built. This is deliberately not scoped to today's Alpha build - it's the target state. Once there's real portal access, the existing app gets compared against this document for a proper gap analysis, module by module. Each section is now tagged <strong>MVP</strong> (needed for a real first launch) or <strong>Phase 2</strong> (can come after) - a few sections split, where the basic version is MVP but full automation can wait.</p>
 
 <h2>1. Purpose and how to use this</h2>
 <p>Every requirement below traces back to a specific Partnership SOP v1.0 section - if the rule changes there, this document needs to change too (see the dependency map on the <a href="#" onclick="showDoc('guide');return false;" class="xlink">Start Here</a> page). Anything still marked open in the SOP shows up here as an open requirement too - this document doesn't invent answers the SOP doesn't have yet.</p>
@@ -11,7 +11,7 @@
 <li><strong>Admin (Sarthy)</strong> - validates leads, confirms conversions, resolves disputes, reviews flagged accounts, manages the whole system's integrity</li>
 </ul>
 
-<h2>3. Onboarding and fees</h2>
+<h2>3. Onboarding and fees <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 5</a></p>
 <ul>
 <li>The system must support two programme types (India, International), each with its own fixed fee (₹999 + GST, or $49) and identical starting credit grant (999 credits)</li>
@@ -21,7 +21,7 @@
 <li>The system must activate the credit wallet with 999 opening credits immediately on fee payment confirmation</li>
 </ul>
 
-<h2>4. The credit wallet</h2>
+<h2>4. The credit wallet <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 6</a></p>
 <ul>
 <li>The system must maintain a running credit ledger per partner - every add and deduction, with a timestamp and a reason (fee payment, lead received, conversion earned, withdrawal, top-up)</li>
@@ -30,7 +30,7 @@
 <li>The system must display a partner's current balance clearly, including how much of it is expiring soon</li>
 </ul>
 
-<h2>5. Lead submission and referral flow</h2>
+<h2>5. Lead submission and referral flow <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
 <ul>
 <li>The system must let a partner submit a lead with enough detail for admin to validate it - contact info, service need, urgency</li>
@@ -47,7 +47,7 @@
 <li><strong>Not yet scoped for build:</strong> a backend matchmaking layer, still in early direction only - see <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for the current thinking. Needs its own design pass before it's a real requirement.</li>
 </ul>
 
-<h2>6. Conversion and disputes</h2>
+<h2>6. Conversion and disputes <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 9</a></p>
 <ul>
 <li>The system must support the same conversion standard for every service category - proof of first payment plus a digitally signed agreement, captured in-platform</li>
@@ -57,7 +57,7 @@
 <li><strong>Still open:</strong> whether there's any escalation path beyond the admin if a partner remains unsatisfied - see <a href="#" onclick="showDoc('phase0');return false;" class="xlink">Phase 0 Discussion Doc</a></li>
 </ul>
 
-<h2>7. Withdrawal and the credit wallet's money mechanics</h2>
+<h2>7. Withdrawal and the credit wallet's money mechanics <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 10</a></p>
 <ul>
 <li>The system must treat membership as ongoing - no cycle-end event, no forced settlement date</li>
@@ -68,7 +68,7 @@
 <li><strong>Still open, applies here too:</strong> whether the 9% fee also applies to the older, separate 10% direct referral-fee flow from Partner 1.0-era agreements - a genuinely different question from the credit system above, not yet answered</li>
 </ul>
 
-<h2>8. Post-closure referral fee tracking</h2>
+<h2>8. Post-closure referral fee tracking <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 20</a></p>
 <ul>
 <li>The system must let a receiving partner record deal value and duration once a referred lead closes into a signed agreement</li>
@@ -81,7 +81,7 @@
 <li>The system must track a 1-year expiry from the lead's first engagement date, after which no further referral-fee entitlement accrues to the original referring partner on that relationship</li>
 </ul>
 
-<h2>9. Partner activity requirement (dormancy)</h2>
+<h2>9. Partner activity requirement (dormancy) <span class="status-pill badge-pending">Phase 2</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 21</a></p>
 <ul>
 <li>The system must track the date of a partner's last shared lead</li>
@@ -90,7 +90,7 @@
 <li><strong>Not yet scoped for build, flagged for later:</strong> gamification elements (leaderboards, streaks, recognition) to encourage consistent giving - a real direction Sarthy wants to pursue, not yet designed</li>
 </ul>
 
-<h2>10. Negative balances</h2>
+<h2>10. Negative balances <span class="status-pill badge-done">MVP</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 8</a></p>
 <ul>
 <li>The system must allow a partner's balance to run negative down to -2,997 credits</li>
@@ -98,7 +98,7 @@
 <li>The system must support a top-up payment (4x the entry fee - ₹3,996 or $196) that adds 3,996 credits back to a frozen wallet, bringing the balance from -2,997 to exactly +999</li>
 </ul>
 
-<h2>11. Trust and evidence - the dispute-reversal mechanism</h2>
+<h2>11. Trust and evidence - the dispute-reversal mechanism <span class="status-pill badge-pending">Phase 2</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
 <p>This is flagged separately because it's a genuinely open design problem, not just an unconfirmed number. The Lead's proposal: for cases disputed past the standard 1-week window, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
 <ul>
@@ -107,7 +107,7 @@
 <li><strong>Still open:</strong> what happens if the startup doesn't respond either - does the case default to favoring the receiving partner, the referring partner, or just stay open longer</li>
 </ul>
 
-<h2>12. Guardrails and admin tools</h2>
+<h2>12. Guardrails and admin tools <span class="status-pill badge-draft">MVP (basic) / Phase 2 (pattern detection)</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 13</a></p>
 <ul>
 <li>The system must give admin visibility into referral patterns across the whole network, to spot suspicious coordination between just one or two partners</li>
@@ -115,15 +115,42 @@
 <li>The system must support admin manually freezing or exiting a partner's account in cases of confirmed abuse</li>
 </ul>
 
-<h2>13. Reporting</h2>
+<h2>13. Reporting <span class="status-pill badge-pending">Phase 2</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 19</a></p>
 <ul>
 <li>The system must be able to report, at minimum monthly: leads matched per month, average time from submission to match, percentage of leads validated versus rejected or stalled, and spread of matches across the partner base</li>
 <li>The system must support recording written recommendations coming out of that reporting, and whether they were acted on</li>
 </ul>
 
-<h2>14. Open decisions log</h2>
+<h2>14. Integration requirements <span class="status-pill badge-draft">MVP (payments, e-sign) / Phase 2 (automation)</span></h2>
+<p>Every one of these is implied by the rules above but never named as an actual technical dependency until now. Selection status tracked on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>, not here - this section defines <em>what</em> needs to integrate, not which vendor.</p>
+<ul>
+<li>A payment gateway - for collecting the ₹999/$49 entry fee and processing withdrawal payouts. Selection pending.</li>
+<li>A digital-signature provider - for the referral agreement (Section 3) and conversion confirmation (Section 6). Selection pending.</li>
+<li>A notification channel (email and/or WhatsApp) - for every trigger in the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>. Specific provider not yet chosen.</li>
+<li>An exchange-rate data source - for converting credits to real currency at withdrawal (SOP Section 10). Which source counts as official is still open.</li>
+</ul>
+
+<h2>15. Non-functional requirements</h2>
+<p>A reasonable baseline, not a formal compliance commitment - can be revisited once real usage and Sarthy's own constraints are clearer.</p>
+<ul>
+<li>The system must encrypt financial and personal data both at rest and in transit - this handles partner bank/payout details and startup contact information, not just operational data</li>
+<li>The system should collect only the data fields already defined in the Data Dictionary - no speculative data collection beyond what a defined rule actually uses</li>
+<li>No formal uptime commitment for now - reasonable best-effort availability is sufficient at this stage, not a contracted SLA</li>
+</ul>
+
+<h2>16. How each requirement gets verified</h2>
+<p>A general principle, plus the specific cases most likely to be interpreted differently by different developers without an explicit test:</p>
+<ul>
+<li><strong>Duplicate lead detection:</strong> submitting the same contact's details twice within the system should be caught and flagged before the second submission reaches admin - test by submitting an intentional duplicate and confirming it's blocked at upload, not after.</li>
+<li><strong>Acknowledgment and stall windows:</strong> a lead acknowledged at hour 0 should auto-finalize (no refund) at exactly hour 168 (7 days) if unresolved - test with a lead deliberately left untouched to confirm the deduction becomes final at the right moment, not early or late.</li>
+<li><strong>Negative balance freeze:</strong> a partner whose balance reaches exactly -2,997 should be blocked from receiving further leads immediately - test by driving a test account to exactly that balance and confirming the block fires at -2,997, not -2,998 or later.</li>
+<li><strong>12-month proration:</strong> a deal reported with a duration over 12 months should calculate the referral fee only on the portion attributable to the first 12 months - test with an 18-month deal and confirm months 13-18 don't affect the payout.</li>
+</ul>
+
+<h2>17. Open decisions log</h2>
 <p>Carried forward from Partnership SOP v1.0 and the Phase 0 Discussion Doc - nothing below should get quietly assumed by whoever eventually builds this:</p>
+<p><strong>Sign-off, resolved:</strong> this document requires written approval from a specifically named person or role at Sarthy before development begins - an informal conversation isn't sufficient. Who that person is hasn't been designated yet - tracked on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>.</p>
 <ul>
 <li>Which exchange rate source counts as official for withdrawal conversion</li>
 <li>The full design of the startup-confirmation mechanism for disputed reversals</li>

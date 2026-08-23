@@ -17,6 +17,7 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 | Business Requirements Document | Low-Level System Specification |
 | Alpha → Beta Graduation Criteria | Migration Wave Plan |
 | Master Execution Sequence (reordered) | This file — if the reorder changes which document feeds which |
+| Action Item & Blocker Tracker | Gap & Risk Register (findings tracked there), Business Requirements Document (sign-off status), Project Plan (Gantt View) (blocker context) |
 
 ## When you add a new document
 

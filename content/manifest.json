@@ -92,8 +92,8 @@
     "content_file": "brd.html",
     "cat": "Technical Handoff",
     "status": "draft",
-    "version": "1.3",
-    "updated": "Added the 12-month proration rule and fresh-cycle rule for deal-closure referral fees",
+    "version": "2.0",
+    "updated": "MVP/Phase 2 tagged across 12 sections; added integration requirements, acceptance criteria, and NFR sections; sign-off process defined",
     "type": "Sarthy-facing",
     "title": "Business Requirements Document",
     "desc": "The To-Be system requirements - what the app should do, per the SOP's confirmed and drafted rules"
@@ -103,8 +103,8 @@
     "content_file": "gap-register.html",
     "cat": "Evidence & Assessment",
     "status": "draft",
-    "version": "1.0",
-    "updated": "Initial version",
+    "version": "1.1",
+    "updated": "Added 3 critical findings from the requirements-gathering review, linked to the new Action Item Tracker",
     "type": "Internal",
     "title": "Gap & Risk Register",
     "desc": "A list of problems we found, each with a suggested fix"
@@ -136,8 +136,8 @@
     "content_file": "comms-library.html",
     "cat": "Scripts & Templates",
     "status": "draft",
-    "version": "1.0",
-    "updated": "Initial version",
+    "version": "1.1",
+    "updated": "Added the existing-partner transition template",
     "type": "Internal",
     "title": "Communication Template Library",
     "desc": "Ready-made messages for WhatsApp, email, and phone calls"
@@ -169,8 +169,8 @@
     "content_file": "interim-system.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.0",
-    "updated": "Call queue updated to the merged status/giving_pattern model with a rotating weekly quota for dormant outreach",
+    "version": "2.1",
+    "updated": "Added the data migration approach and column template",
     "type": "Internal",
     "title": "Interim Operating System",
     "desc": "A simple working tool to manage partners until the platform is ready"
@@ -191,10 +191,21 @@
     "content_file": "gantt.html",
     "cat": "Strategic Planning",
     "status": "draft",
-    "version": "1.0",
-    "updated": "Initial version - relative week numbers, not calendar dates",
+    "version": "1.1",
+    "updated": "Linked the Action Item Tracker for real-world blocker context",
     "type": "Both",
     "title": "Project Plan (Gantt View)",
     "desc": "Visual timeline of the roadmap phases - for discussion with Sarthy leadership"
+  },
+  {
+    "id": "action-tracker",
+    "content_file": "action-tracker.html",
+    "cat": "Tracking & Governance",
+    "status": "draft",
+    "version": "1.1",
+    "updated": "Budget item added; sign-off item refined to the specific remaining gap",
+    "type": "Both",
+    "title": "Action Item & Blocker Tracker",
+    "desc": "Real-world action items blocking progress, with a dependency chain showing what unlocks what"
   }
 ]

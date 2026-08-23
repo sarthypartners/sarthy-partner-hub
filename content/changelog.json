@@ -123,5 +123,15 @@
     "date": "v16.0",
     "title": "Readability improvements, phase 2 complete - diagrams and project plan",
     "desc": "Added two more hand-built SVG diagrams: the referral-fee split (Section 20 - a visual waterfall of the 10% entitlement splitting into Sarthy's 9% and the referrer's 91%), and a partner account-status state diagram (Segmentation Framework - showing how Active leads to At-Risk, Dormant, and Frozen, and the recovery paths back to Active, including the combined-state rule). Added a new Project Plan (Gantt View) page under Strategic Planning - a CSS-based horizontal timeline of all 6 roadmap phases, honestly distinguishing documentation-complete from real-world rollout-not-yet-started, using relative week numbers since real calendar dates were never tracked. This completes both phases of the readability improvement effort requested."
+  },
+  {
+    "date": "v17.0",
+    "title": "Action Item & Blocker Tracker added, requirements-gathering gaps plugged",
+    "desc": "Did a reviewer-style pass on requirements-gathering completeness before the BRD - found 12 real gaps, verified each against actual file content (dropped 3 initial suspicions that turned out to be false positives). New Action Item & Blocker Tracker page (Tracking & Governance) - a dependency-chain diagram plus full table showing what real-world action items (legal review, regulatory review, data migration, payment gateway selection) are blocking what, colour-coded by status. Data migration approach decided: bulk spreadsheet import with a predefined column format matching the Data Dictionary's Partner fields - documented in the Interim Operating System. Gap & Risk Register updated with the 3 critical findings, linked to the new tracker rather than duplicated."
+  },
+  {
+    "date": "v18.0",
+    "title": "All 12 requirements-gathering gaps closed or properly tracked",
+    "desc": "BRD now tags every section MVP or Phase 2 (12 sections tagged, a few split where the basic version is MVP but full automation can wait) - defines what's essential for a real first launch. Added a Non-Functional Requirements section (baseline security/privacy, no formal uptime SLA yet, per the Lead's decision). Added acceptance criteria for the four requirements most likely to be interpreted differently by different developers (duplicate detection, acknowledgment/stall timing, the -2,997 freeze boundary, 12-month proration). Formalized Integration Requirements as its own section. Sign-off process resolved - written approval from a specifically named Sarthy person/role is required; who that person is remains the one open item. Added an existing-partner transition message template to the Comms Library. This closes the reviewer-style requirements-gathering pass in full - 7 items genuinely resolved with real content, 5 properly tracked as action items that need real-world action, not a documentation fix."
   }
 ]
