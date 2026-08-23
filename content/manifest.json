@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "1.3",
-    "updated": "Dependency table moved to end and made self-explanatory with inline section descriptions",
+    "version": "1.4",
+    "updated": "Synced hub-facing dependency table with the corrected meta/dependency-map.md - added glossary, gantt, and action-tracker rows, fixed a stale section title",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"

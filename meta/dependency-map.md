@@ -2,23 +2,26 @@
 
 This is the authoritative source for "if you change X, check Y." Both the human team and any AI assistant working in this repo (via terminal or chat) should consult this file before considering an update finished. If `build.py` ever renders a dependency table inside the hub itself, it should be generated FROM this file, not maintained separately — this file is the single source of truth for dependencies, not a copy of it.
 
+**Note on Partnership SOP section numbers below:** the SOP has been restructured and renumbered multiple times (absorbing Sarthy's original Playbook 2.0, merging four planned SOP documents into itself, adding the deal-closure and dormancy sections). Section numbers referenced here match the SOP as of v6.1 (23 sections). If the SOP gets renumbered again, this table needs a pass to match — that itself is a dependency, see the last row.
+
 | If this changes... | ...check and update these |
 |---|---|
-| Phase 0 Discussion Doc (once Sarthy answers) | Partnership SOP v1.0 §4 (Commercial Mechanics), §11 (Escalation SOP), §13 (KPI Framework) |
+| Phase 0 Discussion Doc (once Sarthy answers) | Partnership SOP §5-10 (fees, wallet, lead flow, credit rules, disputes, withdrawal), §19 (KPI framework), §20 (referral fee) |
 | Current-State Assessment | Gap & Risk Register, Partner Segmentation Framework, Partner Journey Map |
-| Gap & Risk Register | Partnership SOP v1.0 Appendix D, Master Execution Sequence priority order |
-| Data Dictionary / SSOT Schema | Interim Operating System, Partnership SOP v1.0 Appendix B |
-| Partner Segmentation Framework | Partnership SOP v1.0 §6, Partner Journey Map, Dormant-Partner Reactivation Process, Migration Wave Plan |
-| Partner Journey Map | Partnership SOP v1.0 §5, Communication Template Library, Onboarding Process |
-| Communication Template Library | Partnership SOP v1.0 Appendix A, Dormant-Partner Reactivation Process |
-| Onboarding Process / Engagement Cadence | Partnership SOP v1.0 §7 & §8 |
-| Escalation & Dispute SOP | Partnership SOP v1.0 §11 |
-| Partnership SOP v1.0 (any section moving to Confirmed) | Business Requirements Document — re-check no requirement still cites a Pending section |
-| Business Requirements Document | Low-Level System Specification |
-| Alpha → Beta Graduation Criteria | Migration Wave Plan |
-| Master Execution Sequence (reordered) | This file — if the reorder changes which document feeds which |
-| Action Item & Blocker Tracker | Gap & Risk Register (findings tracked there), Business Requirements Document (sign-off status), Project Plan (Gantt View) (blocker context) |
+| Gap & Risk Register | Partnership SOP's problem-related sections, Master Execution Sequence priority order, Action Item & Blocker Tracker (critical findings now live in both — keep them in sync, not duplicated) |
+| Data Dictionary | Interim Operating System (uses these exact field definitions), Partner Segmentation Framework (the `giving_pattern` field is defined jointly across both) |
+| Partner Segmentation Framework | Partnership SOP §11 (Giver/Taker/Balanced — summarize, don't copy in full), §17 (Winning back inactive partners), Migration Wave Plan (once drafted), Interim Operating System (call queue logic) |
+| Partner Journey Map | Partnership SOP §14 (summarize, don't copy in full), Communication Template Library |
+| Communication Template Library | Partnership SOP §16 (the link, not the content), §17 (Reactivation) |
+| Any section of Partnership SOP — any change, not just when it becomes confirmed | Business Requirements Document — it cites specific SOP sections directly; check it didn't just go stale |
+| Business Requirements Document | Low-Level System Specification (once drafted), Action Item & Blocker Tracker (integration requirement items reference BRD section numbers) |
+| Alpha to Beta Graduation Criteria | Migration Wave Plan, Partnership SOP §18 |
+| Interim Operating System | Action Item & Blocker Tracker (the data migration section links here) |
+| Action Item & Blocker Tracker | Gap & Risk Register, Business Requirements Document, Project Plan (Gantt View) - all three reference or link to it |
+| Project Plan (Gantt View) | Roadmap (phase definitions must stay consistent), Action Item & Blocker Tracker |
+| Glossary | Whichever document actually changed the definition - Partnership SOP, Data Dictionary, or Segmentation Framework are the most common sources; the Glossary should never be the source of truth for a term's meaning, only a pointer to it |
+| Master Execution Sequence (reordered) | This file - if the reorder changes which document feeds which |
 
 ## When you add a new document
 
-Add a row here before (or in the same commit as) adding the document itself. An undocumented dependency is worse than an obvious one — it fails silently.
+Add a row here before (or in the same commit as) adding the document itself. An undocumented dependency is worse than an obvious one - it fails silently. This instruction exists specifically because it wasn't followed consistently for several rounds in a row - worth treating as a real commit-blocking checklist item, not a suggestion.
