@@ -14,25 +14,8 @@
 <p>This hub is one file. It does not automatically notice when a change in one document should also change another - nothing in the file itself is smart enough for that. The only thing that keeps everything accurate is a simple habit: <strong>whenever a document changes, check the table below to see what else it affects, and fix those too, in the same sitting.</strong></p>
 
 <h2>How the Playbook is organized - one rulebook, several supporting documents</h2>
-<p><a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> is the single operating rulebook - how partners join, stay engaged, get grouped, and get helped when something goes wrong. Sarthy's original Playbook 2.0 - years of their own design work on the credit system, referral flow, and abuse rules - has been fully absorbed into it, section by section. That original document is now retired; nothing about the program lives there anymore that isn't also here. A few things still stay separate on purpose: the Communication Template Library (a toolkit of scripts, not narrative rules), the Journey Map and Segmentation Framework (analysis that feeds the SOP's conclusions, not the SOP itself), and the technical documents (a different audience entirely). Sarthy's much older Playbook 1.0 stays out too, but only because there's very little in it beyond what's already captured in the Current-State Assessment's history section.</p>
+<p><a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> is the single operating rulebook - how partners join, stay engaged, get grouped, and get helped when something goes wrong. Sarthy's original Playbook 2.0 - years of their own design work on the credit system, referral flow, and abuse rules - has been fully absorbed into it, section by section. That original document is now retired; nothing about the program lives there anymore that isn't also here. A few things still stay separate on purpose: the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a> (a toolkit of scripts, not narrative rules), the Journey Map and Segmentation Framework (analysis that feeds the SOP's conclusions, not the SOP itself), and the technical documents (a different audience entirely). Sarthy's much older Playbook 1.0 stays out too, but only because there's very little in it beyond what's already captured in the <a href="#" onclick="showDoc('current-state');return false;" class="xlink">Current-State Assessment</a>'s history section.</p>
 
-<h2>Which documents affect which others</h2>
-<p>How to read this: if you change something in the left column, go check the item next to it in the right column before you consider the update finished.</p>
-<table class="dtable">
-  <tr><th>If you change this...</th><th>...go check this too</th></tr>
-  <tr><td>Phase 0 Discussion Doc (after Sarthy answers our questions)</td><td>Partnership SOP v1.0 - Sections 5, 6, 7, 8, 9, 10 (money and credit mechanics), Section 13 (guardrails), Section 19 (reporting), Section 20 (referral fee)</td></tr>
-  <tr><td>Current-State Assessment</td><td>Gap & Risk Register, Partner Segmentation Framework, Partner Journey Map</td></tr>
-  <tr><td>Gap & Risk Register</td><td>Partnership SOP v1.0's problem-related sections, and the order of work in the Master Execution Sequence</td></tr>
-  <tr><td><a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> (our shared list of what every piece of partner data means)</td><td>The <a href="#" onclick="showDoc('interim-system');return false;" class="xlink">Interim Operating System</a> - it should use these exact field definitions, not invent its own</td></tr>
-  <tr><td>Partner Segmentation Framework (kept separate - how we group partners)</td><td>Partnership SOP v1.0 Section 11 (summarize, don't copy in full), Section 17 (Dormant), Migration Wave Plan</td></tr>
-  <tr><td>Partner Journey Map (kept separate - the step-by-step partner experience)</td><td>Partnership SOP v1.0 Section 14 (summarize, don't copy in full), Communication Template Library</td></tr>
-  <tr><td>Communication Template Library (our ready-made messages)</td><td>Partnership SOP v1.0 Section 16 (the link, not the content), and Section 17 (Reactivation)</td></tr>
-  <tr><td>Partnership SOP v1.0 Section 20 (deal-closure referral fee) or Section 21 (dormancy)</td><td>The Business Requirements Document's Sections 8 and 9 - these were added together and need to move together</td></tr>
-  <tr><td>Any section of Partnership SOP v1.0 - any change, not just when it becomes confirmed</td><td>The Business Requirements Document now exists and cites specific SOP sections directly - check it didn't just go stale</td></tr>
-  <tr><td>Business Requirements Document</td><td>Low-Level System Specification</td></tr>
-  <tr><td>Alpha to Beta Graduation Criteria (the targets to hit before opening up more widely)</td><td>Migration Wave Plan, and Partnership SOP v1.0 Section 18</td></tr>
-  <tr><td>Master Execution Sequence, if we reorder it</td><td>This table - update it if the reorder changes which document depends on which</td></tr>
-</table>
 
 <h2>What I'll do without being asked</h2>
 <ul>
@@ -46,3 +29,21 @@
   <li>If either of you changes a document without asking me first, tell me about it next time we talk - this table is only useful if it reflects what actually happened.</li>
   <li>If you see an amber or grey dot on a document, treat it as a reminder that something else in the hub might be waiting on it - not just "still pending."</li>
 </ul>
+
+<h2>Which documents affect which others</h2>
+<p>How to read this: if you change something in the left column, go check the item next to it in the right column before you consider the update finished. Each section number below has a one-line description, so this table makes sense even before you've read the document it points to.</p>
+<table class="dtable">
+  <tr><th>If you change this...</th><th>...go check this too</th></tr>
+  <tr><td>Phase 0 Discussion Doc (after Sarthy answers our questions)</td><td>Partnership SOP v1.0 - Sections 5-10 (fees, wallet, lead flow, credit rules, disputes, withdrawal), Section 13 ("Guardrails against abuse"), Section 19 ("How we measure success"), Section 20 ("After the deal closes - the referral fee")</td></tr>
+  <tr><td>Current-State Assessment</td><td>Gap & Risk Register, Partner Segmentation Framework, Partner Journey Map</td></tr>
+  <tr><td>Gap & Risk Register</td><td>Partnership SOP v1.0's problem-related sections, and the order of work in the Master Execution Sequence</td></tr>
+  <tr><td><a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> (our shared list of what every piece of partner data means)</td><td>The <a href="#" onclick="showDoc('interim-system');return false;" class="xlink">Interim Operating System</a> - it uses these exact field definitions, not invented ones of its own</td></tr>
+  <tr><td>Partner Segmentation Framework (kept separate - how we group partners)</td><td>Partnership SOP v1.0 Section 11 ("How we group partners - Giver vs. Taker"), Section 17 ("Winning back inactive partners"), Migration Wave Plan</td></tr>
+  <tr><td>Partner Journey Map (kept separate - the step-by-step partner experience)</td><td>Partnership SOP v1.0 Section 14 ("The partner's day-to-day experience"), Communication Template Library</td></tr>
+  <tr><td>Communication Template Library (our ready-made messages)</td><td>Partnership SOP v1.0 Section 16 ("Ready-made messages" - just the link, not the content), Section 17 ("Winning back inactive partners")</td></tr>
+  <tr><td>Partnership SOP v1.0 Section 20 ("After the deal closes - the referral fee") or Section 21 ("Staying an active partner")</td><td>The Business Requirements Document's Sections 8 and 9 - these were added together and need to move together</td></tr>
+  <tr><td>Any section of Partnership SOP v1.0 - any change, not just when it becomes confirmed</td><td>The Business Requirements Document now exists and cites specific SOP sections directly - check it didn't just go stale</td></tr>
+  <tr><td>Business Requirements Document</td><td>Low-Level System Specification</td></tr>
+  <tr><td>Alpha to Beta Graduation Criteria (the targets to hit before opening up more widely)</td><td>Migration Wave Plan, and Partnership SOP v1.0 Section 18 ("Moving from early testing to full rollout")</td></tr>
+  <tr><td>Master Execution Sequence, if we reorder it</td><td>This table - update it if the reorder changes which document depends on which</td></tr>
+</table>

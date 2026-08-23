@@ -73,7 +73,9 @@
 <ul>
 <li>The system must let a receiving partner record deal value and duration once a referred lead closes into a signed agreement</li>
 <li>The system must notify Sarthy and the original referring partner when this happens</li>
-<li>The system must calculate the referring partner's entitlement as 10% of deal value, then deduct Sarthy's 9% cut of that 10%, crediting the referring partner the remaining 91% (9.1% of total deal value)</li>
+<li>The system must apply a 12-month proration rule when deal_duration exceeds 12 months - the referral fee is calculated only on value invoiced during the first 12 months, not the full multi-year contract</li>
+<li>The system must calculate the referring partner's entitlement as 10% of the applicable (prorated, if needed) value, then deduct Sarthy's 9% cut of that 10%, crediting the referring partner the remaining 91%</li>
+<li>The system must treat a startup being referred to a different partner later as a completely separate deal, with its own independent 12-month entitlement clock - not linked to any prior engagement with a different partner</li>
 <li>The system must accumulate this amount in the referring partner's account separately from their 999-point credit wallet - this is a different pool, on a different payout schedule</li>
 <li>The system must pay out the accumulated referral-fee balance once annually, at financial year-end (March 31st)</li>
 <li>The system must track a 1-year expiry from the lead's first engagement date, after which no further referral-fee entitlement accrues to the original referring partner on that relationship</li>

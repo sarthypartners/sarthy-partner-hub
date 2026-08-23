@@ -85,11 +85,6 @@
     "desc": "Reverted from the hover-out drawer to a fixed-width sidebar sitting permanently alongside the content - no longer needs a hover or a pin button. Category expand/collapse behavior stays the same."
   },
   {
-    "date": "v10.3",
-    "title": "Interim Operating System drafted",
-    "desc": "Moved out of the queue and drafted - a simple five-table structure (Partners, Leads, Deals, Wallet Ledger, Disputes) built directly on the Data Dictionary's field definitions, plus the Associate's daily call queue ordered by Segmentation tier. Meant as scaffolding until the real platform can take over, not a permanent parallel system."
-  },
-  {
     "date": "v10.4",
     "title": "Category document lists now permanently expanded",
     "desc": "Removed the click-to-expand/collapse behavior entirely - every category's document list stays visible at all times, no toggling."
@@ -98,5 +93,20 @@
     "date": "v11.0",
     "title": "Content cleanup - redundancy and staleness pass",
     "desc": "Reviewed all 16 documents for redundant and stale content. Fixed: guide.html's navigation instructions described the old top-nav interface, not the current static sidebar. Phase 0 doc trimmed 59% (1011 to 416 words) - most of it was resolved items now fully duplicated in the SOP; also caught two genuinely stale items (currency conversion and programme switching were marked 'still open' but had actually been resolved rounds ago). Sequence page dropped its redundant status column (the sidebar's dots already show this) and fixed a stale entry claiming SOP sections were still queued when they'd been written. Deliverables Register trimmed a redundant intro explanation. BRD's matchmaking bullet trimmed to a link instead of re-explaining. Checked and ruled out: Current-State vs Playbook history tables looked duplicate but serve different purposes (evidence vs. rules comparison) - kept both. BRD's overall density was reviewed and found appropriately lean, not bloated as initially estimated from word count alone."
+  },
+  {
+    "date": "v12.0",
+    "title": "Partnership SOP restructured for readability",
+    "desc": "Applied all 5 simplification directions to the flagship document. Added a ~250-word Quick Summary block at the top. Removed repeated inline hedge phrases ('working assumption, pending Sarthy sign-off') throughout - the status pill already conveys this, so it no longer needed restating in nearly every paragraph. Consolidated scattered mid-section open items into one clear note at the end of each affected section, instead of interleaved with the rules themselves. Cut audit-trail commentary that had crept into reader-facing prose (e.g. 'unlike the earlier version of this rule', 'this resolves one of the oldest open questions') - that belongs in the changelog, not the rulebook. Added a hand-built SVG diagram for the Section 7 lead lifecycle. Net result: 4,461 words to 3,352 - a 25% reduction despite adding the new summary block and diagram."
+  },
+  {
+    "date": "v13.0",
+    "title": "All 11 findings from the manual review report resolved",
+    "desc": "Worked through a manually-written QA review of the hub, one finding at a time. Fixed: (1) navigation guide's dependency table moved to end, made self-explanatory. (2) Roadmap scorecard now links to how it's measured, with examples. (3) 'Balanced' now defined in SOP Section 11, not just referenced from Section 14. (4) A genuine contradiction fixed - SOP said disputes were final with no appeal, Phase 0 said the opposite; resolved as admin-final for routine disputes with escalation to Sarthy leadership for serious/high-value ones (exact threshold still open). (5) Added a worked example disambiguating the four different meanings of '999' in the wallet. (6) Made the suggest-vs-assign boundary for backend matchmaking explicit. (7) The biggest structural fix - Segmentation Framework's 5 tiers reused words already meaning something different in the Data Dictionary's status field; redesigned into two clean, non-overlapping fields (status + giving_pattern), with every cross-reference across the hub updated to match. (8) Defined the Dormant+Frozen combined recovery order (top-up first, then send a lead). (9) Defined the dormant-reactivation call batch as a rotating weekly quota. (10) Clarified deal_duration's actual purpose - a 12-month proration rule for multi-year deals, plus a fresh-cycle rule if a lead is later referred to a different partner. (11) Clarified Graduation Criteria's lighter 'full lead cycle' bar is intentional, distinct from the SOP's conversion-based cycle. Playbook v5.0 - marks this as the externally-reviewed and corrected version."
+  },
+  {
+    "date": "v13.1",
+    "title": "Fixed 9 unlinked document mentions, caught by Claude Code",
+    "desc": "Claude Code flagged that 'Interim Operating System' appeared as plain text in 3 spots instead of a real link - traced it to the guide.html mention predating that document's drafting, and two fresh mentions in segmentation.html's full rewrite that were never linked. Did a broader sweep and found 6 more of the same pattern (Current-State Assessment, Communication Template Library, Data Dictionary mentioned as plain text in gap-register.html, guide.html, playbook.html, interim-system.html, and segmentation.html) - all fixed."
   }
 ]

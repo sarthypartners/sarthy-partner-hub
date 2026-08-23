@@ -5,9 +5,9 @@
 <tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
 <tr><td>partner_id</td><td>Text</td><td>Unique identifier, assigned at onboarding</td><td>SOP §5</td></tr>
 <tr><td>programme</td><td>India / International</td><td>Locked permanently at sign-up, never changes</td><td>SOP §5</td></tr>
-<tr><td>status</td><td>Applicant / Active / At-Risk / Dormant / Frozen / Exited</td><td>See the status definitions below - this is not the same as the Segmentation Framework's Giver/Taker tiers, which describe behavior, not account state</td><td>SOP §5, §8, §21</td></tr>
+<tr><td>status</td><td>Applicant / Active / At-Risk / Dormant / Frozen / Exited</td><td>See the status definitions below - controls what the account can do on the platform</td><td>SOP §5, §8, §21</td></tr>
 <tr><td>onboarding_notes</td><td>Free text</td><td>Discovery-call read on service relevance, client diversity, professional standing, initial Giver/Taker impression</td><td>SOP §5, §11</td></tr>
-<tr><td>segmentation_tier</td><td>1-5</td><td>Current priority tier from the Segmentation Framework, recalculated from wallet trend, not set manually</td><td>Segmentation Framework</td></tr>
+<tr><td>giving_pattern</td><td>Giver / Balanced / Taker</td><td>Only meaningful when status is Active - recalculated from wallet trend, not set manually. Deliberately separate vocabulary from status, so the two never get confused - see the <a href="#" onclick="showDoc('segmentation');return false;" class="xlink">Segmentation Framework</a></td><td>Segmentation Framework</td></tr>
 <tr><td>last_lead_shared_date</td><td>Date</td><td>Drives the 3-month dormancy calculation</td><td>SOP §21</td></tr>
 </table>
 
@@ -18,7 +18,7 @@
 <tr><td>Active</td><td>Onboarded, wallet balance above -2,997, has shared at least one lead in the last 3 months</td></tr>
 <tr><td>At-Risk</td><td>Active, but balance trending toward -2,997 or 4+ consecutive declines flagged - a warning state, not a restriction</td></tr>
 <tr><td>Dormant</td><td>3+ months with no lead shared - removed from public listing, blocked from receiving new leads, but not frozen for balance reasons</td></tr>
-<tr><td>Frozen</td><td>Balance has hit -2,997 - blocked from receiving new leads until topped up to +999. Distinct from Dormant, and a partner could technically be both</td></tr>
+<tr><td>Frozen</td><td>Balance has hit -2,997 - blocked from receiving new leads until topped up to +999. Distinct from Dormant, and a partner could technically be both. <strong>If both apply:</strong> pay the top-up first, then send a lead - the top-up clears Frozen status; sending a lead is what clears Dormant.</td></tr>
 <tr><td>Exited</td><td>Account closed, by the partner's choice or Sarthy's, per the guardrails in SOP §13</td></tr>
 </table>
 
@@ -46,7 +46,7 @@
 <table class="dtable">
 <tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
 <tr><td>deal_id</td><td>Text</td><td>Unique identifier, linked to the originating lead_id</td><td>SOP §20</td></tr>
-<tr><td>deal_value, deal_duration</td><td>Currency, months</td><td>Reported by the receiving partner on closure</td><td>SOP §20</td></tr>
+<tr><td>deal_value, deal_duration</td><td>Currency, months</td><td>Reported by the receiving partner on closure. deal_duration determines whether the 12-month proration rule applies (SOP §20) - if the engagement runs longer than a year, only the value invoiced in year one counts toward the referral fee</td><td>SOP §20</td></tr>
 <tr><td>referral_fee_entitlement</td><td>Currency</td><td>10% of deal_value, before Sarthy's cut</td><td>SOP §20</td></tr>
 <tr><td>referral_fee_net</td><td>Currency</td><td>91% of the entitlement - what the referring partner actually accrues</td><td>SOP §20</td></tr>
 <tr><td>first_engagement_date</td><td>Date</td><td>Starts the 1-year entitlement window</td><td>SOP §20</td></tr>

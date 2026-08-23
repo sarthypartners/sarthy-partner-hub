@@ -1,4 +1,4 @@
-<p class="callout">A simple working tool for the Lead and Associate to actually run day-to-day operations on, until the real platform matures enough to handle it. Built directly on the Data Dictionary's field definitions - not a separate, invented structure.</p>
+<p class="callout">A simple working tool for the Lead and Associate to actually run day-to-day operations on, until the real platform matures enough to handle it. Built directly on the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>'s field definitions - not a separate, invented structure.</p>
 
 <h2>What this replaces</h2>
 <p>The old Growth Partnerships tracker - 16 tabs, inconsistent columns, different team members' shorthand scattered across years. This is one clean structure instead, using the fields already defined in the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>.</p>
@@ -6,7 +6,7 @@
 <h2>Core structure - one table per entity</h2>
 <table class="dtable">
 <tr><th>Table</th><th>One row per...</th><th>Key fields (see Data Dictionary for full list)</th></tr>
-<tr><td>Partners</td><td>partner</td><td>partner_id, programme, status, segmentation_tier, last_lead_shared_date</td></tr>
+<tr><td>Partners</td><td>partner</td><td>partner_id, programme, status, giving_pattern, last_lead_shared_date</td></tr>
 <tr><td>Leads</td><td>lead</td><td>lead_id, referring/receiving partner, lead_status, timestamps</td></tr>
 <tr><td>Deals</td><td>closed deal</td><td>deal_id, deal_value, referral_fee_net, payout_status</td></tr>
 <tr><td>Wallet Ledger</td><td>credit transaction</td><td>partner_id, amount, reason, timestamp</td></tr>
@@ -15,12 +15,13 @@
 <p>No partner or lead should exist in more than one place - if it's not in these five tables, it isn't tracked. That's the entire point of replacing the old tracker.</p>
 
 <h2>The Associate's daily call queue</h2>
-<p>Not a separate table - a filtered view of the Partners table, ordered by the <a href="#" onclick="showDoc('segmentation');return false;" class="xlink">Segmentation Framework</a>'s tiers:</p>
+<p>Not a separate table - a filtered view of the Partners table, ordered by the <a href="#" onclick="showDoc('segmentation');return false;" class="xlink">Segmentation Framework</a>'s combined status + giving_pattern table:</p>
 <ol>
-<li><strong>Tier 3 (At-Risk)</strong> first - highest priority, most time-sensitive</li>
-<li><strong>Tier 4 (Dormant)</strong> next, but only those flagged for active reactivation this week - not the whole dormant list at once</li>
-<li><strong>Tier 2 (Balanced)</strong> on a rotating monthly check-in basis</li>
-<li><strong>Tier 1 (Active Givers)</strong> lowest priority for calls - light touch, mostly automated messages from the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a></li>
+<li><strong>status = At-Risk</strong> first - highest priority, most time-sensitive</li>
+<li><strong>status = Dormant</strong> next, but only this week's batch - selected on a <strong>rotating weekly quota</strong>, so every dormant partner eventually gets called rather than the same few being picked repeatedly or the list being worked by feel</li>
+<li><strong>status = Active, giving_pattern = Taker</strong> - medium-high touch, before they slide into At-Risk</li>
+<li><strong>status = Active, giving_pattern = Balanced</strong> - standard monthly rotation</li>
+<li><strong>status = Active, giving_pattern = Giver</strong> - lowest priority for calls, light touch, mostly automated messages from the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a></li>
 </ol>
 <p>Each call logged with: date, partner_id, outcome (reached / no answer / rescheduled), and a free-text note - this becomes the historical record the old tracker's scattered comment columns used to (badly) serve.</p>
 
