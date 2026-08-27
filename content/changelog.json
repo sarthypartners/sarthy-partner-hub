@@ -148,5 +148,10 @@
     "date": "v19.1",
     "title": "Replaced \u00a7 with # for section references across the hub",
     "desc": "Style correction - every instance of \u00a7N (Gap & Risk Register, Data Dictionary, Journey Map, Segmentation Framework, Comms Library, Graduation Criteria, and meta/dependency-map.md - 80 instances total) now reads #N instead. Partnership SOP itself already spelled out 'Section N' in full, so this brings everything else in line with a single consistent convention rather than three different ways of referencing the same thing."
+  },
+  {
+    "date": "v20.0",
+    "title": "Comprehensive self-review across all 19 documents",
+    "desc": "Systematic integrity pass, same methodology as the two manual reviews, applied to the whole hub. Numbers audit: verified -2,997/-1,500/+3,996 math, KPI weights (20/40/30/10), the 1-week acknowledgment window, 4+ decline threshold, 30-day coupon expiry, 5-working-day validation, the 10%/91%/9.1% referral split, and the 10-partners/2-weeks rollout target - all consistent everywhere they're mentioned, no contradictions found. Ran a script checking every showDoc() link resolves to a real document - zero broken links. Ran a second script checking every document title for unlinked plain-text mentions across all other documents - found ~15 genuine misses (mostly opening callouts, the highest-value place to link) and fixed them; correctly identified and left alone two false-positive patterns (dependency-table rows describing relationships, and diagram text labels, neither of which needed linking every occurrence). Found two real completeness gaps: the Deliverables Register was missing all 3 of the hub's newest documents entirely (Glossary, Gantt, Action Tracker) - added them. The Master Execution Sequence didn't account for those same 3 documents - added an honest note explaining they emerged from later requests rather than forcing them into the original numbered plan. Verified Roadmap and Gantt's phase descriptions stay consistent in substance despite different styling."
   }
 ]
