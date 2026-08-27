@@ -47,9 +47,14 @@
 <ul>
 <li><strong>Giver:</strong> wallet balance trending upward - referring more than receiving, leads converting, low decline rate</li>
 <li><strong>Balanced:</strong> wallet roughly stable - giving and receiving in reasonable proportion. This is the default state for most partners most of the time, not an edge case.</li>
-<li><strong>Taker:</strong> wallet balance trending downward - receiving regularly, referring rarely or never</li>
+<li><strong>Taker:</strong> wallet balance trending downward over time - receiving regularly, referring rarely or never. This is a <em>pattern</em>, read from the trend over several transactions, not a specific number - deliberately different from the account status At-Risk, which fires at a specific balance (-1,500) or a specific decline count (4+), regardless of longer-term pattern.</li>
 </ul>
 <p>Giving pattern only means something for an Active account. A Dormant or Frozen account doesn't get a giving pattern - its status already says everything that matters for how to handle it.</p>
+
+<div class="example-box">
+<strong>Worked example - Taker and At-Risk don't always move together:</strong>
+<p style="margin:8px 0 0;">Rohan starts with a healthy Giver pattern, referring regularly. Over three months, his referrals dry up while he keeps receiving leads - his giving_pattern quietly shifts to Taker as the ratio tips, even though his balance is still a comfortable <span class="amt-pos">+2,200</span>, nowhere near -1,500. He's a Taker, but not At-Risk. Then, separately, a run of four leads he genuinely can't service comes in over two weeks - he declines all four. That decline count alone flags him At-Risk immediately, even though nothing about his underlying giving_pattern changed that week. Two different signals, two different moments, not the same trigger.</p>
+</div>
 
 <h2>Outreach priority - combining the two fields</h2>
 <table class="dtable">
@@ -70,6 +75,6 @@
 <h2>Feeds directly into</h2>
 <ul>
 <li>The <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Dormant-Partner Reactivation</a> process (SOP §17) - accounts with status Dormant are its target list</li>
-<li>The Migration Wave Plan - Active/Giver and Active/Balanced partners are natural early-wave candidates once rollout expands</li>
+<li>The Migration Wave Plan - Active/Giver and Active/Balanced partners are natural early-wave candidates once rollout expands. This applies identically whether a partner is brand-new or migrated from the old tracker - see the <a href="#" onclick="showDoc('interim-system');return false;" class="xlink">Interim Operating System</a> for why migration doesn't get special-cased status logic.</li>
 <li>The Associate's daily call queue, using this exact combined table - see the <a href="#" onclick="showDoc('interim-system');return false;" class="xlink">Interim Operating System</a></li>
 </ul>

@@ -3,16 +3,17 @@
 <h2>What this replaces</h2>
 <p>The old Growth Partnerships tracker - 16 tabs, inconsistent columns, different team members' shorthand scattered across years. This is one clean structure instead, using the fields already defined in the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>.</p>
 
-<h2>Migrating existing records - bulk import, predefined format</h2>
-<p>Decided approach: a spreadsheet template with one row per existing partner, columns matching the Partner fields already defined in the Data Dictionary - built and populated manually, not automated. Tracked as an open action item on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>.</p>
+<h2>Migrating existing records - treated exactly like a new partner addition</h2>
+<p>Decided approach: this isn't a special process with its own rules. A migrated partner follows the exact same onboarding treatment as a brand-new signup (<a href="#" onclick="showDoc('playbook');return false;" class="xlink">SOP Section 5</a>) - the bulk-import spreadsheet is just the mechanical way their existing record gets typed in, not a different set of business rules. This is what resolves the earlier contradiction between this document and the Segmentation Framework: there's no special "migrated" status category to conflict with anything, because there's no special migrated category at all.</p>
 <table class="dtable">
 <tr><th>Column</th><th>Source</th></tr>
 <tr><td>partner_id</td><td>Assign fresh, or reuse the existing code (e.g. SPA001) if still meaningful</td></tr>
 <tr><td>programme</td><td>India or International - from the original signed agreement</td></tr>
-<tr><td>status</td><td>Read from the old tracker's activity - most will start as Dormant or At-Risk, not Active, given the "Part of Platform" gap</td></tr>
-<tr><td>giving_pattern</td><td>Leave blank initially - this is meant to be calculated from real wallet activity, which doesn't exist yet for a migrated partner</td></tr>
-<tr><td>last_lead_shared_date</td><td>Best available from the old tracker's call logs, or blank if unknown</td></tr>
+<tr><td>status</td><td>Whatever a brand-new partner would get on completing onboarding - not defaulted to Dormant or At-Risk just because they're a migration. If they're not actually active on the platform yet, that's the same as any newly onboarded partner who hasn't logged in yet - normal, not a special case.</td></tr>
+<tr><td>giving_pattern</td><td>Blank initially, same as any new partner - it's calculated from real wallet activity, which nobody has on day one regardless of whether they're new or migrated</td></tr>
+<tr><td>last_lead_shared_date</td><td>Blank, same as a new partner - old-tracker call history doesn't carry over as platform activity</td></tr>
 </table>
+<p>Practical effect: a migrated partner becomes Wave-1-eligible the same way any partner does - by actually building real activity after joining, not by anything special about having been imported. See the Segmentation Framework's outreach table for how that plays out once they're in.</p>
 
 <h2>Core structure - one table per entity</h2>
 <table class="dtable">
