@@ -143,5 +143,10 @@
     "date": "v19.0",
     "title": "All 5 findings from the second manual review resolved",
     "desc": "Verified all 5 findings against actual file content before fixing - all confirmed real. Fixed: (1) Migration Wave Plan contradiction resolved by simplifying migration to follow identical rules as new-partner onboarding - no special 'migrated' status category means nothing to conflict with the Segmentation Framework's normal logic. (2) Section 19 was only explaining 2 of the 4 KPI categories it claimed to cover - added measures for 'finding and signing up partners' and 'supporting startups'. (3) At-Risk given a specific numeric threshold (-1,500) distinct from Taker's pattern-based definition, with a worked example showing they don't have to fire together. (4) Confirmed and made explicit that At-Risk is purely an outreach-priority flag - full Active privileges continue unchanged. (5) Glossary's status pill explanation fixed to clarify the accompanying text (not just colour) carries the real distinction between two same-coloured sections."
+  },
+  {
+    "date": "v19.1",
+    "title": "Replaced \u00a7 with # for section references across the hub",
+    "desc": "Style correction - every instance of \u00a7N (Gap & Risk Register, Data Dictionary, Journey Map, Segmentation Framework, Comms Library, Graduation Criteria, and meta/dependency-map.md - 80 instances total) now reads #N instead. Partnership SOP itself already spelled out 'Section N' in full, so this brings everything else in line with a single consistent convention rather than three different ways of referencing the same thing."
   }
 ]

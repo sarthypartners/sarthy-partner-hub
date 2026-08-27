@@ -6,16 +6,16 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 
 | If this changes... | ...check and update these |
 |---|---|
-| Phase 0 Discussion Doc (once Sarthy answers) | Partnership SOP §5-10 (fees, wallet, lead flow, credit rules, disputes, withdrawal), §19 (KPI framework), §20 (referral fee) |
+| Phase 0 Discussion Doc (once Sarthy answers) | Partnership SOP #5-10 (fees, wallet, lead flow, credit rules, disputes, withdrawal), #19 (KPI framework), #20 (referral fee) |
 | Current-State Assessment | Gap & Risk Register, Partner Segmentation Framework, Partner Journey Map |
 | Gap & Risk Register | Partnership SOP's problem-related sections, Master Execution Sequence priority order, Action Item & Blocker Tracker (critical findings now live in both — keep them in sync, not duplicated) |
 | Data Dictionary | Interim Operating System (uses these exact field definitions), Partner Segmentation Framework (the `giving_pattern` field is defined jointly across both) |
-| Partner Segmentation Framework | Partnership SOP §11 (Giver/Taker/Balanced — summarize, don't copy in full), §17 (Winning back inactive partners), Migration Wave Plan (once drafted), Interim Operating System (call queue logic) |
-| Partner Journey Map | Partnership SOP §14 (summarize, don't copy in full), Communication Template Library |
-| Communication Template Library | Partnership SOP §16 (the link, not the content), §17 (Reactivation) |
+| Partner Segmentation Framework | Partnership SOP #11 (Giver/Taker/Balanced — summarize, don't copy in full), #17 (Winning back inactive partners), Migration Wave Plan (once drafted), Interim Operating System (call queue logic) |
+| Partner Journey Map | Partnership SOP #14 (summarize, don't copy in full), Communication Template Library |
+| Communication Template Library | Partnership SOP #16 (the link, not the content), #17 (Reactivation) |
 | Any section of Partnership SOP — any change, not just when it becomes confirmed | Business Requirements Document — it cites specific SOP sections directly; check it didn't just go stale |
 | Business Requirements Document | Low-Level System Specification (once drafted), Action Item & Blocker Tracker (integration requirement items reference BRD section numbers) |
-| Alpha to Beta Graduation Criteria | Migration Wave Plan, Partnership SOP §18 |
+| Alpha to Beta Graduation Criteria | Migration Wave Plan, Partnership SOP #18 |
 | Interim Operating System | Action Item & Blocker Tracker (the data migration section links here) |
 | Action Item & Blocker Tracker | Gap & Risk Register, Business Requirements Document, Project Plan (Gantt View) - all three reference or link to it |
 | Project Plan (Gantt View) | Roadmap (phase definitions must stay consistent), Action Item & Blocker Tracker |
