@@ -40,11 +40,22 @@
 <li>The system must track a lead through defined stages: Submitted → Validated (admin, within 5 working days) → Introduced → Acknowledged → In Progress → Converted / Rejected / Unresolved</li>
 <li>The system must give a receiving partner 1 week to acknowledge and either accept or explicitly reject a new lead. Explicit rejection within that week fully reverses the 999-credit deduction. No resolution by the end of the week makes the deduction final - no refund.</li>
 <li>The system must deduct 999 credits from the receiving partner's wallet the moment they acknowledge a lead - not before, not after</li>
-<li>The system must let the admin manually reverse a deduction past the 1-week window in disputed cases, based on the merits - see Section 9 below for the evidence mechanism still being designed</li>
+<li>The system must let the admin manually reverse a deduction past the 1-week window in disputed cases, based on the merits - see Section 11 below for the evidence mechanism</li>
 <li>The system must flag any partner with 4 or more consecutive declines to admin for manual review</li>
 <li>The system must allow a lead to be re-referred an unlimited number of times, but must block simultaneous referral of the same lead to two partners offering the same type of service</li>
-<li>The system must always let the referring partner choose the receiving partner directly - matching is not automatic by default</li>
+<li>The system must let a referring partner choose the receiving partner directly (default path), or leave the lead open for the startup to choose its own partner via the self-service product below - matching is never automatic by system logic in either case</li>
 <li><strong>Not yet scoped for build:</strong> a backend matchmaking layer, still in early direction only - see <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for the current thinking. Needs its own design pass before it's a real requirement.</li>
+</ul>
+
+<h3 style="font-size:15px;margin:1.25rem 0 .75rem;">Startup self-service - a new capability, priority not yet confirmed (assuming Phase 2 for now)</h3>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> ("How a startup can be brought in")</p>
+<ul>
+<li>The system must support a separate, startup-facing product, accessed via an SSO link, showing the list of vetted partners</li>
+<li>The system must let a startup using this product select a partner directly and request service - without requiring a specific partner to have referred them first</li>
+<li>The system must still require the selected partner's acknowledgment before the engagement is considered active - the startup's selection alone does not trigger the 999-credit deduction</li>
+<li>The system must track which partner (if any) originally brought a given startup into Sarthy's ecosystem, separately from which partner the startup ultimately engages with - these can be different partners</li>
+<li>The system must route both the 999-credit lead-share reward and the 10% deal-closure referral fee to the originating partner, regardless of whether that partner personally chose the receiving partner (Path A) or the startup self-selected (Path B)</li>
+<li>The system must treat Sarthy itself as the originating partner when a startup signs up with no partner having brought them in - every reward mechanic that applies to a normal partner applies to Sarthy the same way in this case</li>
 </ul>
 
 <h2>6. Conversion and disputes <span class="status-pill badge-done">MVP</span></h2>
@@ -54,7 +65,7 @@
 <li>The system must credit the referring partner 999 credits minus the 9% fee (about 909 net) the moment admin confirms conversion - see Section 7 below for the fee mechanic</li>
 <li>The system must let a partner formally dispute a conversion decision within 14 days of it being made, in writing, through the platform</li>
 <li>The system must notify admin immediately when a dispute is raised, with a target response time of 24 hours</li>
-<li>The system must let a partner remaining unsatisfied after admin's response escalate a serious or high-value dispute directly to Sarthy leadership. <strong>Still open:</strong> the exact deal-value threshold for what counts as "serious or high-value" - see <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a></li>
+<li>The system must let a partner remaining unsatisfied after admin's response escalate a dispute directly to Sarthy leadership. <strong>Resolved:</strong> there's no fixed deal-value threshold. Every escalation must trigger an automatic notification to admin - an in-product popup, plus an automated email - the moment it happens. Admin then decides how to proceed, including whether to loop in Sarthy leadership, based on the specifics of the case.</li>
 </ul>
 
 <h2>7. Withdrawal and the credit wallet's money mechanics <span class="status-pill badge-done">MVP</span></h2>
@@ -64,8 +75,8 @@
 <li>The system must enforce a minimum reserve of 999 credits at all times - a partner cannot withdraw below that floor</li>
 <li>The system must support quarterly withdrawal requests for anything above the reserve</li>
 <li>The system must apply the 9% fee once, at the point credit transfers to a referring partner on conversion - not again at withdrawal, since it's already been taken at the source</li>
-<li>The system must convert credits to real currency using the live exchange rate on the day of withdrawal, not the rate from sign-up - <strong>still open:</strong> which specific rate source counts as official</li>
-<li><strong>Still open, applies here too:</strong> whether the 9% fee also applies to the older, separate 10% direct referral-fee flow from Partner 1.0-era agreements - a genuinely different question from the credit system above, not yet answered</li>
+<li>The system must convert credits to real currency using the live exchange rate on the day of withdrawal, not the rate from sign-up. <strong>Resolved:</strong> the official source is a government-approved, publicly available real-time rate chart - specifically the RBI reference rate.</li>
+<li><strong>Resolved:</strong> the 9% facilitation fee applies to every partner, including those still under Partner 1.0-era agreements. Where an existing agreement doesn't support this, it needs to be amended - see the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a> for the documentation task this creates.</li>
 </ul>
 
 <h2>8. Post-closure referral fee tracking <span class="status-pill badge-done">MVP</span></h2>
@@ -81,13 +92,13 @@
 <li>The system must track a 1-year expiry from the lead's first engagement date, after which no further referral-fee entitlement accrues to the original referring partner on that relationship</li>
 </ul>
 
-<h2>9. Partner activity requirement (dormancy) <span class="status-pill badge-pending">Phase 2</span></h2>
+<h2>9. Partner activity requirement (dormancy) <span class="status-pill badge-draft">MVP (tracking) / High priority (gamification)</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 21</a></p>
 <ul>
 <li>The system must track the date of a partner's last shared lead</li>
 <li>The system must automatically mark a partner dormant after 3 consecutive months with no lead shared</li>
 <li>The system must remove a dormant partner from the public portal listing and block them from receiving new leads until they resume activity</li>
-<li><strong>Not yet scoped for build, flagged for later:</strong> gamification elements (leaderboards, streaks, recognition) to encourage consistent giving - a real direction Sarthy wants to pursue, not yet designed</li>
+<li><strong>Resolved - high priority:</strong> gamification elements (leaderboards, streaks, recognition) to encourage consistent giving. This is to be designed and built alongside the rest of the MVP features, not deferred. The specific mechanics still need a real design pass.</li>
 </ul>
 
 <h2>10. Negative balances <span class="status-pill badge-done">MVP</span></h2>
@@ -98,13 +109,13 @@
 <li>The system must support a top-up payment (4x the entry fee - ₹3,996 or $196) that adds 3,996 credits back to a frozen wallet, bringing the balance from -2,997 to exactly +999</li>
 </ul>
 
-<h2>11. Trust and evidence - the dispute-reversal mechanism <span class="status-pill badge-pending">Phase 2</span></h2>
+<h2>11. Trust and evidence - the dispute-reversal mechanism <span class="status-pill badge-draft">MVP - discretion confirmed, contact form still needs design</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
-<p>This is flagged separately because it's a genuinely open design problem, not just an unconfirmed number. The Lead's proposal: for cases disputed past the standard 1-week window, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
+<p>For cases disputed past the standard 1-week window, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
 <ul>
-<li><strong>Not yet a firm requirement, open for discussion:</strong> the system would need a way to contact the startup lead directly (a short form or message) and capture their confirmation or denial</li>
-<li><strong>Still open:</strong> whether that confirmation is mandatory before any reversal can happen, or just one input among several the admin weighs</li>
-<li><strong>Still open:</strong> what happens if the startup doesn't respond either - does the case default to favoring the receiving partner, the referring partner, or just stay open longer</li>
+<li>The system needs a way to contact the startup lead directly (a short form or message) and capture their confirmation or denial. The exact form this takes still needs a design pass.</li>
+<li><strong>Resolved:</strong> the startup's confirmation is not mandatory. It's one input among several the admin weighs, entirely at admin's discretion.</li>
+<li><strong>Resolved:</strong> if the startup doesn't respond either, that's also handled at admin's discretion. There's no fixed default favoring either partner.</li>
 </ul>
 
 <h2>12. Guardrails and admin tools <span class="status-pill badge-draft">MVP (basic) / Phase 2 (pattern detection)</span></h2>
@@ -129,6 +140,7 @@
 <li>A digital-signature provider - for the referral agreement (Section 3) and conversion confirmation (Section 6). Selection pending.</li>
 <li>A notification channel (email and/or WhatsApp) - for every trigger in the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>. Specific provider not yet chosen.</li>
 <li>An exchange-rate data source - for converting credits to real currency at withdrawal (SOP Section 10). Which source counts as official is still open.</li>
+<li>An SSO provider - for the startup-facing self-service product (Section 5). Selection pending.</li>
 </ul>
 
 <h2>15. Non-functional requirements</h2>
@@ -150,11 +162,9 @@
 
 <h2>17. Open decisions log</h2>
 <p>Carried forward from Partnership SOP v1.0 and the Phase 0 Discussion Doc - nothing below should get quietly assumed by whoever eventually builds this:</p>
-<p><strong>Sign-off, resolved:</strong> this document requires written approval from a specifically named person or role at Sarthy before development begins - an informal conversation isn't sufficient. Who that person is hasn't been designated yet - tracked on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>.</p>
+<p><strong>Sign-off, resolved:</strong> this document requires written approval from a specifically named person or role at Sarthy before development begins - an informal conversation isn't sufficient. The drafting and iteration process itself stays informal - no need for a fresh Sarthy signature on every revision. The formal approval happens once, at whatever point the Lead judges the document ready. Who that named person is hasn't been designated yet - tracked on the <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">Action Item Tracker</a>.</p>
 <ul>
-<li>Which exchange rate source counts as official for withdrawal conversion</li>
-<li>The full design of the startup-confirmation mechanism for disputed reversals</li>
-<li>The exact deal-value threshold for what counts as a "serious or high-value" dispute eligible for escalation to Sarthy leadership</li>
-<li>Exact gamification mechanics for the dormancy/activity system</li>
+<li>The exact design of the startup-confirmation form or message for disputed reversals (the underlying process - non-mandatory, admin's discretion - is resolved; only the form itself still needs designing)</li>
+<li>Exact gamification mechanics for the dormancy/activity system (priority is resolved as high; the specific mechanics still need a design pass)</li>
 <li>The live feature inventory of what's actually built in the current Alpha - once portal access is confirmed, this document gets checked against that reality for a real gap analysis</li>
 </ul>

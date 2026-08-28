@@ -35,8 +35,9 @@
 <table class="dtable">
 <tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
 <tr><td>lead_id</td><td>Text</td><td>Unique identifier</td><td>SOP #7</td></tr>
-<tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it</td><td>SOP #7</td></tr>
-<tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - always partner-chosen, not system-assigned by default</td><td>SOP #7</td></tr>
+<tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it - only set in Path A (direct referral). Blank in Path B (startup self-selected)</td><td>SOP #7</td></tr>
+<tr><td>originating_partner_id</td><td>Reference (can be Sarthy)</td><td>Who originally brought this startup into Sarthy's ecosystem - always set, in both Path A and Path B. Equal to referring_partner_id in Path A. This is who earns the lead-share credit and the deal-closure fee, not necessarily the receiving partner. If no partner brought the startup in, this is Sarthy itself</td><td>SOP #7</td></tr>
+<tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - chosen by the referring partner (Path A) or by the startup itself via the self-service product (Path B)</td><td>SOP #7</td></tr>
 <tr><td>lead_status</td><td>Submitted / Validated / Introduced / Acknowledged / Converted / Rejected / Unresolved</td><td>See stage definitions - matches the BRD #5 pipeline exactly</td><td>SOP #7, BRD #5</td></tr>
 <tr><td>submitted_at, acknowledged_at, resolved_at</td><td>Timestamps</td><td>Used to calculate the 5-working-day validation window and the 1-week acknowledgment/rejection window</td><td>SOP #7</td></tr>
 <tr><td>duplicate_flag</td><td>Boolean</td><td>Set automatically at upload if it matches an existing lead</td><td>SOP #7, BRD #5</td></tr>
@@ -59,7 +60,7 @@
 <tr><td>dispute_id</td><td>Text</td><td>Unique identifier, linked to a lead_id or deal_id</td><td>SOP #9</td></tr>
 <tr><td>raised_at</td><td>Timestamp</td><td>Starts the 24-hour admin-response clock</td><td>SOP #9</td></tr>
 <tr><td>evidence_notes</td><td>Free text</td><td>Includes startup-confirmation input where used - mechanism still being designed, see BRD #11</td><td>SOP #7, BRD #11</td></tr>
-<tr><td>resolution</td><td>Upheld / Reversed</td><td>Admin's call for routine disputes - final. Serious or high-value disputes can escalate to Sarthy leadership, per SOP #9</td><td>SOP #9</td></tr>
+<tr><td>resolution</td><td>Upheld / Reversed</td><td>Admin's call for routine disputes - final. Any dispute can escalate to Sarthy leadership - no fixed value threshold, admin decides case by case, per SOP #9</td><td>SOP #9</td></tr>
 </table>
 
 <h2>What this document deliberately doesn't cover yet</h2>

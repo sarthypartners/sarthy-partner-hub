@@ -5,7 +5,7 @@
 <p>From there, two rewards exist side by side. First: a partner shares a lead with another partner. Once it converts, the referrer earns 999 credits, minus Sarthy's 9% fee. Second: if that lead becomes a real signed deal, the referrer also earns 10% of the deal's value, minus Sarthy's 9% cut of that, paid out once a year.</p>
 <p>Paid credits never expire. Receiving a lead always costs 999 credits. A balance can only run negative so far before the account freezes.</p>
 <p>Leads must be genuine. Disputes go through the admin within a day. Going quiet for 3 months puts an account to sleep until the partner comes back.</p>
-<p>A few details are still waiting on Sarthy's final word - which exchange rate applies at payout, and what happens in some edge-case disputes. Each one is flagged where it comes up below.
+<p>A few smaller details are still open - the exact design of the startup-confirmation form for disputed reversals, and specific gamification mechanics for staying active. Each one is flagged where it comes up below.
 </div>
 
 <div class="toc-box">
@@ -58,7 +58,7 @@
 </ul>
 <p>A partner who consistently sends leads that convert builds up real value. A partner who only ever receives, without referring back, will see their balance drop over time. The system rewards two-way participation, not one-sided use.</p>
 
-<h2 id="s5">5. Joining the program - fees and what they cover <span class="status-pill badge-draft">drafted, one detail still open</span></h2>
+<h2 id="s5">5. Joining the program - fees and what they cover <span class="status-pill badge-done">confirmed</span></h2>
 <table class="dtable">
 <tr><th>Programme</th><th>Fee</th><th>Credits received</th></tr>
 <tr><td>India</td><td>₹999 + applicable GST</td><td>999 credits</td></tr>
@@ -69,7 +69,7 @@
 <p>Currency only enters the picture once: at the moment of withdrawal (see Section 10). Until then, the credit stays a neutral unit - even when it moves between an India-programme partner and an international one.</p>
 <p><strong>Joining steps:</strong> apply through LinkedIn, a mailer, the WhatsApp community, or a direct approach → discovery call → Sarthy evaluates fit (service relevance, affordability, client diversity, professional standing, Giver/Taker read - Section 11) → agreement signed and uploaded → case study and profile submitted → fee paid → wallet activates with 999 credits → officially listed.</p>
 
-<h2 id="s6">6. The credit wallet <span class="status-pill badge-draft">drafted, one detail still open</span></h2>
+<h2 id="s6">6. The credit wallet <span class="status-pill badge-done">confirmed</span></h2>
 <p>Every partner has a credit wallet Sarthy maintains, recording every credit added or taken away.</p>
 <table class="dtable">
 <tr><th>Event</th><th>Effect on wallet</th></tr>
@@ -91,7 +91,7 @@
 <p style="margin:10px 0 0;">At the end of month 3, Asha's balance sits at -90 - negative, but nowhere near the -2,997 freeze floor (Section 8), so nothing else happens yet. Four different "999" events, four different meanings, one running number.</p>
 </div>
 
-<h2 id="s7">7. How a lead moves from one partner to another <span class="status-pill badge-draft">drafted, one mechanism still open</span></h2>
+<h2 id="s7">7. How a lead moves from one partner to another <span class="status-pill badge-draft">confirmed, matchmaking catalyst still undesigned</span></h2>
 <svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:700px;display:block;margin:0 auto 1.5rem;">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
@@ -150,9 +150,19 @@
 <li><strong>Duplicate leads:</strong> caught and flagged as invalid at the point of upload, before they go anywhere. Partners can also see a list of existing leads to reduce accidental duplicates.</li>
 <li><strong>Repeated declines:</strong> four or more leads declined in a row gets flagged to the admin, who steps in manually - not an automatic penalty, a prompt for a human to check.</li>
 <li><strong>Re-referring an unconverted lead:</strong> no fixed limit, but never to two partners offering the same type of service at once, since that creates competing outreach to the same prospect. Different types of service providers at once is fine.</li>
-<li><strong>Who picks the receiving partner:</strong> stays fully in the referring partner's hands, not Sarthy's - see Section 15 for how Sarthy's team supports this.</li>
+<li><strong>Who picks the receiving partner:</strong> two paths exist - a referring partner can choose a specific receiving partner directly (as above), or leave it open for the startup to choose for itself. See "How a startup can be brought in" below.</li>
 </ul>
-<p><strong>Still being worked out, not decided yet:</strong> what happens to a disputed lead past the 1-week window. The leading idea is admin discretion, backed by a direct check-in with the startup to confirm what actually happened. Exactly how that evidence should work isn't finalized - full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
+
+<h3 style="font-size:15px;margin:1.5rem 0 .75rem;">How a startup can be brought in</h3>
+<p>A partner brings a startup into Sarthy's ecosystem in one of two ways:</p>
+<ul>
+<li><strong>Path A - direct referral (the flow above):</strong> the partner chooses a specific receiving partner and refers the lead to them directly, exactly as described in this section.</li>
+<li><strong>Path B - startup self-selection:</strong> the partner brings the startup into Sarthy's ecosystem without choosing a specific receiving partner. The startup gets access to a separate, startup-facing product (via an SSO link) where it can see the list of vetted partners and pick one itself, requesting service directly.</li>
+</ul>
+<p>In both paths, the chosen receiving partner's acknowledgment is still mandatory - it's what triggers the formal agreement, the engagement itself, and the 999-credit deduction. Path B doesn't skip this step; the startup picking a partner isn't the same as that partner accepting the work.</p>
+<p>In both paths, the partner who originally brought the startup into Sarthy's ecosystem is the one who earns the rewards - the 999-credit lead-share reward on conversion, and the 10% deal-closure referral fee (Section 20) if it becomes a real deal. This is true even in Path B, where that partner didn't personally choose which partner the startup ended up picking.</p>
+<p><strong>If a startup signs up with no originating partner at all</strong> - arriving directly, not through any partner - Sarthy itself is treated as the originating partner for that startup. Every reward that would normally go to a partner (the lead-share credit, the deal-closure fee) applies to Sarthy the same way, tracked through the same mechanics as any other partner's activity.</p>
+<p><strong>Resolved:</strong> a disputed lead past the 1-week window is handled at admin's discretion, backed by a direct check-in with the startup to confirm what actually happened. The startup's response is one input the admin weighs, not a mandatory requirement - and if the startup doesn't respond either, that's also left to admin's judgment, with no fixed default favoring either partner. Full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
 <p>Separately, a backend "catalyst" that surfaces good matches to partners is a real direction - but it isn't designed yet. One thing is already clear: the system may <em>suggest</em> a match, but it can never <em>assign</em> one. The referring partner always makes the final choice, even when a suggestion is shown.</p>
 
 <h2 id="s8">8. The six credit rules <span class="status-pill badge-draft">drafted, all six specified</span></h2>
@@ -173,9 +183,9 @@
 <h2 id="s9">9. How conversion gets confirmed, and what happens if someone disagrees <span class="status-pill badge-done">confirmed for now</span></h2>
 <p>Sarthy has the final say on whether a lead converted. The same conversion standard applies across every service category for now: first payment, plus a digitally signed agreement completed through the platform. This means the platform needs real digital-signature capability - not just an uploaded PDF.</p>
 <p>If a partner disagrees, they can raise it in writing within 14 days. The admin responds within 24 hours, engaging both parties directly. This can happen offline, over email - no formal in-platform process is required.</p>
-<p>The admin's decision is final for routine disputes. For serious or high-value disputes, a partner can escalate beyond the admin to Sarthy leadership directly. <strong>Still open:</strong> the exact threshold for what counts as "serious or high-value" hasn't been set yet.</p>
+<p>The admin's decision is final for routine disputes. Any partner can escalate a dispute beyond the admin to Sarthy leadership. <strong>Resolved:</strong> there's no fixed deal-value threshold - every escalation automatically notifies admin (an in-product popup and an automated email), and admin decides how to proceed from there, including whether to loop in Sarthy leadership.</p>
 
-<h2 id="s10">10. Withdrawing credits and staying a member <span class="status-pill badge-draft">drafted, exchange rate source still open</span></h2>
+<h2 id="s10">10. Withdrawing credits and staying a member <span class="status-pill badge-done">confirmed</span></h2>
 <p>There is no fixed programme cycle. Membership is ongoing - a partner joins once and stays a member indefinitely, with no end date forcing a settlement. (Why there's no cycle: see <a href="#" onclick="showDoc('history');return false;" class="xlink">Design History & Decisions</a>.)</p>
 <ul>
 <li><strong>Minimum reserve:</strong> a partner must always keep at least their original entry amount (999 credits) in their wallet.</li>
@@ -184,7 +194,7 @@
 <li><strong>Pausing or stepping away:</strong> no cycle to leave mid-way through means no forfeiture, no prorated payout. A quiet account just sits as-is until the partner returns.</li>
 </ul>
 <p>No partner should be told their credit balance is guaranteed cash before an actual withdrawal is processed.</p>
-<p><strong>Still open:</strong> which specific exchange rate source counts as the official reference at the moment of payout.</p>
+<p><strong>Resolved:</strong> the official exchange rate source is a government-approved, publicly available real-time rate chart - specifically the RBI reference rate.</p>
 
 <h2 id="s11">11. How we group partners - Giver, Taker, or Balanced <span class="status-pill badge-draft">drafted</span></h2>
 <p>Three patterns, not two. Some partners actively contribute to the ecosystem (<strong>Givers</strong>), some mostly draw from it without reciprocating (<strong>Takers</strong>), and most sit somewhere in between (<strong>Balanced</strong>) - giving and receiving in roughly even measure. This shows up directly in the credit wallet: a steadily growing balance behaves like a Giver, a steadily shrinking one behaves like a Taker, and a balance that moves in both directions without a clear trend is Balanced. Sarthy uses this trend when reviewing partners periodically, and may deprioritize or exit partners who consistently show Taker behavior. Most partners are expected to sit in Balanced most of the time - it's the default, not an edge case.</p>
@@ -292,7 +302,7 @@
 <h2 id="s21">21. Staying an active partner <span class="status-pill badge-draft">drafted</span></h2>
 <p>A partner who doesn't share any lead for 3 consecutive months is marked dormant. They're removed from the public listing and blocked from receiving leads until they resume activity.</p>
 <p>The underlying principle: no partner gets to be purely a taker, permanently receiving without ever contributing. This connects directly to the Giver/Taker framing in Section 11.</p>
-<p>Gamifying this further - leaderboards, streaks, recognition - is a real direction as the platform matures. It isn't designed yet.</p>
+<p>Gamifying this further - leaderboards, streaks, recognition - is now high priority, to be built alongside the rest of the platform rather than deferred. The specific mechanics still need a real design pass.</p>
 
 <h2 id="s22">22. Frequently asked questions <span class="status-pill badge-done">confirmed</span></h2>
 <table class="dtable">
