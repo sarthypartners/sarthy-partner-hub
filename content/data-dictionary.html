@@ -16,9 +16,9 @@
 <tr><th>Status</th><th>Means exactly this</th></tr>
 <tr><td>Applicant</td><td>Applied, not yet through evaluation or fee payment</td></tr>
 <tr><td>Active</td><td>Onboarded, wallet balance above -2,997, has shared at least one lead in the last 3 months</td></tr>
-<tr><td>At-Risk</td><td>Active, but balance at or below <strong>-1,500</strong> (roughly halfway to the -2,997 freeze floor), or 4+ consecutive declines flagged. <strong>Confirmed: this is purely a flag, not a restriction</strong> - an At-Risk partner keeps every privilege of an Active account (can still send and receive leads normally); the only actual effect is getting bumped to the top of the Associate's outreach priority (see the Segmentation Framework). Deliberately different from <code>giving_pattern</code>=Taker, which is a longer-term behavioral trend, not a threshold. The two are related (a sustained Taker pattern will often eventually cross -1,500) but don't have to fire together - a single bad stretch of received leads can trigger At-Risk on an otherwise healthy Giver, and a slow long-term Taker with a big starting buffer can stay well clear of -1,500 for a long time.</td></tr>
+<tr><td>At-Risk</td><td>Active, but balance at or below <strong>-1,500</strong> (roughly halfway to the -2,997 freeze floor), or 4+ consecutive declines flagged. <strong>Confirmed: this is purely a flag, not a restriction</strong> - an At-Risk partner keeps every privilege of an Active account and can still send and receive leads normally. The only actual effect is getting bumped to the top of the Associate's outreach priority (see the Segmentation Framework). Deliberately different from <code>giving_pattern</code>=Taker, which is a longer-term behavioral trend, not a threshold. The two are related - a sustained Taker pattern will often eventually cross -1,500 - but don't have to fire together. A single bad stretch of received leads can trigger At-Risk on an otherwise healthy Giver, and a slow long-term Taker with a big starting buffer can stay well clear of -1,500 for a long time.</td></tr>
 <tr><td>Dormant</td><td>3+ months with no lead shared - removed from public listing, blocked from receiving new leads, but not frozen for balance reasons</td></tr>
-<tr><td>Frozen</td><td>Balance has hit -2,997 - blocked from receiving new leads until topped up to +999. Distinct from Dormant, and a partner could technically be both. <strong>If both apply:</strong> pay the top-up first, then send a lead - the top-up clears Frozen status; sending a lead is what clears Dormant.</td></tr>
+<tr><td>Frozen</td><td>Balance has hit -2,997 - blocked from receiving new leads until topped up to +999. Distinct from Dormant, and a partner could technically be both. <strong>If both apply:</strong> pay the top-up first, then send a lead. The top-up clears Frozen status. Sending a lead is what clears Dormant.</td></tr>
 <tr><td>Exited</td><td>Account closed, by the partner's choice or Sarthy's, per the guardrails in SOP #13</td></tr>
 </table>
 
@@ -59,7 +59,7 @@
 <tr><td>dispute_id</td><td>Text</td><td>Unique identifier, linked to a lead_id or deal_id</td><td>SOP #9</td></tr>
 <tr><td>raised_at</td><td>Timestamp</td><td>Starts the 24-hour admin-response clock</td><td>SOP #9</td></tr>
 <tr><td>evidence_notes</td><td>Free text</td><td>Includes startup-confirmation input where used - mechanism still being designed, see BRD #11</td><td>SOP #7, BRD #11</td></tr>
-<tr><td>resolution</td><td>Upheld / Reversed</td><td>Admin's final call - not appealable further, per SOP #9</td><td>SOP #9</td></tr>
+<tr><td>resolution</td><td>Upheld / Reversed</td><td>Admin's call for routine disputes - final. Serious or high-value disputes can escalate to Sarthy leadership, per SOP #9</td><td>SOP #9</td></tr>
 </table>
 
 <h2>What this document deliberately doesn't cover yet</h2>

@@ -30,3 +30,7 @@
 
 <h2>Why membership has no fixed cycle</h2>
 <p>Sarthy's original design was built around cycles - a membership period that ended in a settlement event. This SOP made a deliberate change: membership is now ongoing, with no cycle and no forced end date. A partner joins once and stays a member indefinitely.</p>
+
+<h2>Why the Segmentation Framework changed from 5 tiers to 2 fields</h2>
+<p>The Segmentation Framework used to be a single 5-tier list. It reused words like "At-Risk" and "Dormant" - the same words already meaning something different in the Data Dictionary's account status field. A reader seeing "At-Risk" in a spreadsheet couldn't tell whether it meant the segmentation tier or the account status.</p>
+<p>It was redesigned into two separate fields with no overlapping words: <code>status</code> (what the account can do) and <code>giving_pattern</code> (how the partner behaves, only meaningful when status is Active).</p>
