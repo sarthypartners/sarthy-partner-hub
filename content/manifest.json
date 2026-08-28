@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "2.2",
-    "updated": "Added missing dependency table rows for Design History & Decisions",
+    "version": "2.3",
+    "updated": "Removed talking-document voice - I/we/you replaced with impersonal process language and role names",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -37,8 +37,8 @@
     "content_file": "playbook.html",
     "cat": "Partnership SOP v1.0",
     "status": "draft",
-    "version": "7.0",
-    "updated": "Full rewrite under new house style - Section 2 origin story and Section 10 cycle history extracted to History page; disconnects fixed throughout",
+    "version": "7.1",
+    "updated": "Fixed one second-person inconsistency in Quick Summary",
     "type": "Both",
     "title": "Partnership SOP v1.0",
     "desc": "The complete rulebook - fully absorbs Sarthy's original Playbook 2.0, nothing lives outside this anymore"
@@ -180,8 +180,8 @@
     "content_file": "glossary.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "1.2",
-    "updated": "Untangled nested dashes in two entries",
+    "version": "1.3",
+    "updated": "Removed talking-document voice - Lead definition no longer assumes the reader is the Lead",
     "type": "Both",
     "title": "Glossary",
     "desc": "Quick definitions for terms used across the hub - the 999-credit meanings, status vs giving_pattern, the two reward tracks"
