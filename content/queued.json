@@ -6,11 +6,6 @@
   },
   {
     "cat": "Tracking & Governance",
-    "title": "Migration Wave Plan",
-    "desc": "The order in which partner groups move onto the platform"
-  },
-  {
-    "cat": "Tracking & Governance",
     "title": "Reporting Dashboard",
     "desc": "A simple view of progress, measured against Sarthy's own KPIs"
   }

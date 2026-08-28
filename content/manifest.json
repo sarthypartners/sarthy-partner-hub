@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "2.3",
-    "updated": "Removed talking-document voice - I/we/you replaced with impersonal process language and role names",
+    "version": "2.4",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -26,8 +26,8 @@
     "content_file": "sequence.html",
     "cat": "Strategic Planning",
     "status": "done",
-    "version": "1.5",
-    "updated": "Fixed 3 instances of we",
+    "version": "1.6",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Internal",
     "title": "Master Execution Sequence",
     "desc": "The to-do list in order - what gets done next, and why"
@@ -114,8 +114,8 @@
     "content_file": "segmentation.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.5",
-    "updated": "Extracted historical vocabulary-collision note to History; fixed a mismatched link",
+    "version": "2.6",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Internal",
     "title": "Partner Segmentation Framework",
     "desc": "A way to group partners so we know who to focus on first"
@@ -147,8 +147,8 @@
     "content_file": "graduation-criteria.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.3",
-    "updated": "Simplified dense sentences; fixed a mislinked Migration Wave Plan reference",
+    "version": "1.4",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Internal",
     "title": "Alpha to Beta Graduation Criteria",
     "desc": "The targets we need to hit before opening the app to more partners"
@@ -191,8 +191,8 @@
     "content_file": "gantt.html",
     "cat": "Strategic Planning",
     "status": "draft",
-    "version": "1.2",
-    "updated": "Split 2 dense sentences",
+    "version": "1.3",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Both",
     "title": "Project Plan (Gantt View)",
     "desc": "Visual timeline of the roadmap phases - for discussion with Sarthy leadership"
@@ -202,8 +202,8 @@
     "content_file": "action-tracker.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.4",
-    "updated": "Added the startup self-service product as a tracked priority decision",
+    "version": "1.5",
+    "updated": "Linked/updated now that Migration Wave Plan is drafted",
     "type": "Both",
     "title": "Action Item & Blocker Tracker",
     "desc": "Real-world action items blocking progress, with a dependency chain showing what unlocks what"
@@ -218,5 +218,16 @@
     "type": "Internal",
     "title": "Design History & Decisions",
     "desc": "The why and the used-to-be behind decisions in the hub - kept separate so other pages can stay focused on what is true today"
+  },
+  {
+    "id": "migration-wave-plan",
+    "content_file": "migration-wave-plan.html",
+    "cat": "Tracking & Governance",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Both",
+    "title": "Migration Wave Plan",
+    "desc": "The order in which partner groups move onto the platform"
   }
 ]

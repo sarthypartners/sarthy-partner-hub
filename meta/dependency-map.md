@@ -24,6 +24,8 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 | Partnership SOP §2 (origin story) or §10 (withdrawal/cycle rules) | Design History & Decisions - both sections point here for the full story. If the current-design facts in either section change again, check the History page hasn't gone stale by comparison |
 | Master Execution Sequence's item 11, or its note on unnumbered documents | Design History & Decisions - both explanations live there now |
 | Design History & Decisions, if edited | Partnership SOP §2 and §10, and Master Execution Sequence - confirm their pointer links still make sense given what History now says |
+| Migration Wave Plan | Graduation Criteria (Wave 2 gate), Segmentation Framework (wave-candidate criteria), Action Item & Blocker Tracker (readiness gates) |
+| Alpha to Beta Graduation Criteria, if the target changes | Migration Wave Plan's Wave 2 gate references this document's criteria directly |
 
 ## When you add a new document
 
