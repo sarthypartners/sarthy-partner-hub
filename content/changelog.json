@@ -173,5 +173,15 @@
     "date": "v22.1",
     "title": "House style batch A - 5 shorter documents",
     "desc": "Applied the same style process to Interview Guide, Graduation Criteria, Glossary, Gantt, and Deliverables. Caught two real bugs while reading closely: Graduation Criteria's 'Migration Wave Plan' link actually pointed to the Guide page (copy-paste error), and Interview Guide referenced 'our working system, once that's built' - stale, since the Interim Operating System has existed for many rounds. Both fixed. Also found and linked 2 more bare 'Interim Operating System' mentions, the same recurring pattern class caught earlier by Claude Code."
+  },
+  {
+    "date": "v22.2",
+    "title": "House style batch B - 5 medium documents",
+    "desc": "Applied the style process to Phase 0, Journey Map, Communication Template Library, Action Item Tracker, and Current-State Assessment. Made an explicit judgment call on Current-State Assessment: unlike the SOP, this document's entire purpose is historical evidence, so the To-Be/As-Is extraction principle doesn't apply - only sentence-level fixes were made, nothing moved to History. Caught and immediately fixed a self-inflicted mistake mid-edit: briefly dropped a real link to Partnership SOP while simplifying a sentence in Journey Map, caught before finalizing. Re-ran the full link-integrity check after this batch - zero broken links."
+  },
+  {
+    "date": "v22.3",
+    "title": "Fixed missing dependency-map entry for Design History & Decisions",
+    "desc": "Claude Code caught that the History page - added several rounds ago, now referenced by 4 places across Playbook and Sequence - was never added to meta/dependency-map.md or guide.html's hub-facing table. Same class of gap as the Action Item Tracker miss caught earlier. Checked the real dependency directions precisely before adding rows: confirmed Playbook links to History in 3 places (opening callout, Section 2, Section 10) and Sequence in 1 place - and confirmed Roadmap does NOT actually link to History at all, correcting an assumption from an earlier summary that had implied it did. Added accurate rows to both the meta file and guide.html's table, including the reverse dependency (if History itself is edited, check the pointer sentences in Playbook and Sequence still make sense)."
   }
 ]

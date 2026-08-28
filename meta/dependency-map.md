@@ -21,6 +21,9 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 | Project Plan (Gantt View) | Roadmap (phase definitions must stay consistent), Action Item & Blocker Tracker |
 | Glossary | Whichever document actually changed the definition - Partnership SOP, Data Dictionary, or Segmentation Framework are the most common sources; the Glossary should never be the source of truth for a term's meaning, only a pointer to it |
 | Master Execution Sequence (reordered) | This file - if the reorder changes which document feeds which |
+| Partnership SOP §2 (origin story) or §10 (withdrawal/cycle rules) | Design History & Decisions - both sections point here for the full story. If the current-design facts in either section change again, check the History page hasn't gone stale by comparison |
+| Master Execution Sequence's item 11, or its note on unnumbered documents | Design History & Decisions - both explanations live there now |
+| Design History & Decisions, if edited | Partnership SOP §2 and §10, and Master Execution Sequence - confirm their pointer links still make sense given what History now says |
 
 ## When you add a new document
 
