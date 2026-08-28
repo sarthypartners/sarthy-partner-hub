@@ -1,7 +1,11 @@
-<p class="callout">This is the complete rulebook for how the partner program runs - the operational heart of Strategic Partners Playbook 3.0. It fully absorbs Sarthy's original Playbook 2.0, which is now retired. Each section's colored tag shows its status: green means confirmed, amber means drafted and awaiting Sarthy's formal sign-off. Anything still genuinely unresolved sits in one short note at the end of its section, rather than mixed into the rule itself - the <a href="#" onclick="showDoc('gap-register');return false;" class="xlink">Gap & Risk Register</a> and <a href="#" onclick="showDoc('phase0');return false;" class="xlink">Phase 0 Discussion Doc</a> hold the full list if you want it in one place.</p>
+<p class="callout">This is the complete rulebook for how the partner program runs. Each section has a colored tag showing its status: green means confirmed, amber means drafted and still waiting on Sarthy's sign-off. If something is unresolved, it's in a short note at the end of that section - the <a href="#" onclick="showDoc('gap-register');return false;" class="xlink">Gap & Risk Register</a> and <a href="#" onclick="showDoc('phase0');return false;" class="xlink">Phase 0 Discussion Doc</a> hold the full list in one place. For the history behind this document, see <a href="#" onclick="showDoc('history');return false;" class="xlink">Design History & Decisions</a>.</p>
 
 <div class="pending-box" style="text-align:left;border-style:solid;border-color:var(--accent);background:var(--accent-soft);">
-<strong>Quick summary, if you only read one thing:</strong> Sarthy connects startups with vetted service partners across Marketing, Finance, Legal, Technology, and Strategy. A partner joins by paying a small fee (₹999 India, $49 international) and gets 999 starting credits. From there, two separate rewards exist side by side: (1) share a lead with another partner, and once it converts, earn 999 credits minus Sarthy's 9% fee; (2) if that lead becomes a real signed deal, also earn 10% of the deal value minus Sarthy's 9% cut of that, paid out once a year. Credits never expire if paid for, always cost 999 to receive a lead, and a balance can only run negative so far before the account freezes. Leads must be genuine, disputes go through the admin within a day, and going quiet for 3 months puts an account to sleep until the partner comes back. A handful of details - which exchange rate applies at payout, what happens in a few edge-case disputes - are still waiting on Sarthy's final word; each is flagged individually below.
+<strong>Quick summary, if you only read one thing:</strong> Sarthy connects startups with vetted service partners across Marketing, Finance, Legal, Technology, and Strategy. A partner joins by paying a small fee (₹999 in India, $49 internationally) and gets 999 starting credits.</p>
+<p>From there, two rewards exist side by side. First: share a lead with another partner. Once it converts, you earn 999 credits, minus Sarthy's 9% fee. Second: if that lead becomes a real signed deal, you also earn 10% of the deal's value, minus Sarthy's 9% cut of that, paid out once a year.</p>
+<p>Paid credits never expire. Receiving a lead always costs 999 credits. A balance can only run negative so far before the account freezes.</p>
+<p>Leads must be genuine. Disputes go through the admin within a day. Going quiet for 3 months puts an account to sleep until the partner comes back.</p>
+<p>A few details are still waiting on Sarthy's final word - which exchange rate applies at payout, and what happens in some edge-case disputes. Each one is flagged where it comes up below.
 </div>
 
 <div class="toc-box">
@@ -34,24 +38,14 @@
 </div>
 
 <h2 id="s1">1. What this document is for <span class="status-pill badge-done">confirmed</span></h2>
-<p>One place that explains how partners join, how money and credits work, how we keep them engaged, how we group them, and what to do when something goes wrong. Building the marketplace app itself is not covered here - that's the developers' job, not ours.</p>
+<p>This document explains how partners join, how money and credits work, how we keep partners engaged, how we group them, and what to do when something goes wrong. It does not cover building the marketplace app itself - that's the developers' job.</p>
 
 <h2 id="s2">2. Where this program came from, and why it changed <span class="status-pill badge-done">confirmed</span></h2>
-<p>Sarthy spent over three years working closely with early-stage and growth-stage startups, and kept seeing the same problem: a startup's biggest obstacle usually isn't ambition, it's not knowing the right professional help at the right time. The partner program exists to close that gap.</p>
-<p>The first version of the program (2023-24) only flowed one way: Sarthy referred startups to partners, and partners never referred business to each other. The redesign turns the network from a one-way list of vendors into a system where any partner can refer to, and receive from, any other partner, with Sarthy tracking it all.</p>
-<table class="dtable">
-<tr><th>What changed</th><th>First version</th><th>Current design</th></tr>
-<tr><td>Structure</td><td>Sarthy to partner only</td><td>Any partner to any partner, with Sarthy tracking everything</td></tr>
-<tr><td>Cost to join</td><td>Free</td><td>₹999 (India) or $49 (international)</td></tr>
-<tr><td>Credit wallet</td><td>None</td><td>Starts with 999 credits, earned and spent through referrals</td></tr>
-<tr><td>How partners earn</td><td>Only from their own client work</td><td>Credits for every referral that converts, plus their own client work</td></tr>
-<tr><td>Cost of receiving a lead</td><td>None</td><td>999 credits deducted per lead received</td></tr>
-<tr><td>Accountability</td><td>Signed agreement only</td><td>Signed agreement plus a tracked credit wallet and conversion record</td></tr>
-</table>
-<p>In one line: in the old model, a partner was a vendor. In the current design, a partner is a node in a shared network where everyone has something to gain and something to manage.</p>
+<p>Sarthy has worked closely with early-stage and growth-stage startups for years. They kept seeing the same problem. A startup's biggest obstacle usually isn't ambition - it's not knowing the right professional help at the right time. The partner program exists to close that gap.</p>
+<p>Any partner can refer business to any other partner, and Sarthy tracks the whole exchange. Full history on how this design came about is in <a href="#" onclick="showDoc('history');return false;" class="xlink">Design History & Decisions</a>.</p>
 
 <h2 id="s3">3. Who does what <span class="status-pill badge-done">confirmed</span></h2>
-<p><strong>Lead</strong> handles the overall plan, writing things down, reporting to Sarthy, writing the technical requirements, and deciding how to handle problems. <strong>Associate</strong> makes calls, enters data, and does the first round of follow-up with partners. <strong>Sarthy</strong> decides the money rules, the app's roadmap, and how success is measured, and stays involved as the programme's referee - every lead exchange runs through Sarthy's tracking, not directly between partners.</p>
+<p><strong>Lead</strong> handles the overall plan, writing things down, reporting to Sarthy, writing the technical requirements, and deciding how to handle problems. <strong>Associate</strong> makes calls, enters data, and does the first round of follow-up with partners. <strong>Sarthy</strong> decides the money rules, the app's roadmap, and how success is measured. Sarthy also stays involved as the programme's referee - every lead exchange runs through Sarthy's tracking, never directly between partners.</p>
 
 <h2 id="s4">4. What partners actually get out of joining <span class="status-pill badge-done">confirmed</span></h2>
 <ul>
@@ -62,7 +56,7 @@
 <li>A chance to be featured as Partner of the Month, a recognition program showcasing partner work to Sarthy's whole startup network</li>
 <li>A listing in Sarthy's partner directory, with their case study and profile visible to startups</li>
 </ul>
-<p>A partner who consistently sends leads that convert builds up real value; a partner who only ever receives without referring back will draw their balance down over time. The system rewards two-way participation, not one-sided use.</p>
+<p>A partner who consistently sends leads that convert builds up real value. A partner who only ever receives, without referring back, will see their balance drop over time. The system rewards two-way participation, not one-sided use.</p>
 
 <h2 id="s5">5. Joining the program - fees and what they cover <span class="status-pill badge-draft">drafted, one detail still open</span></h2>
 <table class="dtable">
@@ -71,7 +65,8 @@
 <tr><td>International</td><td>$49</td><td>999 credits</td></tr>
 </table>
 <p>Paying the fee activates a partner's account and their starting 999 credits immediately. It doesn't guarantee any leads - it buys entry and a starting balance, which the partner grows through actually participating.</p>
-<p>Both programmes grant 999 credits regardless of the fee difference, and the credit count never reprices - 999 stays 999 no matter what the INR/USD exchange rate does in the meantime. A partner's programme choice is locked permanently at sign-up. Currency only enters the picture once, at the moment of withdrawal (Section 10) - the credit itself stays a neutral unit the whole time in between, including when it moves between an India-programme partner and an international one.</p>
+<p>Both programmes grant 999 credits, regardless of the fee difference. The credit count never changes - 999 always stays 999, no matter what the INR/USD exchange rate does. A partner's programme choice is locked permanently at sign-up.</p>
+<p>Currency only enters the picture once: at the moment of withdrawal (see Section 10). Until then, the credit stays a neutral unit - even when it moves between an India-programme partner and an international one.</p>
 <p><strong>Joining steps:</strong> apply through LinkedIn, a mailer, the WhatsApp community, or a direct approach → discovery call → Sarthy evaluates fit (service relevance, affordability, client diversity, professional standing, Giver/Taker read - Section 11) → agreement signed and uploaded → case study and profile submitted → fee paid → wallet activates with 999 credits → officially listed.</p>
 
 <h2 id="s6">6. The credit wallet <span class="status-pill badge-draft">drafted, one detail still open</span></h2>
@@ -148,7 +143,8 @@
     <text x="10" y="205" fill="var(--ink-faint)" font-size="10.5">A rejected lead is freed to be re-referred elsewhere. A lead with no resolution can still be disputed past the window - see the note below.</text>
   </g>
 </svg>
-<p>All referrals go through Sarthy - two partners privately swapping leads outside the system doesn't count and won't be honoured at settlement. A valid lead is a real prospect with an actual need, a real point of contact, and one that hasn't already been referred through the system or already engaged with that partner.</p>
+<p>All referrals go through Sarthy. Two partners privately swapping leads outside the system doesn't count, and won't be honoured at settlement.</p>
+<p>A valid lead is a real prospect with an actual need and a real point of contact. It also can't be a lead that's already been referred through the system, or one that's already working with that partner.</p>
 <ul>
 <li><strong>Cancelling a submission:</strong> a referring partner can cancel a lead before it reaches the receiving partner.</li>
 <li><strong>Duplicate leads:</strong> caught and flagged as invalid at the point of upload, before they go anywhere. Partners can also see a list of existing leads to reduce accidental duplicates.</li>
@@ -156,7 +152,8 @@
 <li><strong>Re-referring an unconverted lead:</strong> no fixed limit, but never to two partners offering the same type of service at once, since that creates competing outreach to the same prospect. Different types of service providers at once is fine.</li>
 <li><strong>Who picks the receiving partner:</strong> stays fully in the referring partner's hands, not Sarthy's - see Section 15 for how Sarthy's team supports this.</li>
 </ul>
-<p><strong>Still being worked out, not decided yet:</strong> what happens to a disputed lead past the 1-week window - the leading idea is admin discretion backed by a direct check-in with the startup to confirm what actually happened, but exactly how that evidence should work isn't finalized (full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>). Separately, a backend "catalyst" that surfaces good matches to partners is a real direction, not yet designed - to be explicit about the boundary: the system may <em>suggest</em> a match, but never <em>assigns</em> or auto-selects a receiving partner on someone's behalf. The referring partner always makes the final choice, even when a suggestion is shown.</p>
+<p><strong>Still being worked out, not decided yet:</strong> what happens to a disputed lead past the 1-week window. The leading idea is admin discretion, backed by a direct check-in with the startup to confirm what actually happened. Exactly how that evidence should work isn't finalized - full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
+<p>Separately, a backend "catalyst" that surfaces good matches to partners is a real direction - but it isn't designed yet. One thing is already clear: the system may <em>suggest</em> a match, but it can never <em>assign</em> one. The referring partner always makes the final choice, even when a suggestion is shown.</p>
 
 <h2 id="s8">8. The six credit rules <span class="status-pill badge-draft">drafted, all six specified</span></h2>
 <table class="dtable">
@@ -174,11 +171,12 @@
 </div>
 
 <h2 id="s9">9. How conversion gets confirmed, and what happens if someone disagrees <span class="status-pill badge-done">confirmed for now</span></h2>
-<p>Sarthy has the final say on whether a lead converted. The same conversion standard applies across every service category for now - first payment plus a digitally signed agreement completed through the platform, which means the platform needs real digital-signature capability, not just an uploaded PDF.</p>
-<p>If a partner disagrees, they can raise it in writing within 14 days. The admin responds within 24 hours, engaging both parties directly - this can happen offline, over email, no formal in-platform process required. The admin's decision is final for routine disputes. For serious or high-value disputes, a partner can escalate beyond the admin to Sarthy leadership directly - <strong>still open:</strong> the exact threshold for what counts as "serious or high-value" hasn't been set yet.</p>
+<p>Sarthy has the final say on whether a lead converted. The same conversion standard applies across every service category for now: first payment, plus a digitally signed agreement completed through the platform. This means the platform needs real digital-signature capability - not just an uploaded PDF.</p>
+<p>If a partner disagrees, they can raise it in writing within 14 days. The admin responds within 24 hours, engaging both parties directly. This can happen offline, over email - no formal in-platform process is required.</p>
+<p>The admin's decision is final for routine disputes. For serious or high-value disputes, a partner can escalate beyond the admin to Sarthy leadership directly. <strong>Still open:</strong> the exact threshold for what counts as "serious or high-value" hasn't been set yet.</p>
 
 <h2 id="s10">10. Withdrawing credits and staying a member <span class="status-pill badge-draft">drafted, exchange rate source still open</span></h2>
-<p>There is no fixed programme cycle. Membership is ongoing - a partner joins once and stays a member indefinitely, with no end date forcing a settlement. This is a deliberate change from Sarthy's original cycle-based design.</p>
+<p>There is no fixed programme cycle. Membership is ongoing - a partner joins once and stays a member indefinitely, with no end date forcing a settlement. (Why there's no cycle: see <a href="#" onclick="showDoc('history');return false;" class="xlink">Design History & Decisions</a>.)</p>
 <ul>
 <li><strong>Minimum reserve:</strong> a partner must always keep at least their original entry amount (999 credits) in their wallet.</li>
 <li><strong>Withdrawing:</strong> anything above the reserve can be withdrawn quarterly. Credits convert to real currency at whatever the live exchange rate is on the day of withdrawal, not the rate from when the partner joined.</li>
@@ -289,10 +287,12 @@
     <text x="380" y="120" text-anchor="middle" fill="var(--ink-faint)" font-size="10">₹45,500 - paid annually, March 31st</text>
   </g>
 </svg>
-<p><strong>If the same startup later engages a different partner</strong> - a genuinely separate referral to someone else, not a continuation - that's a fresh, independent deal with its own 12-month entitlement clock, unrelated to any prior engagement with a different partner.</p>
+<p>If the same startup later engages a different partner, that counts as a genuinely separate referral - not a continuation. It's a fresh, independent deal with its own 12-month entitlement clock, unrelated to any prior engagement.</p>
 
 <h2 id="s21">21. Staying an active partner <span class="status-pill badge-draft">drafted</span></h2>
-<p>A partner who doesn't share any lead for 3 consecutive months is marked dormant - removed from the public listing and blocked from receiving leads until they resume activity. The underlying principle: no partner gets to be purely a taker, permanently receiving without ever contributing - connects directly to the Giver/Taker framing in Section 11. Gamifying this further (leaderboards, streaks, recognition) is a real direction as the platform matures, not designed yet.</p>
+<p>A partner who doesn't share any lead for 3 consecutive months is marked dormant. They're removed from the public listing and blocked from receiving leads until they resume activity.</p>
+<p>The underlying principle: no partner gets to be purely a taker, permanently receiving without ever contributing. This connects directly to the Giver/Taker framing in Section 11.</p>
+<p>Gamifying this further - leaderboards, streaks, recognition - is a real direction as the platform matures. It isn't designed yet.</p>
 
 <h2 id="s22">22. Frequently asked questions <span class="status-pill badge-done">confirmed</span></h2>
 <table class="dtable">
@@ -305,4 +305,5 @@
 </table>
 
 <h2 id="s23">23. Closing note <span class="status-pill badge-done">confirmed</span></h2>
-<p>This program is built on the belief that the strongest partner networks run on mutual accountability, not just shared access. Every partner who joins becomes a real stakeholder in a shared system - not a passive vendor waiting for the phone to ring. The credit model is deliberately simple and the rules are deliberately transparent, so that a partner's balance is an honest reflection of what they've actually put into the ecosystem. This program works when every partner is both a generous contributor and a serious professional.</p>
+<p>This program is built on one belief: the strongest partner networks run on mutual accountability, not just shared access. Every partner who joins becomes a real stakeholder in a shared system - not a passive vendor waiting for the phone to ring.</p>
+<p>The credit model is simple on purpose. The rules are transparent on purpose. That way, a partner's balance is an honest reflection of what they've actually put into the ecosystem. This program works when every partner is both a generous contributor and a serious professional.</p>

@@ -153,5 +153,25 @@
     "date": "v20.0",
     "title": "Comprehensive self-review across all 19 documents",
     "desc": "Systematic integrity pass, same methodology as the two manual reviews, applied to the whole hub. Numbers audit: verified -2,997/-1,500/+3,996 math, KPI weights (20/40/30/10), the 1-week acknowledgment window, 4+ decline threshold, 30-day coupon expiry, 5-working-day validation, the 10%/91%/9.1% referral split, and the 10-partners/2-weeks rollout target - all consistent everywhere they're mentioned, no contradictions found. Ran a script checking every showDoc() link resolves to a real document - zero broken links. Ran a second script checking every document title for unlinked plain-text mentions across all other documents - found ~15 genuine misses (mostly opening callouts, the highest-value place to link) and fixed them; correctly identified and left alone two false-positive patterns (dependency-table rows describing relationships, and diagram text labels, neither of which needed linking every occurrence). Found two real completeness gaps: the Deliverables Register was missing all 3 of the hub's newest documents entirely (Glossary, Gantt, Action Tracker) - added them. The Master Execution Sequence didn't account for those same 3 documents - added an honest note explaining they emerged from later requests rather than forcing them into the original numbered plan. Verified Roadmap and Gantt's phase descriptions stay consistent in substance despite different styling."
+  },
+  {
+    "date": "v21.0",
+    "title": "New house style: To-Be only, plain short sentences - Guide page as proof-of-concept",
+    "desc": "Rewrote the Guide page under new writing rules: one idea per sentence, sentences under ~20 words, minimal dash-contrasts, no nested parentheticals, and no historical/As-Is content mixed into the main body. Created a new Design History & Decisions page (Start Here category) specifically to hold the 'why' and 'what it used to be' content that used to live inline - starting with the Playbook 2.0 absorption story and a note on why Playbook 1.0 was never absorbed. This is a proof-of-concept for a full 19-page rewrite under the same rules, pending approval of this result."
+  },
+  {
+    "date": "v21.1",
+    "title": "Fixed 3 disconnects in Guide; batch-rewrote History, Roadmap, Sequence",
+    "desc": "User caught a real flaw in the simplification approach: short sentences can lose the connecting logic between them, creating a new kind of confusion even though each sentence is individually simple. Fixed all 3 instances of this found in the Guide page through a close re-read. Refined the process going forward: split sentences when ideas are genuinely separate, but keep one connected sentence (with a single linking word like 'but' or 'so') when ideas need each other to make sense - and check every rewritten sentence for hidden dependencies on unstated context. Applied this refined process to a batch of 3 more pages: audited the History page fresh (0 disconnects found - a good sign the process works on new writing, not just retroactive fixes). Rewrote Roadmap under the new style. Rewrote Sequence, extracting 2 more As-Is/historical explanations to the History page and fixing 1 disconnect in the process."
+  },
+  {
+    "date": "v22.0",
+    "title": "Partnership SOP fully rewritten under the new house style",
+    "desc": "Applied the refined simplification process (short sentences, checked for hidden dependencies between them, To-Be content only) to all 23 sections. Section 2 was almost entirely an origin story - extracted the old-vs-new comparison table and evolution narrative to Design History & Decisions, leaving a brief statement of purpose in the main SOP. Section 10's brief historical aside about cycles moved to History too. Rewrote dense, multi-clause sentences throughout - the Quick Summary box, Section 7's dispute/matching paragraph, Section 9's conversion rules, Section 20's closing note, Section 21, and the Closing Note - splitting cramped sentences into short connected ones rather than short disconnected fragments. Verified every critical number (999, -2,997, 3,996, 9%, 91%, all the timing windows) survived the rewrite intact."
+  },
+  {
+    "date": "v22.1",
+    "title": "House style batch A - 5 shorter documents",
+    "desc": "Applied the same style process to Interview Guide, Graduation Criteria, Glossary, Gantt, and Deliverables. Caught two real bugs while reading closely: Graduation Criteria's 'Migration Wave Plan' link actually pointed to the Guide page (copy-paste error), and Interview Guide referenced 'our working system, once that's built' - stale, since the Interim Operating System has existed for many rounds. Both fixed. Also found and linked 2 more bare 'Interim Operating System' mentions, the same recurring pattern class caught earlier by Claude Code."
   }
 ]
