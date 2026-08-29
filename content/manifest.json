@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "3.4",
-    "updated": "Removed all Gantt and Migration Wave Plan references from the dependency table - both documents were decommissioned.",
+    "version": "3.5",
+    "updated": "Restored Migration Wave Plan references in the dependency table - the document was un-decommissioned.",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -26,8 +26,8 @@
     "content_file": "sequence.html",
     "cat": "Strategic Planning",
     "status": "done",
-    "version": "1.5",
-    "updated": "Updated item 14 - Migration Wave Plan was drafted then retired; pointed to Design History & Decisions.",
+    "version": "1.6",
+    "updated": "Restored the item 14 link to Migration Wave Plan - un-decommissioned.",
     "type": "Internal",
     "title": "Master Execution Sequence",
     "desc": "The to-do list in order - what gets done next, and why"
@@ -70,8 +70,8 @@
     "content_file": "deliverables.html",
     "cat": "Tracking & Governance",
     "status": "done",
-    "version": "1.7",
-    "updated": "Re-linked the visual project plan bullet to Roadmap now that Gantt is decommissioned.",
+    "version": "1.8",
+    "updated": "Restored the Migration Wave Plan bullet - un-decommissioned.",
     "type": "Internal",
     "title": "Deliverables Register",
     "desc": "A list of every document in this project and what each one is for"
@@ -125,8 +125,8 @@
     "content_file": "segmentation.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.9",
-    "updated": "Removed the Migration Wave Plan bullet from Feeds Directly Into, following its decommissioning.",
+    "version": "3.0",
+    "updated": "Restored the Migration Wave Plan bullet in Feeds Directly Into - un-decommissioned.",
     "type": "Internal",
     "title": "Partner Segmentation Framework",
     "desc": "A way to group partners so we know who to focus on first"
@@ -169,8 +169,8 @@
     "content_file": "graduation-criteria.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.7",
-    "updated": "Rewrote Feeds Into - Migration Wave Plan was decommissioned; migration itself is now a deferred, post-build activity.",
+    "version": "1.8",
+    "updated": "Restored the Feeds Into section pointing to Migration Wave Plan - un-decommissioned.",
     "type": "Internal",
     "title": "Alpha to Beta Graduation Criteria",
     "desc": "The targets we need to hit before opening the app to more partners"
@@ -224,8 +224,8 @@
     "content_file": "action-tracker.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.8",
-    "updated": "Removed the Migration Wave Plan row and updated the critical-path diagram box to just Low-Level System Spec, following its decommissioning.",
+    "version": "1.9",
+    "updated": "Restored the Migration Wave Plan row and critical-path diagram box text - un-decommissioned.",
     "type": "Both",
     "title": "Action Item & Blocker Tracker",
     "desc": "Real-world action items blocking progress, with a dependency chain showing what unlocks what"
@@ -235,8 +235,8 @@
     "content_file": "history.html",
     "cat": "Start Here",
     "status": "draft",
-    "version": "1.7",
-    "updated": "Added a section explaining why the Gantt view and Migration Wave Plan were retired outright, not just rewritten; fixed a stale document count in the unnumbered-documents note.",
+    "version": "1.8",
+    "updated": "Corrected the retirement note - Migration Wave Plan was un-decommissioned; only the Gantt view stays retired.",
     "type": "Internal",
     "title": "Design History & Decisions",
     "desc": "The why and the used-to-be behind decisions in the hub - kept separate so other pages can stay focused on what is true today"
@@ -273,5 +273,16 @@
     "type": "Both",
     "title": "Reporting Dashboard",
     "desc": "A simple view of progress, measured against Sarthy's own KPIs"
+  },
+  {
+    "id": "migration-wave-plan",
+    "content_file": "migration-wave-plan.html",
+    "cat": "Tracking & Governance",
+    "status": "draft",
+    "version": "1.2",
+    "updated": "Restored after briefly being decommissioned - the Lead determined it holds real data needed for post-launch migration planning. Gantt stays decommissioned; only this one came back.",
+    "type": "Both",
+    "title": "Migration Wave Plan",
+    "desc": "The order in which partner groups move onto the platform"
   }
 ]
