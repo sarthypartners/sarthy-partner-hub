@@ -1,0 +1,101 @@
+<p class="callout">A new proposed way for a Startup, a Referring Partner, or a Receiving Partner to start a connection with each other - in any direction, not just the two the SOP defines today - with Sarthy admin gating every step. This is a proposal for review, not yet a confirmed rule: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> Section 7, the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level Spec</a>'s Lead state machine, and the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>'s Lead table are deliberately left untouched until this shape is confirmed.</p>
+
+<h2>Why this is being proposed</h2>
+<p>Today's SOP only recognizes two ways a startup and a receiving partner end up connected: a referring partner picks the receiving partner directly (Path A), or the startup picks one itself from a list (Path B). Both of those are one person choosing, and one person waiting. This proposal adds a third direction - a receiving partner browsing startups and proposing to work with one directly - and puts the same admin-gated approval process in front of all three, so every connection, regardless of who started it, goes through the same consent-and-sanity-check step before anyone's contact details are shared.</p>
+
+<h2>The three ways a connection can start</h2>
+<table class="dtable">
+<tr><th>Who starts it</th><th>What they do</th><th>Requesting party</th><th>Requested party</th><th>Who else is kept in the loop</th></tr>
+<tr><td>Startup</td><td>Browses the list of vetted partners and requests one directly</td><td>Startup</td><td>Receiving partner</td><td>The startup's existing referring partner, if it has one on record</td></tr>
+<tr><td>Referring partner</td><td>Browses the partner list and recommends connecting a startup already under its belt with a specific receiving partner</td><td>Referring partner</td><td>Receiving partner <em>and</em> the startup</td><td>Admin only - the referring partner already consented by making the request</td></tr>
+<tr><td>Receiving partner</td><td>Browses the full startup list and proposes to work with one directly, with a business proposal</td><td>Receiving partner</td><td>Startup</td><td>The startup's existing referring partner, informed with no approval role - see below</td></tr>
+</table>
+<p>In every row, "requesting" only ever means someone has expressed interest - it never means the connection exists yet. Every party involved can see that a request exists from the moment it's made, but only as a faded, FYI-only entry with nothing to act on - see below for what changes once admin has looked at it. Showing it at all, even in this inactive form, is deliberate: seeing a live request tends to nudge people to be more responsive and engaged on their own, before admin ever steps in - and it gives admin a shared reference point to open the sanity-check conversation with, instead of surprising the requested party cold.</p>
+
+<h2>The common approval process, step by step</h2>
+<svg viewBox="0 0 820 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrowCR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <rect x="10" y="15" width="150" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="85" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Startup requests</text>
+    <text x="85" y="49" text-anchor="middle" fill="var(--ink-soft)" font-size="9">a receiving partner</text>
+
+    <rect x="10" y="72" width="150" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="85" y="92" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Referring partner</text>
+    <text x="85" y="106" text-anchor="middle" fill="var(--ink-soft)" font-size="9">recommends a connection</text>
+
+    <rect x="10" y="129" width="150" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="85" y="149" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Receiving partner</text>
+    <text x="85" y="163" text-anchor="middle" fill="var(--ink-soft)" font-size="9">proposes to a startup</text>
+
+    <line x1="160" y1="38" x2="220" y2="90" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="160" y1="95" x2="220" y2="95" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="160" y1="152" x2="220" y2="100" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+    <line x1="220" y1="90" x2="220" y2="100" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+
+    <rect x="225" y="70" width="160" height="50" rx="7" fill="var(--panel)" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="305" y="90" text-anchor="middle" fill="var(--ink-faint)" font-weight="500" font-size="11">Visible to all parties</text>
+    <text x="305" y="105" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">faded - FYI only, no action yet</text>
+
+    <line x1="385" y1="95" x2="415" y2="95" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+
+    <rect x="420" y="70" width="150" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="495" y="90" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">First sanity check</text>
+    <text x="495" y="105" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">is this request real and valid</text>
+
+    <line x1="570" y1="95" x2="600" y2="95" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+
+    <rect x="605" y="70" width="205" height="50" rx="7" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <text x="707" y="88" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Admin activates it</text>
+    <text x="707" y="103" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">takes consent from requested party</text>
+
+    <line x1="707" y1="120" x2="707" y2="150" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="500" y1="150" x2="707" y2="150" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="500" y1="150" x2="500" y2="175" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+    <line x1="707" y1="150" x2="707" y2="175" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowCR)"/>
+
+    <rect x="415" y="177" width="170" height="56" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="500" y="200" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Consent refused</text>
+    <text x="500" y="216" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">admin rejects, closed</text>
+    <text x="500" y="228" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no deduction to anyone</text>
+
+    <rect x="622" y="177" width="170" height="56" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="707" y="197" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Consent given</text>
+    <text x="707" y="212" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">admin approves, parties</text>
+    <text x="707" y="224" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">connected, 999 deducted</text>
+
+    <text x="10" y="270" fill="var(--ink-faint)" font-size="10">Referring partner (where one exists) sees the faded entry from the moment it's made, same as everyone else - never asked for approval, in any of the 3 flows.</text>
+    <text x="10" y="285" fill="var(--ink-faint)" font-size="10">Same-service-type overlap (SOP #7's existing guardrail) is now shown to the receiving partner as a flag, not used to block the request.</text>
+    <text x="10" y="300" fill="var(--ink-faint)" font-size="10">The 999-credit deduction always lands on the receiving partner, and always fires at admin approval - the new equivalent of today's "Acknowledged."</text>
+  </g>
+</svg>
+
+<h2>What's genuinely new here, versus what stays the same</h2>
+<table class="dtable">
+<tr><th>Rule</th><th>What changes</th></tr>
+<tr><td>Who can start a connection</td><td>New: a receiving partner can now propose to a startup directly. Today's SOP only lets a referring partner or the startup itself choose.</td></tr>
+<tr><td>Visibility before approval</td><td>New: every party involved can see that a request exists from the moment it's made - but only as a faded, FYI-only entry with nothing to act on, until admin runs the sanity check and activates it. Today's Path A/B have no equivalent "quiet" stage - the receiving partner is notified the moment a lead is Introduced, and it's actionable immediately.</td></tr>
+<tr><td>The referring partner's role</td><td>Changed: explicitly no veto in any of the 3 flows - sees the faded request from the moment it's made, like every other party, but is never asked to approve or block it. Today's SOP doesn't have to address this directly, since the referring partner already makes the choice in Path A.</td></tr>
+<tr><td>Same-service-type overlap</td><td>Loosened: today this blocks a lead from going to two same-type partners at once. Here, the receiving partner is shown the overlap and can still choose to proceed - the block becomes a flag.</td></tr>
+<tr><td>999-credit deduction</td><td>Stays: still charged to the receiving partner. Moves: fires at admin approval instead of at the receiving partner's own acknowledgment - the same underlying moment, generalized so it works for all 3 directions, including one where the receiving partner never formally "acknowledges" anything the old way.</td></tr>
+<tr><td>Who earns the lead-share credit and referral fee</td><td>Stays, extended: the startup's original referring/originating partner keeps both, regardless of which of the 3 flows produced the eventual connection - the same principle <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> Section 7 already established for Path B, just applied consistently to this third direction too.</td></tr>
+</table>
+
+<h2>How this would map onto today's Lead lifecycle</h2>
+<p>Proposed, not yet built: "admin approves" becomes the new equivalent of "Acknowledged" in the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level Spec</a>'s Lead state machine - the 999-credit deduction fires there, exactly like today, just triggered by admin's decision instead of the receiving partner's own action. "Consent refused" becomes the equivalent of "Rejected" - no deduction, same as today. Everything downstream of that point - In Progress, Converted, the referral fee, disputes - stays exactly as already defined; this proposal only changes how a Lead gets from nothing to Introduced-and-Acknowledged, not what happens after.</p>
+
+<h2>Open questions this raises</h2>
+<ul>
+<li><strong>Startup consent, formally:</strong> in the referring-partner-initiated flow, the startup is listed as a requested party alongside the receiving partner - meaning this may be the first time a startup is ever formally asked to consent to a connection, rather than being the subject of one. Today's SOP never asks a startup anything directly. Worth confirming whether that's intended.</li>
+<li><strong>What the "sanity check" actually checks:</strong> this document assumes it means confirming the requesting party's account is in good standing and the request isn't a duplicate of one already open - but that's an assumption, not a confirmed rule.</li>
+<li><strong>How long a request can sit open:</strong> today's SOP has defined windows for validation (5 working days) and acknowledgment (7 days). This proposal doesn't yet define an equivalent timeout for an admin-mediated request - does an unactioned request expire, and after how long?</li>
+<li><strong>Multiple open requests on the same startup:</strong> since the same-service-type rule is now a flag instead of a block, could the same startup have two open requests from two similar receiving partners at once? If so, does accepting one automatically close the other, or can both stay open until the startup picks?</li>
+</ul>
+
+<h2>What this document deliberately doesn't touch yet</h2>
+<p>This is a standalone proposal for review. <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> Section 7, the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level Spec</a>'s Lead state machine, the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>'s Lead table, and the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD</a> are not edited in this round. Once this shape is confirmed and the open questions above are answered, the next round folds the confirmed version into those source-of-truth documents directly - not as a separate proposal layer.</p>
+
+<h2>Built from</h2>
+<p>The originating-partner reward-continuity rule extends the principle already confirmed in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> Section 7 for Path B. The referral-fee mechanics referenced stay exactly as defined in Section 20. The Lead-lifecycle mapping is checked against the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level Spec</a>'s state machine. This connects directly to Stage 1 (Origination) of the <a href="#" onclick="showDoc('engagement-strategy');return false;" class="xlink">Engagement Strategy Framework</a> and the <a href="#" onclick="showDoc('combined-journey');return false;" class="xlink">Combined Journey Map</a> it was built from - once confirmed, this would replace how Stage 1 actually happens for all three roles.</p>
