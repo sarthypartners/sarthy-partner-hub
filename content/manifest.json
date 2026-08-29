@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "3.0",
-    "updated": "Mirrored the dependency map's rows for the new Connection Request Flow proposal",
+    "version": "3.1",
+    "updated": "Dependency table updated - Connection Request Flow is now confirmed (not a proposal), folded into Playbook Sec.7/Low-Level Spec/Data Dictionary/BRD; flagged Combined Journey Map as stale against the new 3-direction connection flow.",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -37,8 +37,8 @@
     "content_file": "playbook.html",
     "cat": "Partnership SOP v1.0",
     "status": "draft",
-    "version": "7.6",
-    "updated": "Fixed Section 7's diagram - Rejected and Unresolved now correctly branch from Introduced, before any deduction, matching the Low-Level Spec",
+    "version": "7.7",
+    "updated": "Section 7 rewritten - the Connection Request Flow (3 directions, admin-mediated consent, no auto-expiry) is now the authoritative rule, replacing the old two-path/self-service-acknowledgment model.",
     "type": "Both",
     "title": "Partnership SOP v1.0",
     "desc": "The complete rulebook - fully absorbs Sarthy's original Playbook 2.0, nothing lives outside this anymore"
@@ -47,12 +47,12 @@
     "id": "connection-request-flow",
     "content_file": "connection-request-flow.html",
     "cat": "Partnership SOP v1.0",
-    "status": "draft",
-    "version": "1.2",
-    "updated": "Explained why the faded, FYI-only visibility exists at all - it nudges people to stay responsive before admin steps in, and gives admin a shared reference point for the sanity-check conversation.",
+    "status": "done",
+    "version": "2.0",
+    "updated": "All 4 open questions resolved directly with Sarthy leadership; confirmed as the authoritative model (not a proposal) and folded into Playbook Sec.7, Low-Level Spec, Data Dictionary, and BRD.",
     "type": "Sarthy-facing",
-    "title": "Connection Request Flow (Proposed)",
-    "desc": "A new admin-gated way for a Startup, Referring Partner, or Receiving Partner to start a connection in any direction - including a new receiving-partner-initiated case Section 7 doesn't cover today. Proposal for review; Section 7, the Low-Level Spec, and the Data Dictionary are untouched until confirmed"
+    "title": "Connection Request Flow",
+    "desc": "The confirmed admin-gated model for how a Startup, Referring Partner, or Receiving Partner can start a connection, in any of 3 directions. All open questions resolved; folded into Partnership SOP v1.0 Section 7, the Low-Level Spec, the Data Dictionary, and the BRD."
   },
   {
     "id": "phase0",
@@ -103,8 +103,8 @@
     "content_file": "brd.html",
     "cat": "Technical Handoff",
     "status": "draft",
-    "version": "2.5",
-    "updated": "Added a cross-link to the Playbook's new Path A/B diagram (Section 5)",
+    "version": "2.6",
+    "updated": "Section 5 rewritten for the confirmed 3-direction, admin-mediated connection flow; retired the 7-day acknowledgment-window test case in Section 16.",
     "type": "Sarthy-facing",
     "title": "Business Requirements Document",
     "desc": "The To-Be system requirements - what the app should do, per the SOP's confirmed and drafted rules"
@@ -180,8 +180,8 @@
     "content_file": "data-dictionary.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.8",
-    "updated": "Added an entity-relationship diagram plus cross-links to two Playbook diagrams",
+    "version": "2.9",
+    "updated": "Lead table extended: request_direction, visibility_state, per-party consent fields; lead_status enum drops Unresolved.",
     "type": "Internal",
     "title": "Data Dictionary / SSOT Schema",
     "desc": "One clear definition for every piece of partner data we track"
@@ -268,8 +268,8 @@
     "content_file": "low-level-spec.html",
     "cat": "Technical Handoff",
     "status": "draft",
-    "version": "1.1",
-    "updated": "Added the full Lead state machine diagram and a cross-link to the Playbook's wallet-threshold diagram",
+    "version": "1.2",
+    "updated": "Lead state machine rewritten: Introduced now fires immediately (faded/FYI), Acknowledged now reached via admin-mediated consent, auto-finalization and Unresolved retired.",
     "type": "Internal",
     "title": "Low-Level System Specification",
     "desc": "The detailed technical spec, built from the approved BRD"

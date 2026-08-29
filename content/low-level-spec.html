@@ -4,33 +4,35 @@
 <ul>
 <li>The <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD</a> is the source of truth for what the system must do. This document doesn't override it.</li>
 <li>The <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> is the source of truth for field names, types, and meanings. This document builds on it, doesn't repeat it.</li>
-<li>Anyone building this on Replit specifically should also read the Replit Build Brief, once drafted - that document is the platform-specific companion to this one.</li>
+<li>Anyone building this on Replit specifically should also read the <a href="#" onclick="showDoc('replit-build-brief');return false;" class="xlink">Replit Build Brief</a> - that document is the platform-specific companion to this one.</li>
 </ul>
 
 <h2>Lead state machine</h2>
+<p><strong>Rewritten once the <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a> was confirmed.</strong> Two states and two operations changed meaning, not just gained a new case: <code>Introduced</code> now fires immediately on submission (visible to all relevant parties, faded/FYI-only) instead of after validation; <code>Acknowledged</code> is now reached through admin taking consent from the requested part(y/ies), not the receiving partner self-servicing an accept in the app. The old 7-day self-service window and its automatic finalization at hour 168 are retired entirely - nothing in this state machine times out on its own any more. <code>Unresolved</code> is no longer a reachable state.</p>
 <svg viewBox="0 0 830 235" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto 1.5rem;">
   <defs>
     <marker id="arrowLS" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
   </defs>
   <g font-family="Inter,sans-serif" font-size="10.5">
-    <rect x="10" y="20" width="110" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="65" y="47" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Submitted</text>
+    <rect x="10" y="20" width="105" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="62" y="47" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Submitted</text>
 
-    <line x1="120" y1="43" x2="140" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
+    <line x1="115" y1="43" x2="135" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
 
-    <rect x="145" y="20" width="110" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="200" y="47" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Validated</text>
+    <rect x="140" y="20" width="115" height="46" rx="7" fill="var(--panel)" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="197" y="40" text-anchor="middle" fill="var(--ink-faint)" font-weight="500" font-size="10.5">Introduced</text>
+    <text x="197" y="54" text-anchor="middle" fill="var(--ink-faint)" font-size="8.5">faded, visible to all - FYI only</text>
 
     <line x1="255" y1="43" x2="275" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
 
-    <rect x="280" y="20" width="110" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="335" y="47" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Introduced</text>
+    <rect x="280" y="20" width="105" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="332" y="47" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Validated</text>
 
-    <line x1="390" y1="43" x2="410" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
+    <line x1="385" y1="43" x2="405" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
 
-    <rect x="415" y="20" width="125" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="477" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Acknowledged</text>
-    <text x="477" y="56" text-anchor="middle" fill="var(--ink-soft)" font-size="9">-999 deducted</text>
+    <rect x="410" y="20" width="130" height="46" rx="7" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <text x="475" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Acknowledged</text>
+    <text x="475" y="56" text-anchor="middle" fill="var(--ink-soft)" font-size="9">consent taken, -999 deducted</text>
 
     <line x1="540" y1="43" x2="560" y2="43" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
 
@@ -43,45 +45,36 @@
     <text x="762" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Converted</text>
     <text x="762" y="56" text-anchor="middle" fill="var(--ink-soft)" font-size="9">referrer +909</text>
 
-    <line x1="65" y1="66" x2="65" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowLS)"/>
-    <rect x="10" y="152" width="110" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)" stroke-dasharray="3,2"/>
-    <text x="65" y="176" text-anchor="middle" fill="var(--ink-soft)" font-weight="600" font-size="10.5">Cancelled</text>
-    <text x="65" y="212" text-anchor="middle" fill="var(--ink-faint)" font-size="9">referrer withdraws</text>
-    <text x="65" y="223" text-anchor="middle" fill="var(--ink-faint)" font-size="9">before it's introduced</text>
+    <line x1="62" y1="66" x2="62" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowLS)"/>
+    <rect x="10" y="152" width="105" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)" stroke-dasharray="3,2"/>
+    <text x="62" y="176" text-anchor="middle" fill="var(--ink-soft)" font-weight="600" font-size="10.5">Cancelled</text>
+    <text x="62" y="212" text-anchor="middle" fill="var(--ink-faint)" font-size="9">initiating party withdraws,</text>
+    <text x="62" y="223" text-anchor="middle" fill="var(--ink-faint)" font-size="9">any time before Acknowledged</text>
 
-    <line x1="315" y1="66" x2="315" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
-    <rect x="240" y="152" width="150" height="46" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
-    <text x="315" y="176" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Rejected</text>
-    <text x="315" y="212" text-anchor="middle" fill="var(--ink-faint)" font-size="9">explicit decline within 1 week</text>
-    <text x="315" y="223" text-anchor="middle" fill="var(--ink-faint)" font-size="9">&#8212; no deduction ever happened</text>
-
-    <line x1="355" y1="66" x2="355" y2="100" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="355" y1="100" x2="545" y2="100" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="545" y1="100" x2="545" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
-    <text x="450" y="93" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">1 week passes, no action</text>
-    <rect x="470" y="152" width="150" height="46" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
-    <text x="545" y="176" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Unresolved</text>
-    <text x="545" y="215" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">also no deduction &#8212; closed, not disputed</text>
+    <line x1="475" y1="66" x2="475" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowLS)"/>
+    <rect x="400" y="152" width="150" height="46" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="475" y="176" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Rejected</text>
+    <text x="475" y="212" text-anchor="middle" fill="var(--ink-faint)" font-size="9">consent refused, at any point</text>
+    <text x="475" y="223" text-anchor="middle" fill="var(--ink-faint)" font-size="9">&#8212; no deduction ever happened</text>
 
     <line x1="600" y1="66" x2="600" y2="120" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3"/>
-    <line x1="600" y1="120" x2="390" y2="120" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowLS)"/>
-    <text x="600" y="113" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">dispute upheld past the window &#8594; +999 refunded</text>
+    <line x1="600" y1="120" x2="410" y2="120" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowLS)"/>
+    <text x="600" y="113" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">later dispute upheld &#8594; +999 refunded</text>
   </g>
 </svg>
 <table class="dtable">
 <tr><th>From</th><th>Event</th><th>To</th><th>Side effects</th></tr>
-<tr><td>(none)</td><td>Referring partner submits</td><td>Submitted</td><td>Duplicate check runs immediately, at upload</td></tr>
-<tr><td>Submitted</td><td>Admin validates (within 5 working days)</td><td>Validated</td><td>None</td></tr>
-<tr><td>Submitted</td><td>Referring partner cancels</td><td>(deleted)</td><td>No deduction ever happened - nothing to reverse</td></tr>
-<tr><td>Validated</td><td>System introduces to receiving partner</td><td>Introduced</td><td>1-week acknowledgment clock starts</td></tr>
-<tr><td>Introduced</td><td>Receiving partner acknowledges</td><td>Acknowledged</td><td><span class="amt-neg">-999</span> credits deducted from receiving partner, immediately</td></tr>
-<tr><td>Introduced</td><td>Receiving partner explicitly rejects, within 1 week</td><td>Rejected</td><td>No deduction (none happened yet)</td></tr>
-<tr><td>Introduced</td><td>1 week passes, no action taken</td><td>Unresolved</td><td>No deduction (none happened yet) - lead is simply closed, not disputed</td></tr>
+<tr><td>(none)</td><td>Initiating party submits (any of the 3 directions - see Playbook §7)</td><td>Submitted</td><td>Duplicate check runs immediately, at upload</td></tr>
+<tr><td>Submitted</td><td>System makes it visible to all relevant parties</td><td>Introduced</td><td>Faded, FYI-only entry - nothing actionable yet, no deduction</td></tr>
+<tr><td>Introduced</td><td>Admin runs the sanity check (account standing, not a duplicate, responsible use)</td><td>Validated</td><td>No fixed deadline - a soft target of 5 working days, not an auto-trigger</td></tr>
+<tr><td>Validated</td><td>Admin takes consent from the requested part(y/ies) and approves</td><td>Acknowledged</td><td><span class="amt-neg">-999</span> credits deducted from receiving partner, immediately</td></tr>
+<tr><td>Introduced or Validated</td><td>Initiating party cancels</td><td>(deleted)</td><td>No deduction ever happened - nothing to reverse</td></tr>
+<tr><td>Introduced or Validated</td><td>A requested party refuses consent</td><td>Rejected</td><td>No deduction (none happened yet)</td></tr>
 <tr><td>Acknowledged</td><td>Work begins</td><td>In Progress</td><td>None</td></tr>
-<tr><td>In Progress</td><td>Admin confirms conversion</td><td>Converted</td><td>Referring partner credited <span class="amt-pos">+909</span> (999 minus 9%)</td></tr>
-<tr><td>In Progress or Acknowledged</td><td>Dispute raised, past 1-week window, admin reverses</td><td>Rejected</td><td><span class="amt-pos">+999</span> credits refunded to receiving partner (full reversal)</td></tr>
+<tr><td>In Progress</td><td>Admin confirms conversion</td><td>Converted</td><td>Referring/originating partner credited <span class="amt-pos">+909</span> (999 minus 9%)</td></tr>
+<tr><td>In Progress or Acknowledged</td><td>Dispute raised, admin reverses</td><td>Rejected</td><td><span class="amt-pos">+999</span> credits refunded to receiving partner (full reversal)</td></tr>
 </table>
-<p>Re-referral: a Rejected or Unresolved lead can be resubmitted to a different partner (new Lead record, new lifecycle) - never simultaneously to two partners offering the same service type.</p>
+<p>Re-referral: a Rejected lead can be resubmitted to a different partner (new Lead record, new lifecycle). Same-service-type overlap is now a flag rather than a block - more than one open request can exist on the same startup with similar-type receiving partners at once. <strong>Still open, not yet answered:</strong> when one converts to Acknowledged, do the startup's other open requests to similar-type partners auto-close, or stay open? Needs a decision before this is built - see the <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a> page.</p>
 
 <h2>Partner status state machine</h2>
 <table class="dtable">
@@ -100,8 +93,10 @@
 <p>Defined independent of any specific framework or API style - inputs, what changes, and what must be true before/after.</p>
 <table class="dtable">
 <tr><th>Operation</th><th>Preconditions</th><th>Effect</th><th>Postconditions</th></tr>
-<tr><td>SubmitLead</td><td>Referring partner isn't Exited. Dormant partners specifically can and must be able to do this - it's their documented recovery path. Lead isn't a duplicate. <strong>Not yet answered anywhere in the source material:</strong> whether a Frozen partner can submit/refer a lead, since Frozen is specifically about receiving. Worth confirming before building rather than assuming.</td><td>Creates Lead record, status Submitted</td><td>Duplicate flag set if a match is found</td></tr>
-<tr><td>AcknowledgeLead</td><td>Lead status is Introduced. Receiving partner is Active or At-Risk (not Frozen or Dormant).</td><td>Deducts 999 from receiving partner's wallet</td><td>Lead status becomes Acknowledged. Wallet balance re-evaluated for At-Risk/Frozen status</td></tr>
+<tr><td>SubmitLead</td><td>Initiating partner isn't Exited. Dormant partners specifically can and must be able to do this - it's their documented recovery path. Lead isn't a duplicate. <strong>Not yet answered anywhere in the source material:</strong> whether a Frozen partner can submit/refer a lead, since Frozen is specifically about receiving. Worth confirming before building rather than assuming.</td><td>Creates Lead record with its direction (A/B/C - see Playbook §7), status Submitted</td><td>Immediately moves to Introduced (visible to all relevant parties, faded/FYI-only) - duplicate flag set if a match is found</td></tr>
+<tr><td>ValidateRequest</td><td>Lead status is Introduced.</td><td>Admin runs the sanity check: requesting party's account in good standing, not a duplicate of one already open, requesting party using the feature responsibly</td><td>Lead status becomes Validated. No fixed deadline enforced by the system - 5 working days is a service target, not a trigger</td></tr>
+<tr><td>TakeConsentAndApprove</td><td>Lead status is Validated. All required requested parties for this direction have given consent (receiving partner always; the startup too, in directions A and C - see Playbook §7). Receiving partner is Active or At-Risk (not Frozen or Dormant).</td><td>Deducts 999 from receiving partner's wallet</td><td>Lead status becomes Acknowledged. Wallet balance re-evaluated for At-Risk/Frozen status</td></tr>
+<tr><td>RefuseConsent</td><td>Lead status is Introduced or Validated. Any required requested party declines.</td><td>None - no deduction has happened yet</td><td>Lead status becomes Rejected</td></tr>
 <tr><td>ConfirmConversion</td><td>Lead status is In Progress. Admin has proof (signed agreement + first payment).</td><td>Credits referring partner 909 (999 minus 9%)</td><td>Lead status becomes Converted. Referring partner's wallet balance re-evaluated</td></tr>
 <tr><td>RequestWithdrawal</td><td>Partner status is Active. Balance above 999 (the reserve).</td><td>Converts the withdrawable portion to real currency at the current RBI reference rate</td><td>Wallet balance reduced by the withdrawn amount, floor stays at 999</td></tr>
 <tr><td>RecordDealClosure</td><td>A Lead exists with status Converted.</td><td>Creates a Deal record linked to the Lead. Applies the 12-month proration rule if deal_duration exceeds 12 months.</td><td>referral_fee_entitlement and referral_fee_net calculated (see formulas below)</td></tr>
@@ -125,8 +120,8 @@
 <h2>Validation and edge-case rules</h2>
 <ul>
 <li><strong>Duplicate detection:</strong> runs at the moment of upload, before the lead reaches admin - not a background job that runs later.</li>
-<li><strong>Decline counting:</strong> 4 consecutive declines (not 4 total, not 4 in a rolling window) flags the partner to admin. The count resets on any acceptance.</li>
-<li><strong>Acknowledgment window:</strong> exactly 168 hours (7 days) from the Introduced timestamp. Finalization at hour 168 is automatic, not admin-triggered.</li>
-<li><strong>Dispute window:</strong> 14 days from the decision being disputed, in writing. Admin response target: 24 hours from that point.</li>
+<li><strong>Consent-refusal counting:</strong> 4 consecutive refusals for the same receiving partner (not 4 total, not 4 in a rolling window) flags the partner to admin. The count resets on any acceptance.</li>
+<li><strong>No acknowledgment window:</strong> retired along with the old self-service accept/decline. A Lead can sit at Introduced or Validated indefinitely - nothing about it finalizes automatically at any hour count. It only changes state when admin actively approves or a requested party refuses consent.</li>
+<li><strong>Dispute window:</strong> 14 days from the decision being disputed, in writing. Admin response target: 24 hours from that point. Unaffected by the acknowledgment-window retirement above - this is the separate, still-active window for disputing a conversion decision (Section 9 of the Playbook), not the old lead-acceptance window.</li>
 <li><strong>At-Risk and Frozen are independent triggers</strong> - evaluate both conditions separately on every wallet-affecting event, don't treat one as implying the other.</li>
 </ul>

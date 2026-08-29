@@ -91,128 +91,92 @@
 <p style="margin:10px 0 0;">At the end of month 3, Asha's balance sits at -90 - negative, but nowhere near the -2,997 freeze floor (Section 8), so nothing else happens yet. Four different "999" events, four different meanings, one running number.</p>
 </div>
 
-<h2 id="s7">7. How a lead moves from one partner to another <span class="status-pill badge-draft">confirmed, matchmaking catalyst still undesigned</span></h2>
-<svg viewBox="0 0 800 235" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:740px;display:block;margin:0 auto 1.5rem;">
+<h2 id="s7">7. How a connection forms between partners <span class="status-pill badge-draft">confirmed design, matchmaking catalyst still undesigned</span></h2>
+<p><strong>This section was substantially rewritten</strong> once the <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a> proposal was confirmed. What used to be "two paths in, then a separate self-service accept/decline step" is now one consistent, admin-gated process that every connection goes through, regardless of who starts it. The detailed walkthrough and the record of how each design question was resolved live on that page; this section is now the authoritative rule.</p>
+
+<h3 style="font-size:15px;margin:1.5rem 0 .75rem;">The three ways a connection can start</h3>
+<table class="dtable">
+<tr><th>Direction</th><th>What happens</th><th>Who must consent before it's active</th></tr>
+<tr><td><strong>A - Direct referral</strong> (the original path)</td><td>A referring partner, with a real point of contact at a startup, recommends a specific receiving partner</td><td>The receiving partner <em>and</em>, newly, the startup itself</td></tr>
+<tr><td><strong>B - Startup self-selection</strong></td><td>A startup with no partner-chosen destination browses the list of vetted partners itself and requests one directly</td><td>The receiving partner (the startup's own request already stands as its consent)</td></tr>
+<tr><td><strong>C - Receiving-partner-initiated</strong> (new)</td><td>A receiving partner browses the startup list and proposes to work with one directly, with a business proposal</td><td>The startup itself</td></tr>
+</table>
+<p><strong>Worth flagging plainly:</strong> requiring the startup's own consent in direction A is new. A direct referral used to only need the receiving partner's acknowledgment - the startup was never formally asked to approve anything, just expected to be "a real point of contact." That's a real increase in what admin has to do on every single lead, not only the new direction C. Worth Sarthy weighing whether that operational cost is acceptable as lead volume grows, since most leads today still arrive via direction A.</p>
+
+<h3 style="font-size:15px;margin:1.5rem 0 .75rem;">The common approval process, step by step</h3>
+<svg viewBox="0 0 830 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;display:block;margin:0 auto 1.5rem;">
   <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
-  </defs>
-  <g font-family="Inter,sans-serif" font-size="12">
-    <rect x="10" y="20" width="140" height="52" rx="8" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="80" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600">1. Submitted</text>
-    <text x="80" y="58" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">by referring partner</text>
-
-    <line x1="150" y1="46" x2="182" y2="46" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-    <rect x="185" y="20" width="140" height="52" rx="8" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="255" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600">2. Validated</text>
-    <text x="255" y="58" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">within 5 working days</text>
-
-    <line x1="325" y1="46" x2="357" y2="46" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-    <rect x="360" y="20" width="140" height="52" rx="8" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="430" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600">3. Introduced</text>
-    <text x="430" y="58" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">to receiving partner</text>
-
-    <line x1="500" y1="46" x2="532" y2="46" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-    <rect x="535" y="20" width="160" height="52" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
-    <text x="615" y="42" text-anchor="middle" fill="var(--ink)" font-weight="600">4. Acknowledged</text>
-    <text x="615" y="58" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">999 credits deducted</text>
-
-    <line x1="615" y1="72" x2="615" y2="140" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-    <rect x="535" y="145" width="160" height="56" rx="8" fill="var(--green-bg)" stroke="var(--green)"/>
-    <text x="615" y="168" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="12.5">Converted</text>
-    <text x="615" y="184" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">referrer earns 999,</text>
-    <text x="615" y="197" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">minus 9% fee</text>
-
-    <line x1="430" y1="72" x2="430" y2="105" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="95" y1="105" x2="430" y2="105" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <text x="262" y="99" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">decline or timeout - before any deduction</text>
-    <line x1="95" y1="105" x2="95" y2="143" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-    <line x1="270" y1="105" x2="270" y2="143" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-    <rect x="15" y="145" width="160" height="56" rx="8" fill="var(--amber-bg)" stroke="var(--amber)"/>
-    <text x="95" y="167" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="12">Unresolved</text>
-    <text x="95" y="183" text-anchor="middle" fill="var(--ink-soft)" font-size="10">1 week passes, no action -</text>
-    <text x="95" y="196" text-anchor="middle" fill="var(--ink-soft)" font-size="10">closed, not disputed</text>
-
-    <rect x="190" y="145" width="160" height="56" rx="8" fill="var(--red-bg)" stroke="var(--red)"/>
-    <text x="270" y="167" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="12">Rejected</text>
-    <text x="270" y="183" text-anchor="middle" fill="var(--ink-soft)" font-size="10">explicit decline within the</text>
-    <text x="270" y="196" text-anchor="middle" fill="var(--ink-soft)" font-size="10">window - no deduction ever</text>
-
-    <text x="10" y="222" fill="var(--ink-faint)" font-size="10.5">Neither Rejected nor Unresolved ever triggers a deduction - both branch from Introduced, before Acknowledgment happens.</text>
-  </g>
-</svg>
-<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.75rem 0 1.25rem;">This shows the common path. For every transition, including cancellations and the late-reversal case, see the full Lead state machine in the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level System Specification</a>.</p>
-<p>All referrals go through Sarthy. Two partners privately swapping leads outside the system doesn't count, and won't be honoured at settlement.</p>
-<p>A valid lead is a real prospect with an actual need and a real point of contact. It also can't be a lead that's already been referred through the system, or one that's already working with that partner.</p>
-<ul>
-<li><strong>Cancelling a submission:</strong> a referring partner can cancel a lead before it reaches the receiving partner.</li>
-<li><strong>Duplicate leads:</strong> caught and flagged as invalid at the point of upload, before they go anywhere. Partners can also see a list of existing leads to reduce accidental duplicates.</li>
-<li><strong>Repeated declines:</strong> four or more leads declined in a row gets flagged to the admin, who steps in manually - not an automatic penalty, a prompt for a human to check.</li>
-<li><strong>Re-referring an unconverted lead:</strong> no fixed limit, but never to two partners offering the same type of service at once, since that creates competing outreach to the same prospect. Different types of service providers at once is fine.</li>
-<li><strong>Who picks the receiving partner:</strong> two paths exist - a referring partner can choose a specific receiving partner directly (as above), or leave it open for the startup to choose for itself. See "How a startup can be brought in" below.</li>
-</ul>
-
-<h3 style="font-size:15px;margin:1.5rem 0 .75rem;">How a startup can be brought in</h3>
-<p>A partner brings a startup into Sarthy's ecosystem in one of two ways:</p>
-<ul>
-<li><strong>Path A - direct referral (the flow above):</strong> the partner chooses a specific receiving partner and refers the lead to them directly, exactly as described in this section.</li>
-<li><strong>Path B - startup self-selection:</strong> the partner brings the startup into Sarthy's ecosystem without choosing a specific receiving partner. The startup gets access to a separate, startup-facing product (via an SSO link) where it can see the list of vetted partners and pick one itself, requesting service directly.</li>
-</ul>
-<p>In both paths, the chosen receiving partner's acknowledgment is still mandatory - it's what triggers the formal agreement, the engagement itself, and the 999-credit deduction. Path B doesn't skip this step; the startup picking a partner isn't the same as that partner accepting the work.</p>
-<p>In both paths, the partner who originally brought the startup into Sarthy's ecosystem is the one who earns the rewards - the 999-credit lead-share reward on conversion, and the 10% deal-closure referral fee (Section 20) if it becomes a real deal. This is true even in Path B, where that partner didn't personally choose which partner the startup ended up picking.</p>
-<p><strong>If a startup signs up with no originating partner at all</strong> - arriving directly, not through any partner - Sarthy itself is treated as the originating partner for that startup. Every reward that would normally go to a partner (the lead-share credit, the deal-closure fee) applies to Sarthy the same way, tracked through the same mechanics as any other partner's activity.</p>
-<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:800px;display:block;margin:0 auto 1.5rem;">
-  <defs>
-    <marker id="arrowPB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+    <marker id="arrow7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
   </defs>
   <g font-family="Inter,sans-serif" font-size="10.5">
-    <rect x="10" y="15" width="220" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="120" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Path A</text>
-    <text x="120" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">partner picks the receiving partner directly</text>
+    <rect x="10" y="10" width="125" height="38" rx="6" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="72" y="33" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">A - Direct referral</text>
 
-    <line x1="230" y1="38" x2="255" y2="38" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+    <rect x="10" y="56" width="125" height="38" rx="6" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="72" y="79" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">B - Startup self-selects</text>
 
-    <rect x="10" y="105" width="220" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="120" y="123" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Path B</text>
-    <text x="120" y="138" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">partner brings startup in, doesn't</text>
-    <text x="120" y="150" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">choose who it goes to</text>
+    <rect x="10" y="102" width="125" height="38" rx="6" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="72" y="125" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">C - Partner proposes</text>
 
-    <line x1="230" y1="130" x2="255" y2="130" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+    <line x1="135" y1="29" x2="160" y2="70" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="135" y1="75" x2="160" y2="75" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="135" y1="121" x2="160" y2="80" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
+    <line x1="160" y1="70" x2="160" y2="80" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
 
-    <rect x="260" y="105" width="230" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="375" y="123" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Startup self-selects via SSO</text>
-    <text x="375" y="138" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">picks any vetted partner from the list</text>
+    <rect x="165" y="50" width="110" height="50" rx="7" fill="var(--panel)" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="220" y="70" text-anchor="middle" fill="var(--ink-faint)" font-weight="500" font-size="10.5">1. Introduced</text>
+    <text x="220" y="85" text-anchor="middle" fill="var(--ink-faint)" font-size="9">visible to all, faded - FYI only</text>
 
-    <line x1="490" y1="130" x2="510" y2="130" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="255" y1="38" x2="510" y2="38" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="510" y1="38" x2="510" y2="115" stroke="var(--ink-faint)" stroke-width="1.5"/>
-    <line x1="510" y1="115" x2="530" y2="115" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
-    <line x1="510" y1="130" x2="530" y2="130" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+    <line x1="275" y1="75" x2="300" y2="75" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
 
-    <rect x="535" y="90" width="190" height="70" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="630" y="115" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Chosen partner</text>
-    <text x="630" y="130" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">acknowledges</text>
-    <text x="630" y="147" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">mandatory either way</text>
+    <rect x="305" y="50" width="110" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="360" y="70" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">2. Validated</text>
+    <text x="360" y="85" text-anchor="middle" fill="var(--ink-soft)" font-size="9">admin sanity check</text>
 
-    <line x1="725" y1="125" x2="750" y2="125" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+    <line x1="415" y1="75" x2="440" y2="75" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
 
-    <rect x="755" y="95" width="135" height="60" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
-    <text x="822" y="115" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Originating</text>
-    <text x="822" y="128" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">partner earns</text>
-    <text x="822" y="143" text-anchor="middle" fill="var(--ink-soft)" font-size="9">999-credit + 10% fee</text>
+    <rect x="445" y="42" width="135" height="66" rx="7" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <text x="512" y="63" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">3. Acknowledged</text>
+    <text x="512" y="78" text-anchor="middle" fill="var(--ink-soft)" font-size="9">consent taken, admin approves</text>
+    <text x="512" y="91" text-anchor="middle" fill="var(--ink-soft)" font-size="9">999 credits deducted</text>
 
-    <text x="450" y="180" text-anchor="middle" fill="var(--ink-soft)" font-size="10">In Path B, the originating partner is whoever brought the startup in &#8212; not necessarily the partner the startup ended up choosing.</text>
+    <line x1="580" y1="75" x2="605" y2="75" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
 
-    <rect x="10" y="200" width="620" height="40" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
-    <text x="320" y="216" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">No partner brought the startup in at all?</text>
-    <text x="320" y="231" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">Sarthy is treated as the originating partner &#8212; same rewards, same mechanics.</text>
+    <rect x="610" y="50" width="105" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="662" y="79" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">In Progress</text>
+
+    <line x1="715" y1="75" x2="740" y2="75" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
+
+    <rect x="745" y="42" width="80" height="66" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="785" y="65" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Converted</text>
+    <text x="785" y="80" text-anchor="middle" fill="var(--ink-soft)" font-size="8.5">referrer +909</text>
+    <text x="785" y="92" text-anchor="middle" fill="var(--ink-soft)" font-size="8.5">(999 minus 9%)</text>
+
+    <line x1="512" y1="108" x2="512" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrow7)"/>
+
+    <rect x="425" y="152" width="200" height="56" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="525" y="174" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Consent refused (Rejected)</text>
+    <text x="525" y="190" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">admin closes it - no deduction</text>
+    <text x="525" y="202" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">to anyone, at any point</text>
+
+    <text x="10" y="240" fill="var(--ink-faint)" font-size="10">No automatic finalization or timeout anywhere in this chain - a request only ever resolves when admin actively approves</text>
+    <text x="10" y="254" fill="var(--ink-faint)" font-size="10">or refuses it. This retires the old 7-day self-service window and the "Unresolved" (silent-timeout) status entirely.</text>
+    <text x="10" y="275" fill="var(--ink-faint)" font-size="10">Full field-level detail, including the cancellation and late-dispute-reversal transitions, is in the <tspan fill="var(--ink)">Low-Level System Specification</tspan>.</text>
   </g>
 </svg>
-<p><strong>Resolved:</strong> a disputed lead past the 1-week window is handled at admin's discretion, backed by a direct check-in with the startup to confirm what actually happened. The startup's response is one input the admin weighs, not a mandatory requirement - and if the startup doesn't respond either, that's also left to admin's judgment, with no fixed default favoring either partner. Full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
+<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.75rem 0 1.25rem;">This shows the common path across all three directions. For every transition, see the full Lead state machine in the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level System Specification</a>.</p>
+<p>All connections go through Sarthy. Two partners privately arranging one outside the system doesn't count, and won't be honoured at settlement.</p>
+<p>A valid lead is a real prospect with an actual need and a real point of contact. It also can't be a lead that's already been referred through the system, or one that's already working with that partner.</p>
+<ul>
+<li><strong>Cancelling a request:</strong> the initiating party can cancel any time before Acknowledged - since nothing is actually committed, and no deduction has happened, until admin approves it.</li>
+<li><strong>Duplicate requests:</strong> caught and flagged as invalid at the point of upload, before they go anywhere. Partners can also see a list of existing open requests to reduce accidental duplicates - the same check is now part of admin's sanity check at Validated.</li>
+<li><strong>Repeated consent refusals:</strong> four or more requests refused in a row for the same receiving partner gets flagged to admin, who steps in manually - not an automatic penalty, a prompt for a human to check.</li>
+<li><strong>Re-requesting after a refusal:</strong> no fixed limit on trying a different receiving partner. The same-service-type rule below still governs how many can be pursued at once.</li>
+<li><strong>Same-service-type overlap:</strong> loosened from a hard block to a flag. More than one open request can now exist on the same startup with similar-type receiving partners at once - the receiving partner sees the overlap and can still choose to proceed. <strong>Still open, not yet answered:</strong> once one of those requests converts into an actual live connection, do the startup's other open requests to similar-type partners close automatically, or stay open until someone acts on them too? Worth resolving before this reaches a developer as a build spec, since it decides what the system must do automatically the moment admin approves one.</li>
+</ul>
+<p>The partner who originally brought the startup into Sarthy's ecosystem is the one who earns the rewards - the 999-credit lead-share reward on conversion, and the 10% deal-closure referral fee (Section 20) if it becomes a real deal. This holds across all three directions, even C, where a different partner (not the originating one) is the one proposing the new connection.</p>
+<p><strong>If a startup signs up with no originating partner at all</strong> - arriving directly, not through any partner - Sarthy itself is treated as the originating partner for that startup. Every reward that would normally go to a partner (the lead-share credit, the deal-closure fee) applies to Sarthy the same way, tracked through the same mechanics as any other partner's activity.</p>
+<p><strong>Resolved:</strong> a disputed lead is handled at admin's discretion, backed by a direct check-in with the startup to confirm what actually happened. The startup's response is one input the admin weighs, not a mandatory requirement - and if the startup doesn't respond either, that's also left to admin's judgment, with no fixed default favoring either partner. Full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
 <p>Separately, a backend "catalyst" that surfaces good matches to partners is a real direction - but it isn't designed yet. One thing is already clear: the system may <em>suggest</em> a match, but it can never <em>assign</em> one. The referring partner always makes the final choice, even when a suggestion is shown.</p>
 
 <h2 id="s8">8. The six credit rules <span class="status-pill badge-draft">drafted, all six specified</span></h2>
@@ -412,7 +376,7 @@
 <tr><th>Question</th><th>Answer</th></tr>
 <tr><td>Do I lose my starting 999 credits if none of my referrals convert?</td><td>No - opening credits aren't tied to referral performance. Receiving leads still deducts 999 credits regardless.</td></tr>
 <tr><td>What if I refer a lead and it doesn't convert?</td><td>No credit earned. The receiving partner's deduction stands either way.</td></tr>
-<tr><td>Can I decline a lead I don't think is relevant?</td><td>Yes - before the deduction happens. Outside your service area, decline and nothing gets deducted.</td></tr>
+<tr><td>Can I decline a lead I don't think is relevant?</td><td>Yes - by refusing consent when admin reaches out, any time before the deduction happens. Outside your service area, refuse and nothing gets deducted.</td></tr>
 <tr><td>Can I refer more than one lead to the same partner?</td><td>Yes - each referral is its own separate transaction.</td></tr>
 <tr><td>What if a lead converts months later?</td><td>The credit is awarded whenever conversion is actually confirmed.</td></tr>
 </table>

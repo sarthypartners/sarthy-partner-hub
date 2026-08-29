@@ -30,32 +30,27 @@
 <li>The system must display a partner's current balance clearly, including how much of it is expiring soon</li>
 </ul>
 
-<h2>5. Lead submission and referral flow <span class="status-pill badge-done">MVP</span></h2>
-<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
+<h2>5. Lead submission and connection flow <span class="status-pill badge-done">MVP</span></h2>
+<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a>, folded in from the confirmed <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a>. This replaces the old two-path, self-service-acknowledgment model - the requirements below are the current, authoritative ones.</p>
 <ul>
-<li>The system must let a partner submit a lead with enough detail for admin to validate it - contact info, service need, urgency</li>
-<li>The system must check every new submission against existing leads and automatically flag likely duplicates <strong>at the point of upload</strong>, before it reaches admin - not after</li>
-<li>The system must show a partner a list of existing open leads, to reduce accidental duplicate submissions</li>
-<li>The system must let a referring partner cancel a submission any time before the receiving partner acknowledges it</li>
-<li>The system must track a lead through defined stages: Submitted → Validated (admin, within 5 working days) → Introduced → Acknowledged → In Progress → Converted / Rejected / Unresolved</li>
-<li>The system must give a receiving partner 1 week to acknowledge and either accept or explicitly reject a new lead. Explicit rejection within that week fully reverses the 999-credit deduction. No resolution by the end of the week makes the deduction final - no refund.</li>
-<li>The system must deduct 999 credits from the receiving partner's wallet the moment they acknowledge a lead - not before, not after</li>
-<li>The system must let the admin manually reverse a deduction past the 1-week window in disputed cases, based on the merits - see Section 11 below for the evidence mechanism</li>
-<li>The system must flag any partner with 4 or more consecutive declines to admin for manual review</li>
-<li>The system must allow a lead to be re-referred an unlimited number of times, but must block simultaneous referral of the same lead to two partners offering the same type of service</li>
-<li>The system must let a referring partner choose the receiving partner directly (default path), or leave the lead open for the startup to choose its own partner via the self-service product below - matching is never automatic by system logic in either case</li>
-<li><strong>Not yet scoped for build:</strong> a backend matchmaking layer, still in early direction only - see <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for the current thinking. Needs its own design pass before it's a real requirement.</li>
-</ul>
-
-<h3 style="font-size:15px;margin:1.25rem 0 .75rem;">Startup self-service - a new capability, priority not yet confirmed (assuming Phase 2 for now)</h3>
-<p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> ("How a startup can be brought in") - see the Path A / Path B diagram there for how the originating partner ends up earning the reward either way.</p>
-<ul>
-<li>The system must support a separate, startup-facing product, accessed via an SSO link, showing the list of vetted partners</li>
-<li>The system must let a startup using this product select a partner directly and request service - without requiring a specific partner to have referred them first</li>
-<li>The system must still require the selected partner's acknowledgment before the engagement is considered active - the startup's selection alone does not trigger the 999-credit deduction</li>
-<li>The system must track which partner (if any) originally brought a given startup into Sarthy's ecosystem, separately from which partner the startup ultimately engages with - these can be different partners</li>
-<li>The system must route both the 999-credit lead-share reward and the 10% deal-closure referral fee to the originating partner, regardless of whether that partner personally chose the receiving partner (Path A) or the startup self-selected (Path B)</li>
+<li>The system must let any of the 3 initiating parties - a referring partner (direction A), a startup (direction B), or a receiving partner (direction C) - submit a connection request with enough detail for admin to run its sanity check</li>
+<li>The system must check every new submission against existing open requests and automatically flag likely duplicates <strong>at the point of upload</strong>, before it reaches admin - not after</li>
+<li>The system must show a partner a list of existing open requests, to reduce accidental duplicate submissions</li>
+<li>The system must let the initiating party cancel a request any time before it reaches Acknowledged</li>
+<li>The system must track a lead through defined stages: Submitted → Introduced (immediate, visible to all relevant parties, faded/FYI-only) → Validated (admin's sanity check) → Acknowledged → In Progress → Converted / Rejected</li>
+<li>The system must have admin - not the receiving partner directly - take consent from every required requested party before a request can reach Acknowledged: the receiving partner in all 3 directions, and the startup as well in directions A and C. Consent refusal at any point moves the request to Rejected, with no deduction ever having happened</li>
+<li>The system must not auto-finalize or auto-close a request on any timer. There is no equivalent of the old 7-day acknowledgment window any more - a request can sit at Introduced or Validated indefinitely; it only changes state when admin actively approves it or a required party refuses consent</li>
+<li>The system must deduct 999 credits from the receiving partner's wallet the moment admin approves (reaches Acknowledged) - not before, not after</li>
+<li>The system must let the admin manually reverse a deduction in disputed cases, based on the merits, at any point after Acknowledged - see Section 11 below for the evidence mechanism</li>
+<li>The system must flag any receiving partner with 4 or more consecutive consent refusals to admin for manual review</li>
+<li>The system must allow a lead to be re-requested an unlimited number of times after a refusal</li>
+<li>The system must show, not block, same-service-type overlap - flagging the receiving partner when a startup already has another open request or active engagement with a similar-type partner, rather than preventing the new request outright. <strong>Not yet answered:</strong> whether one request converting to Acknowledged should auto-close the startup's other open requests to similar-type partners - needs a decision before this is built, see the Connection Request Flow page</li>
+<li>The system must let a startup browse the list of vetted partners and request one directly (direction B), without requiring a specific partner to have referred them first</li>
+<li>The system must let a receiving partner browse the full startup list and propose a connection directly, with a business proposal (direction C)</li>
+<li>The system must track which partner (if any) originally brought a given startup into Sarthy's ecosystem (originating_partner_id), separately from which partner the startup ultimately engages with - these can be different partners in any of the 3 directions</li>
+<li>The system must route both the 999-credit lead-share reward and the 10% deal-closure referral fee to the originating partner, regardless of which of the 3 directions produced the eventual connection</li>
 <li>The system must treat Sarthy itself as the originating partner when a startup signs up with no partner having brought them in - every reward mechanic that applies to a normal partner applies to Sarthy the same way in this case</li>
+<li><strong>Not yet scoped for build:</strong> a backend matchmaking layer, still in early direction only - see <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for the current thinking. Needs its own design pass before it's a real requirement.</li>
 </ul>
 
 <h2>6. Conversion and disputes <span class="status-pill badge-done">MVP</span></h2>
@@ -111,7 +106,7 @@
 
 <h2>11. Trust and evidence - the dispute-reversal mechanism <span class="status-pill badge-draft">MVP - discretion confirmed, contact form still needs design</span></h2>
 <p>Source: <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a></p>
-<p>For cases disputed past the standard 1-week window, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
+<p>For disputed cases raised after Acknowledged, the system should reach out directly to the startup to confirm whether the receiving partner actually engaged with them, and use that as evidence for admin's manual reversal decision.</p>
 <ul>
 <li>The system needs a way to contact the startup lead directly (a short form or message) and capture their confirmation or denial. The exact form this takes still needs a design pass.</li>
 <li><strong>Resolved:</strong> the startup's confirmation is not mandatory. It's one input among several the admin weighs, entirely at admin's discretion.</li>
@@ -156,7 +151,7 @@
 <p>A general principle, plus the specific cases most likely to be interpreted differently by different developers without an explicit test:</p>
 <ul>
 <li><strong>Duplicate lead detection:</strong> submitting the same contact's details twice within the system should be caught and flagged before the second submission reaches admin - test by submitting an intentional duplicate and confirming it's blocked at upload, not after.</li>
-<li><strong>Acknowledgment and stall windows:</strong> a lead acknowledged at hour 0 should auto-finalize (no refund) at exactly hour 168 (7 days) if unresolved - test with a lead deliberately left untouched to confirm the deduction becomes final at the right moment, not early or late.</li>
+<li><strong>No auto-finalization:</strong> a request left untouched at Introduced or Validated should still be sitting there, unchanged, no matter how much time passes - test by leaving a request deliberately untouched for well beyond the old 7-day window and confirming nothing about its state or the receiving partner's wallet changes on its own.</li>
 <li><strong>Negative balance freeze:</strong> a partner whose balance reaches exactly -2,997 should be blocked from receiving further leads immediately - test by driving a test account to exactly that balance and confirming the block fires at -2,997, not -2,998 or later.</li>
 <li><strong>12-month proration:</strong> a deal reported with a duration over 12 months should calculate the referral fee only on the portion attributable to the first 12 months - test with an 18-month deal and confirm months 13-18 don't affect the payout.</li>
 </ul>

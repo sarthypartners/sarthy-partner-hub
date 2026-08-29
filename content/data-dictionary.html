@@ -74,17 +74,21 @@
 <p style="font-size:12.5px;color:var(--ink-faint);">See the balance-threshold diagram in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 8</a> for how the -2,997 floor and the -1,500 At-Risk line sit relative to each other.</p>
 
 <h2>Lead</h2>
+<p><strong>Extended once the <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a> was confirmed</strong> - new fields for request direction, visibility, and per-party consent; <code>lead_status</code>'s enum drops <code>Unresolved</code>, since nothing about a Lead auto-finalizes any more.</p>
 <table class="dtable">
 <tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th></tr>
 <tr><td>lead_id</td><td>Text</td><td>Unique identifier</td><td>SOP #7</td></tr>
-<tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it - only set in Path A (direct referral). Blank in Path B (startup self-selected)</td><td>SOP #7</td></tr>
-<tr><td>originating_partner_id</td><td>Reference (can be Sarthy)</td><td>Who originally brought this startup into Sarthy's ecosystem - always set, in both Path A and Path B. Equal to referring_partner_id in Path A. This is who earns the lead-share credit and the deal-closure fee, not necessarily the receiving partner. If no partner brought the startup in, this is Sarthy itself</td><td>SOP #7</td></tr>
-<tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - chosen by the referring partner (Path A) or by the startup itself via the self-service product (Path B)</td><td>SOP #7</td></tr>
-<tr><td>lead_status</td><td>Submitted / Validated / Introduced / Acknowledged / In Progress / Converted / Rejected / Unresolved</td><td>See stage definitions - matches the BRD #5 pipeline exactly</td><td>SOP #7, BRD #5</td></tr>
-<tr><td>submitted_at, acknowledged_at, resolved_at</td><td>Timestamps</td><td>Used to calculate the 5-working-day validation window and the 1-week acknowledgment/rejection window</td><td>SOP #7</td></tr>
+<tr><td>request_direction</td><td>A (direct referral) / B (startup self-selects) / C (receiving partner proposes)</td><td>Which of the 3 ways this connection started - determines who the required requested parties are</td><td>SOP #7</td></tr>
+<tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it - set in direction A (direct referral). Blank in directions B and C</td><td>SOP #7</td></tr>
+<tr><td>originating_partner_id</td><td>Reference (can be Sarthy)</td><td>Who originally brought this startup into Sarthy's ecosystem - always set, across all 3 directions. Equal to referring_partner_id in direction A. This is who earns the lead-share credit and the deal-closure fee, not necessarily the receiving partner. If no partner brought the startup in, this is Sarthy itself</td><td>SOP #7</td></tr>
+<tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - chosen by the referring partner (direction A), by the startup itself (direction B), or is the partner proposing the connection (direction C)</td><td>SOP #7</td></tr>
+<tr><td>lead_status</td><td>Submitted / Introduced / Validated / Acknowledged / In Progress / Converted / Rejected</td><td>See stage definitions - matches the BRD #5 pipeline exactly. Note the order: Introduced (immediate, faded visibility) now comes before Validated (admin's sanity check), reversed from the pipeline's old order</td><td>SOP #7, BRD #5</td></tr>
+<tr><td>visibility_state</td><td>Faded / Active</td><td>Faded from Introduced until admin approves at Acknowledged (or the request is Rejected) - controls whether the entry is shown as FYI-only or as a real, actionable connection</td><td>SOP #7</td></tr>
+<tr><td>receiving_partner_consent, startup_consent</td><td>Pending / Given / Refused</td><td>Per-party consent status. startup_consent is only required (not left blank/N-A) in directions A and C; direction B treats the startup's own request as its consent</td><td>SOP #7</td></tr>
+<tr><td>submitted_at, validated_at, acknowledged_at, resolved_at</td><td>Timestamps</td><td>submitted_at also marks the moment lead_status becomes Introduced, since that now happens immediately. No field here drives an auto-finalization window any more - the old 1-week acknowledgment/rejection window is retired</td><td>SOP #7</td></tr>
 <tr><td>duplicate_flag</td><td>Boolean</td><td>Set automatically at upload if it matches an existing lead</td><td>SOP #7, BRD #5</td></tr>
 </table>
-<p style="font-size:12.5px;color:var(--ink-faint);">See the Path A / Path B diagram in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for how originating_partner_id gets set differently in each path.</p>
+<p style="font-size:12.5px;color:var(--ink-faint);">See the 3-directions table in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> for how originating_partner_id gets set in each direction.</p>
 
 <h2>Deal (post-closure)</h2>
 <table class="dtable">
