@@ -38,7 +38,7 @@
 <tr><td>referring_partner_id</td><td>Reference</td><td>Who submitted it - only set in Path A (direct referral). Blank in Path B (startup self-selected)</td><td>SOP #7</td></tr>
 <tr><td>originating_partner_id</td><td>Reference (can be Sarthy)</td><td>Who originally brought this startup into Sarthy's ecosystem - always set, in both Path A and Path B. Equal to referring_partner_id in Path A. This is who earns the lead-share credit and the deal-closure fee, not necessarily the receiving partner. If no partner brought the startup in, this is Sarthy itself</td><td>SOP #7</td></tr>
 <tr><td>receiving_partner_id</td><td>Reference</td><td>Who it's introduced to - chosen by the referring partner (Path A) or by the startup itself via the self-service product (Path B)</td><td>SOP #7</td></tr>
-<tr><td>lead_status</td><td>Submitted / Validated / Introduced / Acknowledged / Converted / Rejected / Unresolved</td><td>See stage definitions - matches the BRD #5 pipeline exactly</td><td>SOP #7, BRD #5</td></tr>
+<tr><td>lead_status</td><td>Submitted / Validated / Introduced / Acknowledged / In Progress / Converted / Rejected / Unresolved</td><td>See stage definitions - matches the BRD #5 pipeline exactly</td><td>SOP #7, BRD #5</td></tr>
 <tr><td>submitted_at, acknowledged_at, resolved_at</td><td>Timestamps</td><td>Used to calculate the 5-working-day validation window and the 1-week acknowledgment/rejection window</td><td>SOP #7</td></tr>
 <tr><td>duplicate_flag</td><td>Boolean</td><td>Set automatically at upload if it matches an existing lead</td><td>SOP #7, BRD #5</td></tr>
 </table>

@@ -1,12 +1,1 @@
-[
-  {
-    "cat": "Technical Handoff",
-    "title": "Low-Level System Specification",
-    "desc": "The detailed technical spec, built from the approved BRD"
-  },
-  {
-    "cat": "Tracking & Governance",
-    "title": "Reporting Dashboard",
-    "desc": "A simple view of progress, measured against Sarthy's own KPIs"
-  }
-]
+[]

@@ -1,0 +1,50 @@
+<p class="callout">A simple view of progress, measured directly against Sarthy's own scorecard - not a new set of metrics invented separately. Until a real connected dashboard exists, this same structure works as a manual monthly report, built from the <a href="#" onclick="showDoc('interim-system');return false;" class="xlink">Interim Operating System</a>'s tables.</p>
+
+<div class="gantt">
+<div class="gantt-row">
+  <div class="gantt-label">Finding & signing partners (20%)</div>
+  <div class="gantt-track"><div class="gantt-bar gantt-progress" style="left:0%;width:20%;">20%</div></div>
+</div>
+<div class="gantt-row">
+  <div class="gantt-label">Supporting startups (40%)</div>
+  <div class="gantt-track"><div class="gantt-bar gantt-progress" style="left:0%;width:40%;">40%</div></div>
+</div>
+<div class="gantt-row">
+  <div class="gantt-label">Match-Making (30%)</div>
+  <div class="gantt-track"><div class="gantt-bar gantt-progress" style="left:0%;width:30%;">30%</div></div>
+</div>
+<div class="gantt-row">
+  <div class="gantt-label">Research & reporting (10%)</div>
+  <div class="gantt-track"><div class="gantt-bar gantt-progress" style="left:0%;width:10%;">10%</div></div>
+</div>
+</div>
+<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.5rem 0 1.5rem;">These bars show Sarthy's fixed scorecard weights, not live performance - once real numbers exist, each category gets its own actual result, not just its weight.</p>
+
+<h2>What each category actually reports on</h2>
+<p>Every measure below is already defined in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">SOP Section 19</a> - this table just adds where the number comes from.</p>
+<table class="dtable">
+<tr><th>Category</th><th>Measure</th><th>Data source</th></tr>
+<tr><td rowspan="3">Finding & signing partners</td><td>New partners signed and onboarded per month</td><td>Partners table - count by onboarding date</td></tr>
+<tr><td>Time from first contact to signed agreement</td><td>Not currently tracked - needs a contact-date field added</td></tr>
+<tr><td>Share of newly signed partners who reach real activity, not just a signature</td><td>Partners table - status vs. onboarding date, directly targets the "Part of Platform" gap</td></tr>
+<tr><td rowspan="3">Supporting startups</td><td>Call volume - startup calls and check-ins per month</td><td>Not currently tracked - needs a startup-contact log, separate from the partner call queue</td></tr>
+<tr><td>Outcomes - startups actually matched, not just contacted</td><td>Leads table - startups with at least one Introduced lead</td></tr>
+<tr><td>Startup feedback captured</td><td>Not currently tracked - no mechanism exists yet</td></tr>
+<tr><td rowspan="4">Match-Making</td><td>Leads matched per month</td><td>Leads table - count by month, status Introduced or later</td></tr>
+<tr><td>Time from submission to match, vs. the 5-day target</td><td>Leads table - submitted_at to introduced timestamp</td></tr>
+<tr><td>Share validated vs. rejected or stalled</td><td>Leads table - lead_status distribution</td></tr>
+<tr><td>Spread of matches across the partner base</td><td>Leads table - distinct receiving_partner_id count vs. total leads</td></tr>
+<tr><td rowspan="2">Research & reporting</td><td>Monthly report on activity trends</td><td>This dashboard itself, once populated</td></tr>
+<tr><td>Written recommendations and whether they're acted on</td><td>Not currently tracked - needs a simple recommendations log</td></tr>
+</table>
+
+<h2>What's missing before this can actually run</h2>
+<p>Half the measures above have a real data source already. The other half need something built first - most of it small:</p>
+<ul>
+<li>A contact-date field on the Partner record, to measure time-to-signature</li>
+<li>A startup-contact log, separate from the existing partner call queue in the Interim Operating System</li>
+<li>A lightweight recommendations log - even a simple running list would satisfy this for now</li>
+</ul>
+
+<h2>Cadence</h2>
+<p>Monthly, at minimum - matching the existing BRD requirement. Nothing here needs to be real-time; a month-old number is still useful for spotting a trend, which is what this is actually for.</p>

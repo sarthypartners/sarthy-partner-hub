@@ -27,6 +27,10 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 | Migration Wave Plan | Graduation Criteria (Wave 2 gate), Segmentation Framework (wave-candidate criteria), Action Item & Blocker Tracker (readiness gates) |
 | Alpha to Beta Graduation Criteria, if the target changes | Migration Wave Plan's Wave 2 gate references this document's criteria directly |
 
+| Business Requirements Document, any MVP/Phase 2 tag or requirement change | Low-Level System Specification and Replit Build Brief - both were built directly from the BRD's current state |
+| Low-Level System Specification (state machines, formulas, operations) | Replit Build Brief - references it directly rather than duplicating; keep both in sync |
+| Partnership SOP §19 (KPI measures), if changed | Reporting Dashboard and BRD §13 - both cite the measures directly, not their own copy |
+
 ## When you add a new document
 
 Add a row here before (or in the same commit as) adding the document itself. An undocumented dependency is worse than an obvious one - it fails silently. This instruction exists specifically because it wasn't followed consistently for several rounds in a row - worth treating as a real commit-blocking checklist item, not a suggestion.

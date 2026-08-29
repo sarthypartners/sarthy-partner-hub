@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "2.4",
-    "updated": "Linked/updated now that Migration Wave Plan is drafted",
+    "version": "2.6",
+    "updated": "Updated for Reporting Dashboard drafting",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -26,8 +26,8 @@
     "content_file": "sequence.html",
     "cat": "Strategic Planning",
     "status": "done",
-    "version": "1.6",
-    "updated": "Linked/updated now that Migration Wave Plan is drafted",
+    "version": "1.8",
+    "updated": "Updated for Reporting Dashboard drafting",
     "type": "Internal",
     "title": "Master Execution Sequence",
     "desc": "The to-do list in order - what gets done next, and why"
@@ -59,8 +59,8 @@
     "content_file": "deliverables.html",
     "cat": "Tracking & Governance",
     "status": "done",
-    "version": "1.4",
-    "updated": "Fixed 3 instances of we",
+    "version": "1.5",
+    "updated": "Updated for Reporting Dashboard drafting",
     "type": "Internal",
     "title": "Deliverables Register",
     "desc": "A list of every document in this project and what each one is for"
@@ -92,8 +92,8 @@
     "content_file": "brd.html",
     "cat": "Technical Handoff",
     "status": "draft",
-    "version": "2.3",
-    "updated": "Added startup self-service requirements to Section 5, plus SSO integration requirement in Section 14",
+    "version": "2.4",
+    "updated": "Updated for Reporting Dashboard drafting",
     "type": "Sarthy-facing",
     "title": "Business Requirements Document",
     "desc": "The To-Be system requirements - what the app should do, per the SOP's confirmed and drafted rules"
@@ -103,8 +103,8 @@
     "content_file": "gap-register.html",
     "cat": "Evidence & Assessment",
     "status": "draft",
-    "version": "1.5",
-    "updated": "Closed 2 more gaps (exchange rate, dispute escalation)",
+    "version": "1.6",
+    "updated": "Updated for Low-Level Spec / Replit Build Brief drafting",
     "type": "Internal",
     "title": "Gap & Risk Register",
     "desc": "A list of problems we found, each with a suggested fix"
@@ -158,8 +158,8 @@
     "content_file": "data-dictionary.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.6",
-    "updated": "Added originating_partner_id field, clarified referring/receiving partner fields for the two-path model",
+    "version": "2.7",
+    "updated": "Updated for Low-Level Spec / Replit Build Brief drafting",
     "type": "Internal",
     "title": "Data Dictionary / SSOT Schema",
     "desc": "One clear definition for every piece of partner data we track"
@@ -191,8 +191,8 @@
     "content_file": "gantt.html",
     "cat": "Strategic Planning",
     "status": "draft",
-    "version": "1.3",
-    "updated": "Linked/updated now that Migration Wave Plan is drafted",
+    "version": "1.5",
+    "updated": "Updated for Reporting Dashboard drafting",
     "type": "Both",
     "title": "Project Plan (Gantt View)",
     "desc": "Visual timeline of the roadmap phases - for discussion with Sarthy leadership"
@@ -202,8 +202,8 @@
     "content_file": "action-tracker.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.5",
-    "updated": "Linked/updated now that Migration Wave Plan is drafted",
+    "version": "1.6",
+    "updated": "Updated for Low-Level Spec / Replit Build Brief drafting",
     "type": "Both",
     "title": "Action Item & Blocker Tracker",
     "desc": "Real-world action items blocking progress, with a dependency chain showing what unlocks what"
@@ -229,5 +229,38 @@
     "type": "Both",
     "title": "Migration Wave Plan",
     "desc": "The order in which partner groups move onto the platform"
+  },
+  {
+    "id": "low-level-spec",
+    "content_file": "low-level-spec.html",
+    "cat": "Technical Handoff",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Low-Level System Specification",
+    "desc": "The detailed technical spec, built from the approved BRD"
+  },
+  {
+    "id": "replit-build-brief",
+    "content_file": "replit-build-brief.html",
+    "cat": "Technical Handoff",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Replit Build Brief",
+    "desc": "Platform-specific companion to the Low-Level Spec - build order, lock-in risks, and human-review checkpoints for building on Replit"
+  },
+  {
+    "id": "reporting-dashboard",
+    "content_file": "reporting-dashboard.html",
+    "cat": "Tracking & Governance",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Both",
+    "title": "Reporting Dashboard",
+    "desc": "A simple view of progress, measured against Sarthy's own KPIs"
   }
 ]

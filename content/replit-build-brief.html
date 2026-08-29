@@ -1,0 +1,34 @@
+<p class="callout">The platform-specific companion to the Low-Level Spec, written for whoever actually builds this on Replit. It doesn't repeat the business rules or data model - those live in the BRD, the Data Dictionary, and the Low-Level Spec. This document only adds what's specific to building on Replit: the technical choices to make deliberately, the build order that matches how Replit Agent actually works, and where a human needs to check the output rather than trust it.</p>
+
+<h2>Two choices to make deliberately, not by default</h2>
+<p>Replit Agent defaults to its own built-in services for storage and login. They work well inside Replit, but create real lock-in - and this system handles real financial data, with a regulatory review already pending on the Action Tracker. Don't accept the defaults here:</p>
+<ul>
+<li><strong>Database:</strong> use standard PostgreSQL, not Replit's built-in database. When the agent suggests its own, redirect it explicitly.</li>
+<li><strong>Authentication:</strong> use a standard library (Passport.js, Auth.js, or similar), not Replit's built-in auth. Same reason - portability matters more than convenience here.</li>
+</ul>
+<p>Everything else Replit scaffolds automatically (hosting, deployment, the dev environment itself) is fine to accept as-is - the lock-in risk is specifically in these two choices.</p>
+
+<h2>Build order</h2>
+<p>Matches the BRD's MVP tagging - build and stabilize the MVP-tagged sections first, treat Phase 2 as genuinely separate follow-up work rather than one combined spec. AI-generated code is well-documented to not scale cleanly past MVP-sized scope, so this isn't just a sequencing preference.</p>
+<ol>
+<li>Core data model - Partner, Credit Wallet, Lead (BRD Sections 3, 4, 5)</li>
+<li>Lead flow and acknowledgment (BRD Section 5, using the Low-Level Spec's Lead state machine directly)</li>
+<li>Conversion, disputes, and withdrawal (BRD Sections 6, 7)</li>
+<li>Post-closure referral fee tracking (BRD Section 8)</li>
+<li>Negative balances and the freeze/top-up mechanic (BRD Section 10)</li>
+<li>Integration requirements - payment gateway, e-signature (BRD Section 14) - these usually need to exist before the flows above can be tested end to end for real</li>
+<li>Everything tagged Phase 2 - gamification, full automation of notifications, pattern-detection reporting</li>
+</ol>
+
+<h2>What to feed the agent for each phase</h2>
+<p>A good Replit Agent prompt reads like a short product brief, not a raw requirements dump. For each phase above: pull the relevant BRD section's "must" statements directly, reference the Low-Level Spec's state machine and formulas for that area, and use the Playbook's worked examples as literal test cases to check the output against once built.</p>
+
+<h2>Where a human has to check the output, not just trust it</h2>
+<ul>
+<li><strong>Every financial calculation</strong> - the 9% fee, the 12-month proration, the negative-balance freeze math. Verify against the Low-Level Spec's formulas and the Playbook's worked examples line by line, not just "does it look reasonable."</li>
+<li><strong>The Lead and Partner state machines</strong> - confirm every transition in the Low-Level Spec's tables is actually implemented, including the ones that are easy to skip (like a Dormant partner being able to submit a lead as their recovery path).</li>
+<li><strong>Before any major change,</strong> use Replit's checkpoint feature - there are documented cases of the agent deleting working code while attempting a fix.</li>
+</ul>
+
+<h2>Cost awareness</h2>
+<p>Replit Agent uses effort-based, credit-metered pricing - cost isn't fixed per feature. Worth tracking actual spend against the still-unconfirmed <a href="#" onclick="showDoc('action-tracker');return false;" class="xlink">development budget</a> as building progresses, not just at the end.</p>

@@ -1,0 +1,71 @@
+<p class="callout">This is the technical detail layer beneath the BRD - written to be technology-neutral, so it stays useful whether this gets built on Replit, migrated elsewhere later, or handed to a different team entirely. It doesn't restate what the BRD or Data Dictionary already cover - it adds the things only a precise technical spec needs: exact state transitions, exact formulas, and defined operations with clear inputs, outputs, and conditions.</p>
+
+<h2>How this relates to the other technical documents</h2>
+<ul>
+<li>The <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD</a> is the source of truth for what the system must do. This document doesn't override it.</li>
+<li>The <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> is the source of truth for field names, types, and meanings. This document builds on it, doesn't repeat it.</li>
+<li>Anyone building this on Replit specifically should also read the Replit Build Brief, once drafted - that document is the platform-specific companion to this one.</li>
+</ul>
+
+<h2>Lead state machine</h2>
+<table class="dtable">
+<tr><th>From</th><th>Event</th><th>To</th><th>Side effects</th></tr>
+<tr><td>(none)</td><td>Referring partner submits</td><td>Submitted</td><td>Duplicate check runs immediately, at upload</td></tr>
+<tr><td>Submitted</td><td>Admin validates (within 5 working days)</td><td>Validated</td><td>None</td></tr>
+<tr><td>Submitted</td><td>Referring partner cancels</td><td>(deleted)</td><td>No deduction ever happened - nothing to reverse</td></tr>
+<tr><td>Validated</td><td>System introduces to receiving partner</td><td>Introduced</td><td>1-week acknowledgment clock starts</td></tr>
+<tr><td>Introduced</td><td>Receiving partner acknowledges</td><td>Acknowledged</td><td><span class="amt-neg">-999</span> credits deducted from receiving partner, immediately</td></tr>
+<tr><td>Introduced</td><td>Receiving partner explicitly rejects, within 1 week</td><td>Rejected</td><td>No deduction (none happened yet)</td></tr>
+<tr><td>Introduced</td><td>1 week passes, no action taken</td><td>Unresolved</td><td>No deduction (none happened yet) - lead is simply closed, not disputed</td></tr>
+<tr><td>Acknowledged</td><td>Work begins</td><td>In Progress</td><td>None</td></tr>
+<tr><td>In Progress</td><td>Admin confirms conversion</td><td>Converted</td><td>Referring partner credited <span class="amt-pos">+909</span> (999 minus 9%)</td></tr>
+<tr><td>In Progress or Acknowledged</td><td>Dispute raised, past 1-week window, admin reverses</td><td>Rejected</td><td><span class="amt-pos">+999</span> credits refunded to receiving partner (full reversal)</td></tr>
+</table>
+<p>Re-referral: a Rejected or Unresolved lead can be resubmitted to a different partner (new Lead record, new lifecycle) - never simultaneously to two partners offering the same service type.</p>
+
+<h2>Partner status state machine</h2>
+<table class="dtable">
+<tr><th>From</th><th>Event</th><th>To</th><th>Notes</th></tr>
+<tr><td>(none)</td><td>Applies, not yet evaluated</td><td>Applicant</td><td></td></tr>
+<tr><td>Applicant</td><td>Fee paid, wallet activated</td><td>Active</td><td>Wallet opens at <span class="amt-pos">+999</span></td></tr>
+<tr><td>Active</td><td>Balance drops to -1,500 or below, OR 4+ consecutive declines</td><td>At-Risk</td><td>Flag only - every Active privilege continues unchanged</td></tr>
+<tr><td>Active or At-Risk</td><td>Balance hits -2,997</td><td>Frozen</td><td>Independent trigger from At-Risk - can happen with or without At-Risk first</td></tr>
+<tr><td>Active or At-Risk</td><td>3 consecutive months with no lead shared</td><td>Dormant</td><td>Independent trigger from Frozen - a partner can be Dormant and Frozen simultaneously</td></tr>
+<tr><td>Frozen</td><td>Top-up paid (4x entry fee)</td><td>Active (or At-Risk, if the -1,500 condition still applies post-top-up)</td><td>Balance moves from -2,997 to exactly +999</td></tr>
+<tr><td>Dormant</td><td>Partner sends a lead</td><td>Active (or At-Risk/Frozen if those conditions independently apply)</td><td>If both Dormant and Frozen apply, top-up must happen first, then the lead - see Data Dictionary</td></tr>
+<tr><td>Any</td><td>Partner or Sarthy closes the account</td><td>Exited</td><td>Terminal state</td></tr>
+</table>
+
+<h2>Core operations</h2>
+<p>Defined independent of any specific framework or API style - inputs, what changes, and what must be true before/after.</p>
+<table class="dtable">
+<tr><th>Operation</th><th>Preconditions</th><th>Effect</th><th>Postconditions</th></tr>
+<tr><td>SubmitLead</td><td>Referring partner isn't Exited. Dormant partners specifically can and must be able to do this - it's their documented recovery path. Lead isn't a duplicate. <strong>Not yet answered anywhere in the source material:</strong> whether a Frozen partner can submit/refer a lead, since Frozen is specifically about receiving. Worth confirming before building rather than assuming.</td><td>Creates Lead record, status Submitted</td><td>Duplicate flag set if a match is found</td></tr>
+<tr><td>AcknowledgeLead</td><td>Lead status is Introduced. Receiving partner is Active or At-Risk (not Frozen or Dormant).</td><td>Deducts 999 from receiving partner's wallet</td><td>Lead status becomes Acknowledged. Wallet balance re-evaluated for At-Risk/Frozen status</td></tr>
+<tr><td>ConfirmConversion</td><td>Lead status is In Progress. Admin has proof (signed agreement + first payment).</td><td>Credits referring partner 909 (999 minus 9%)</td><td>Lead status becomes Converted. Referring partner's wallet balance re-evaluated</td></tr>
+<tr><td>RequestWithdrawal</td><td>Partner status is Active. Balance above 999 (the reserve).</td><td>Converts the withdrawable portion to real currency at the current RBI reference rate</td><td>Wallet balance reduced by the withdrawn amount, floor stays at 999</td></tr>
+<tr><td>RecordDealClosure</td><td>A Lead exists with status Converted.</td><td>Creates a Deal record linked to the Lead. Applies the 12-month proration rule if deal_duration exceeds 12 months.</td><td>referral_fee_entitlement and referral_fee_net calculated (see formulas below)</td></tr>
+<tr><td>RaiseDispute</td><td>Within 14 days of the decision being disputed.</td><td>Starts the 24-hour admin-response clock. Triggers admin notification (popup + email).</td><td>Dispute record created, status Raised</td></tr>
+</table>
+
+<h2>Formulas</h2>
+<table class="dtable">
+<tr><th>What</th><th>Formula</th></tr>
+<tr><td>Conversion reward, net to referring partner</td><td>999 × (1 - 0.09) = 909</td></tr>
+<tr><td>Negative balance freeze floor</td><td>-2,997 (exactly -999 × 3)</td></tr>
+<tr><td>At-Risk threshold</td><td>-1,500 (roughly half of -2,997)</td></tr>
+<tr><td>Top-up amount and effect</td><td>Entry fee × 4 (₹3,996 or $196) adds 3,996 credits. Always moves balance from exactly -2,997 to exactly +999.</td></tr>
+<tr><td>Deal-closure referral fee entitlement</td><td>10% of the applicable deal value (see proration rule below)</td></tr>
+<tr><td>Deal-closure referral fee, net to referring partner</td><td>entitlement × 0.91 (Sarthy takes 9% of the 10%)</td></tr>
+<tr><td>12-month proration rule</td><td>If deal_duration ≤ 12 months, use the full deal_value. If deal_duration > 12 months, use only the value invoiced in the first 12 months - not the full multi-year contract value.</td></tr>
+<tr><td>Goodwill credit expiry</td><td>issue_date + 30 days. Paid credits never expire.</td></tr>
+</table>
+
+<h2>Validation and edge-case rules</h2>
+<ul>
+<li><strong>Duplicate detection:</strong> runs at the moment of upload, before the lead reaches admin - not a background job that runs later.</li>
+<li><strong>Decline counting:</strong> 4 consecutive declines (not 4 total, not 4 in a rolling window) flags the partner to admin. The count resets on any acceptance.</li>
+<li><strong>Acknowledgment window:</strong> exactly 168 hours (7 days) from the Introduced timestamp. Finalization at hour 168 is automatic, not admin-triggered.</li>
+<li><strong>Dispute window:</strong> 14 days from the decision being disputed, in writing. Admin response target: 24 hours from that point.</li>
+<li><strong>At-Risk and Frozen are independent triggers</strong> - evaluate both conditions separately on every wallet-affecting event, don't treat one as implying the other.</li>
+</ul>
