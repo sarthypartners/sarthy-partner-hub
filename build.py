@@ -158,7 +158,7 @@ const CHANGELOG = {changelog_js};
 const CATS_ORDER = {cats_js};
 const CAT_DESC = {cat_desc_js};
 
-let activeCat = "Strategic Planning";
+let activeCat = "Start Here";
 let searchTerm = "";
 
 function statusBadge(status){{

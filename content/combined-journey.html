@@ -1,7 +1,10 @@
-<p class="callout">The Partner Journey Map covers one partner's own lifecycle. This document is different - it lines up the startup, the referring partner, and the receiving partner against the same shared timeline, so it's possible to see what each of them is experiencing at the exact same moment. Built to spot where engagement quietly breaks down, as the first step before designing any fix.</p>
+<p class="callout">This document used to be two separate pages - the Partner Journey Map and the Combined Journey Map. They're merged here as the <strong>User Journey Map</strong>, in four sections: (A) one referral, three parties, one shared timeline; (B) the referring partner's own account lifecycle; (C) the receiving partner's own account lifecycle; (D) a proposed startup lifecycle, since nothing in the hub tracks that today. See <a href="#" onclick="showDoc('history');return false;" class="xlink">Design History &amp; Decisions</a> for why the merge happened and why B and C exist as separate sections even though they describe mostly the same mechanics.</p>
+
+<h2>A. The Referral Timeline</h2>
+<p>This section lines up the startup, the referring partner, and the receiving partner against the same shared timeline for one specific referral, so it's possible to see what each of them is experiencing at the exact same moment. Built to spot where engagement quietly breaks down, as the first step before designing any fix.</p>
 
 <div class="pending-box" style="text-align:left;">
-Before this timeline starts, both partners have already been through their own onboarding - see the <a href="#" onclick="showDoc('journey-map');return false;" class="xlink">Partner Journey Map</a>. This document picks up once a specific startup enters the picture, and follows that one lead through to conversion, deal closure, and whatever happens next.
+Before this timeline starts, both partners have already been through their own account lifecycle - see Sections B and C below. This section picks up once a specific startup enters the picture, and follows that one lead through to conversion, deal closure, and whatever happens next.
 </div>
 
 <svg viewBox="0 0 980 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto 1.5rem;">
@@ -62,8 +65,8 @@ Before this timeline starts, both partners have already been through their own o
     <text x="782" y="156" text-anchor="middle" fill="var(--ink-soft)" font-size="9">10% accrues; the one moment</text>
     <text x="782" y="168" text-anchor="middle" fill="var(--ink-soft)" font-size="9">that IS well covered</text>
     <rect x="855" y="135" width="115" height="55" rx="6" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="912" y="156" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Feeds the existing</text>
-    <text x="912" y="168" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Partner Journey Map</text>
+    <text x="912" y="156" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Feeds Section B below -</text>
+    <text x="912" y="168" text-anchor="middle" fill="var(--ink-soft)" font-size="9">the Referring Partner Lifecycle</text>
 
     <text x="15" y="242" fill="var(--ink)" font-weight="600" font-size="11">Receiving</text>
     <text x="15" y="255" fill="var(--ink)" font-weight="600" font-size="11">Partner</text>
@@ -87,8 +90,8 @@ Before this timeline starts, both partners have already been through their own o
     <text x="782" y="241" text-anchor="middle" fill="var(--ink-soft)" font-size="9">the client outright once the</text>
     <text x="782" y="252" text-anchor="middle" fill="var(--ink-soft)" font-size="9">1-year window closes</text>
     <rect x="855" y="215" width="115" height="55" rx="6" fill="var(--panel)" stroke="var(--line-strong)"/>
-    <text x="912" y="236" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Own Active/At-Risk/</text>
-    <text x="912" y="248" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Dormant status applies</text>
+    <text x="912" y="236" text-anchor="middle" fill="var(--ink-soft)" font-size="9">Feeds Section C below -</text>
+    <text x="912" y="248" text-anchor="middle" fill="var(--ink-soft)" font-size="9">the Receiving Partner Lifecycle</text>
 
     <rect x="10" y="292" width="14" height="14" rx="3" fill="var(--red-bg)" stroke="var(--red)"/>
     <text x="30" y="303" fill="var(--ink-faint)" font-size="9.5">Confirmed gap &#8212; checked directly against the Communication Template Library / Data Dictionary</text>
@@ -114,7 +117,7 @@ Before this timeline starts, both partners have already been through their own o
 
 <div class="example-box">
 <strong>Finding 3 - the startup's own repeat engagement isn't tracked anywhere.</strong>
-<p style="margin:8px 0 0;">The <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> tracks a partner's activity in detail - <code>giving_pattern</code>, <code>last_lead_shared_date</code>, dormancy status. Nothing equivalent exists for a startup. If a startup that came through once needs a different kind of service later, whether it comes back through the same referring partner, self-serves again through Path B, or just leaves the ecosystem entirely isn't something any document currently answers or measures.</p>
+<p style="margin:8px 0 0;">The <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> tracks a partner's activity in detail - <code>giving_pattern</code>, <code>last_lead_shared_date</code>, dormancy status. Nothing equivalent exists for a startup. If a startup that came through once needs a different kind of service later, whether it comes back through the same referring partner, self-serves again through Path B, or just leaves the ecosystem entirely isn't something any document currently answers or measures. Section D below is a first, deliberately unconfirmed attempt at naming what that would even look like.</p>
 </div>
 
 <p style="font-size:12.5px;color:var(--ink-faint);">These are observations from lining up existing, already-confirmed rules against each other - not new rules, and not confirmed defects. Worth raising with Sarthy directly rather than assumed either way.</p>
@@ -159,8 +162,8 @@ Before this timeline starts, both partners have already been through their own o
 </tr>
 <tr>
 <td>6. Repeat or Dormancy</td>
-<td>If a future need comes up, whether it comes back through this same referring partner, self-serves again, or leaves the ecosystem for good isn't tracked or measured anywhere (see Finding 3)</td>
-<td>Feeds directly into the existing <a href="#" onclick="showDoc('journey-map');return false;" class="xlink">Partner Journey Map</a>'s Active Participation, Risk Zone, and Dormancy stages</td>
+<td>If a future need comes up, whether it comes back through this same referring partner, self-serves again, or leaves the ecosystem for good isn't tracked or measured anywhere (see Finding 3, and the proposed Section D below)</td>
+<td>Feeds directly into this document's Referring Partner Lifecycle section (Active Participation, Risk Zone, and Dormancy stages), below</td>
 <td>Same as the referring partner - governed by their own status and <code>giving_pattern</code> in the <a href="#" onclick="showDoc('segmentation');return false;" class="xlink">Segmentation Framework</a></td>
 <td>Finding 3 - no equivalent of the partner-side activity tracking exists for the startup</td>
 </tr>
@@ -170,4 +173,179 @@ Before this timeline starts, both partners have already been through their own o
 <p>This map doesn't introduce any new rule. Every stage traces back to something already confirmed elsewhere: the Lead state machine in the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level System Specification</a>, the 3-direction connection flow and admin-mediated consent process in <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a> (described in more detail in the confirmed <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a>), the entity relationships in the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a>, and the message inventory in the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>. The three findings above come only from placing those existing facts side by side - Finding 1 has been narrowed to match the confirmed rewrite; Findings 2 and 3 are unaffected by it.</p>
 
 <h2>What comes next</h2>
-<p>This document is diagnostic, not prescriptive - it maps where engagement currently breaks down, without yet proposing what should replace the gaps. Designing the actual fixes (new message templates, a startup-facing retention signal, or something else) is deliberately a separate, later step, once these three findings are confirmed rather than assumed.</p>
+<p>This section is diagnostic, not prescriptive - it maps where engagement currently breaks down, without yet proposing what should replace the gaps. Designing the actual fixes (new message templates, a startup-facing retention signal, or something else) is deliberately a separate, later step, once these three findings are confirmed rather than assumed.</p>
+
+<h2>B. Referring Partner Lifecycle</h2>
+<div class="pending-box" style="text-align:left;">
+Sections B and C describe the same underlying partner account lifecycle - the same eight stages, the same mechanics (account status, wallet trend, dormancy rules). They're split into two sections because a partner's day-to-day experience genuinely differs in a few concrete places - most clearly, whether "first activity" means submitting a lead or receiving one. Everywhere else, the two sections say the same thing in the same words on purpose, not by oversight. This is the full detail behind <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0</a> #14.
+</div>
+
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:700px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrowJM-refer" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <rect x="10" y="15" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="95" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">1. Awareness</text>
+    <text x="95" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no single channel</text>
+
+    <line x1="180" y1="39" x2="205" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="210" y="15" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="295" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">2. Evaluation</text>
+    <text x="295" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">informal judgment call</text>
+
+    <line x1="380" y1="39" x2="405" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="410" y="15" width="180" height="48" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="500" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">3. Agreement &amp; Payment</text>
+    <text x="500" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">well-defined, no issue</text>
+
+    <line x1="590" y1="39" x2="615" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="600" y="15" width="170" height="48" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="685" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">4. First Lead Sent</text>
+    <text x="685" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">the biggest gap today</text>
+
+    <line x1="685" y1="63" x2="685" y2="95" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="600" y="97" width="170" height="48" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="685" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">5. Active Participation</text>
+    <text x="685" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">infrequent, not sustained</text>
+
+    <line x1="600" y1="121" x2="575" y2="121" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="400" y="97" width="170" height="48" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="485" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">6. Steady State</text>
+    <text x="485" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">tends toward Giver</text>
+
+    <line x1="400" y1="121" x2="375" y2="121" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="200" y="97" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="285" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">7. Risk Zone</text>
+    <text x="285" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">At-Risk outreach must catch this</text>
+
+    <line x1="245" y1="145" x2="150" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+    <line x1="325" y1="145" x2="420" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
+
+    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="150" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8a. Reactivation</text>
+    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no process exists yet</text>
+
+    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="530" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8b. Formal Dormancy</text>
+    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">whether it's communicated clearly is untested</text>
+
+    <text x="150" y="248" text-anchor="middle" fill="var(--green)" font-size="10.5">&#8634; re-engages &#8594; back to Stage 5</text>
+
+    <text x="10" y="280" fill="var(--ink-faint)" font-size="10">Red = the clearest, highest-friction gaps today. Amber = a real open question or a point that needs active management. Green = already working, no issue found.</text>
+  </g>
+</svg>
+
+<table class="dtable">
+<tr><th>Stage</th><th>What happens</th><th>Where friction likely shows up</th></tr>
+<tr><td>1. Awareness</td><td>Partner hears about the program via LinkedIn, a mailer, the WhatsApp community, or a direct approach</td><td>No consistent inbound channel - depends entirely on who's reaching out that week</td></tr>
+<tr><td>2. Evaluation</td><td>Sarthy reviews the company profile, holds a discovery call, reads fit against service relevance, client diversity, professional standing, and a first Giver/Taker impression</td><td>Informal, conversation-based judgment - no written checklist yet</td></tr>
+<tr><td>3. Agreement & Payment</td><td>Referral agreement signed digitally, programme fee paid (₹999+GST or $49), 999 opening credits granted</td><td>None currently identified - this step is well-defined</td></tr>
+<tr><td>4. First Lead Sent</td><td>Partner submits their first lead to another partner - this is the make-or-break moment for habit formation as a referrer</td><td>The single biggest gap today for referring activity - most partners never submit a first lead in practice ("Part of Platform" is empty for most)</td></tr>
+<tr><td>5. Active Participation</td><td>Regularly submitting leads to other partners, wallet moving outward, Sarthy team checking in per SOP #15</td><td>Even the few partners who do submit show infrequent activity, not sustained habit</td></tr>
+<tr><td>6. Steady State</td><td>Partner settles into a Giver, Balanced, or Taker pattern (see Segmentation Framework) - a partner mostly in the referring role tends toward Giver, though the role played on one deal and the giving_pattern trend read across many deals aren't the same thing</td><td>No current data on how long this takes or what triggers the split</td></tr>
+<tr><td>7. Risk Zone</td><td>Wallet trending negative, declines mounting, or activity slowing toward the 3-month dormancy line</td><td>This is exactly where At-Risk-status outreach (Segmentation Framework) needs to intervene, before Stage 8</td></tr>
+<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages, usually after direct outreach</td><td>No process exists yet - this is SOP #17's remaining open piece</td></tr>
+<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Whether this actually gets communicated clearly to the partner, or just happens silently, is untested</td></tr>
+</table>
+
+<h2>C. Receiving Partner Lifecycle</h2>
+<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.5rem 0 1.25rem;">Same underlying lifecycle as Section B, from the other side - see the callout at the top of Section B for why both are kept as separate sections.</p>
+
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:700px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrowJM-receive" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <rect x="10" y="15" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="95" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">1. Awareness</text>
+    <text x="95" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no single channel</text>
+
+    <line x1="180" y1="39" x2="205" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="210" y="15" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="295" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">2. Evaluation</text>
+    <text x="295" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">informal judgment call</text>
+
+    <line x1="380" y1="39" x2="405" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="410" y="15" width="180" height="48" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="500" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">3. Agreement &amp; Payment</text>
+    <text x="500" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">well-defined, no issue</text>
+
+    <line x1="590" y1="39" x2="615" y2="39" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="600" y="15" width="170" height="48" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="685" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">4. First Lead Received</text>
+    <text x="685" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">the biggest gap today</text>
+
+    <line x1="685" y1="63" x2="685" y2="95" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="600" y="97" width="170" height="48" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="685" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">5. Active Participation</text>
+    <text x="685" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">infrequent, not sustained</text>
+
+    <line x1="600" y1="121" x2="575" y2="121" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="400" y="97" width="170" height="48" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="485" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">6. Steady State</text>
+    <text x="485" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">tends toward Taker</text>
+
+    <line x1="400" y1="121" x2="375" y2="121" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="200" y="97" width="170" height="48" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="285" y="117" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">7. Risk Zone</text>
+    <text x="285" y="132" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">At-Risk outreach must catch this</text>
+
+    <line x1="245" y1="145" x2="150" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+    <line x1="325" y1="145" x2="420" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
+
+    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <text x="150" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8a. Reactivation</text>
+    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no process exists yet</text>
+
+    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="530" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8b. Formal Dormancy</text>
+    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">whether it's communicated clearly is untested</text>
+
+    <text x="150" y="248" text-anchor="middle" fill="var(--green)" font-size="10.5">&#8634; re-engages &#8594; back to Stage 5</text>
+
+    <text x="10" y="280" fill="var(--ink-faint)" font-size="10">Red = the clearest, highest-friction gaps today. Amber = a real open question or a point that needs active management. Green = already working, no issue found.</text>
+  </g>
+</svg>
+
+<table class="dtable">
+<tr><th>Stage</th><th>What happens</th><th>Where friction likely shows up</th></tr>
+<tr><td>1. Awareness</td><td>Partner hears about the program via LinkedIn, a mailer, the WhatsApp community, or a direct approach</td><td>No consistent inbound channel - depends entirely on who's reaching out that week</td></tr>
+<tr><td>2. Evaluation</td><td>Sarthy reviews the company profile, holds a discovery call, reads fit against service relevance, client diversity, professional standing, and a first Giver/Taker impression</td><td>Informal, conversation-based judgment - no written checklist yet</td></tr>
+<tr><td>3. Agreement & Payment</td><td>Referral agreement signed digitally, programme fee paid (₹999+GST or $49), 999 opening credits granted</td><td>None currently identified - this step is well-defined</td></tr>
+<tr><td>4. First Lead Received</td><td>Partner receives their first lead from another partner - this is the make-or-break moment for habit formation as a receiver</td><td>The single biggest gap today for receiving activity - most partners never receive and work a first lead in practice ("Part of Platform" is empty for most)</td></tr>
+<tr><td>5. Active Participation</td><td>Regularly receiving and working leads from other partners, wallet moving inward, Sarthy team checking in per SOP #15</td><td>Even the few partners who do receive show infrequent activity, not sustained habit</td></tr>
+<tr><td>6. Steady State</td><td>Partner settles into a Giver, Balanced, or Taker pattern (see Segmentation Framework) - a partner mostly in the receiving role tends toward Taker, though the role played on one deal and the giving_pattern trend read across many deals aren't the same thing</td><td>No current data on how long this takes or what triggers the split</td></tr>
+<tr><td>7. Risk Zone</td><td>Wallet trending negative, declines mounting, or activity slowing toward the 3-month dormancy line</td><td>This is exactly where At-Risk-status outreach (Segmentation Framework) needs to intervene, before Stage 8</td></tr>
+<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages, usually after direct outreach</td><td>No process exists yet - this is SOP #17's remaining open piece</td></tr>
+<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Whether this actually gets communicated clearly to the partner, or just happens silently, is untested</td></tr>
+</table>
+
+<h2>What the interview guide should validate</h2>
+<p>Sections B and C are built from documented rules, not direct partner testimony. The <a href="#" onclick="showDoc('interview-guide');return false;" class="xlink">Alpha Partner Interview Guide</a> exists specifically to check whether Stage 4 and 5 actually feel this way to a real partner, or whether the friction sits somewhere these sections haven't captured yet.</p>
+
+<h2>D. Startup Lifecycle <span class="status-pill badge-pending">Proposed - not yet validated</span></h2>
+<div class="pending-box" style="text-align:left;">
+<strong>This section is new content, not migrated from any existing hub document.</strong> Nothing in the hub today defines a startup's own lifecycle across time, separate from any single referral - Section A only follows one startup through one referral. The four stages below are reasoned by analogy to Section A and to the Referring/Receiving Partner Lifecycles, directly answering Finding 3 ("the startup's own repeat engagement isn't tracked anywhere") - they are not sourced from a confirmed Sarthy rule, and shouldn't be treated as fact until checked against real startup behaviour or confirmed with Sarthy.
+</div>
+
+<table class="dtable">
+<tr><th>Stage</th><th>What happens</th><th>Status</th></tr>
+<tr><td>1. First Contact</td><td>The startup is introduced into the ecosystem for the first time, through any of the 3 directions described in Section A</td><td>Matches Section A, Stage 1 - well defined</td></tr>
+<tr><td>2. Engaged</td><td>Actively working with a receiving partner on this specific need</td><td>Matches Section A, Stages 3-4 - well defined</td></tr>
+<tr><td>3. Converted</td><td>The deal closes; the startup becomes the receiving partner's own client</td><td>Matches Section A, Stage 5 - well defined</td></tr>
+<tr><td>4. Open Question - what happens next</td><td>Does the startup return through the same referring partner for a future need? Self-serve again through Path B? Get referred elsewhere? Leave the ecosystem entirely? No hub document currently answers or measures any of this</td><td><span class="status-pill badge-pending">Untracked - see Finding 3</span></td></tr>
+</table>
+<p style="font-size:12.5px;color:var(--ink-faint);">If this gets developed further, Finding 3 in Section A is the natural anchor - once there's a real answer to Stage 4, this section should stop being "proposed" and start citing whatever mechanism actually answers it.</p>

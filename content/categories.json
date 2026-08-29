@@ -1,24 +1,22 @@
 {
   "order": [
     "Start Here",
-    "Strategic Planning",
-    "Partnership SOP v1.0",
-    "Decision Records",
-    "Evidence & Assessment",
-    "Operational Tools",
-    "Scripts & Templates",
-    "Technical Handoff",
-    "Tracking & Governance"
+    "Business Documents",
+    "Process Documents",
+    "Technical Documents",
+    "Reference Materials",
+    "Tracking & Governance",
+    "Archives",
+    "Glossary"
   ],
   "descriptions": {
     "Start Here": "How to find your way around this hub, and how updates are meant to flow",
-    "Strategic Planning": "The overall project plan and the order we're doing things in",
-    "Partnership SOP v1.0": "The day-to-day rulebook - how partners are onboarded, supported, and managed",
-    "Decision Records": "Questions we need Sarthy to answer before we can move forward",
-    "Evidence & Assessment": "What we found by studying how things work today, and what's broken",
-    "Operational Tools": "The internal tools and data setup we use to run day-to-day work",
-    "Scripts & Templates": "Ready-to-use scripts for calls, messages, and interviews",
-    "Technical Handoff": "Documents we hand to Sarthy's developers to build the marketplace",
-    "Tracking & Governance": "How we track rollout progress and report results to Sarthy"
+    "Business Documents": "The rules and decisions that shape the partner program itself - what it is, and what still needs Sarthy's sign-off",
+    "Process Documents": "How the day-to-day work actually happens - onboarding, staying in touch, prioritizing outreach, and the referral journey itself",
+    "Technical Documents": "What gets handed to developers to actually build the app - requirements, specs, and shared data definitions",
+    "Reference Materials": "What we found by studying how things work today",
+    "Tracking & Governance": "How we track rollout progress and report results to Sarthy",
+    "Archives": "Why things changed, and what they used to look like before",
+    "Glossary": "Quick definitions for terms used across the hub"
   }
 }
