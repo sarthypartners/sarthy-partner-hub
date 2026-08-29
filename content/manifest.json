@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "2.7",
-    "updated": "Mirrored the dependency map's 2 new rows (wallet-threshold and Path A/B diagrams)",
+    "version": "2.8",
+    "updated": "Mirrored the dependency map's rows for the new Combined Journey Map document",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -130,6 +130,17 @@
     "type": "Internal",
     "title": "Partner Journey Map",
     "desc": "The full step-by-step partner experience, start to finish"
+  },
+  {
+    "id": "combined-journey",
+    "content_file": "combined-journey.html",
+    "cat": "Evidence & Assessment",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "Initial version",
+    "type": "Internal",
+    "title": "Combined Journey Map",
+    "desc": "Startup, referring partner, and receiving partner lined up against the same shared timeline - built to spot where partner engagement quietly breaks down, before designing any fix"
   },
   {
     "id": "comms-library",

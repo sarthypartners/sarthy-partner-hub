@@ -228,5 +228,10 @@
     "date": "v27.1",
     "title": "Added supporting diagrams across 6 documents",
     "desc": "New diagrams: the Journey Map's full partner lifecycle, the Low-Level Spec's complete Lead state machine, three new Playbook diagrams (wallet-threshold gauge in Section 8, Path A/B flow in Section 7, referral-fee timeline in Section 20), the Data Dictionary's entity-relationship map, and the Segmentation Framework's Giver/Balanced/Taker trend sparkline. The BRD and Interim Operating System each got a cross-link to the relevant new diagram instead of a duplicate copy. No facts or numbers changed - this round is visual support for what the text already said."
+  },
+  {
+    "date": "v27.2",
+    "title": "Combined Journey Map drafted - startup and both partners lined up on one shared timeline",
+    "desc": "New document, built as step one of a planned partner-engagement improvement effort. Lines up the startup, the referring partner, and the receiving partner against the same 6-stage timeline (Origination through Repeat or Dormancy) instead of documenting each lane separately, using only already-confirmed facts from the Lead state machine, Partnership SOP Section 7, the Data Dictionary, and the Communication Template Library - no new rules introduced. Surfaced 3 findings worth confirming with Sarthy: a lead that silently times out during acknowledgment triggers no message to anyone (checked directly against all 11 Communication Template Library triggers - confirmed the internal Associate nudge covers a different, later stall point, not this one); no message exists for the moment a referral actually converts and credits land, even though the annual payout notice and the pre-acknowledgment reminder both already exist; and a startup's own repeat engagement has no equivalent of the partner-side giving_pattern/dormancy tracking. Cross-links to the existing Partner Journey Map, Low-Level Spec, Playbook Section 7, Data Dictionary, and Communication Template Library. Explicitly diagnostic only - designing the actual engagement fixes is the next, separate step."
   }
 ]
