@@ -298,5 +298,15 @@
     "date": "v33.0",
     "title": "Reorganized the sidebar into 8 new categories, replacing the old 9",
     "desc": "Retired Start Here (folded to just the Guide), Strategic Planning, Partnership SOP v1.0, Decision Records, Evidence & Assessment, Operational Tools, Scripts & Templates, and Technical Handoff as category names. Replaced with: Start Here (Guide only), Business Documents, Process Documents, Technical Documents, Reference Materials, Tracking & Governance, Archives (History), and Glossary. The User Journey Map moved into Process Documents by explicit request, alongside Segmentation, Comms Library, Interview Guide, Interim Operating System, and Engagement Strategy - all now grouped as how the day-to-day work happens rather than as background evidence. No document content changed; this is a sidebar/navigation reorganization only. Reference Materials is now a smaller, tighter category (Current-State Assessment, Gap & Risk Register) as a direct consequence of moving the User Journey Map out of it."
+  },
+  {
+    "date": "v33.1",
+    "title": "Fixed a stale note on User Journey Map",
+    "desc": "Its manifest \"updated\" text still said it was queued to move into Process Documents once the recategorization finished - the recategorization (v33.0) already finished and moved it there. Cosmetic only; the cat field was already correct. Flagged by the Lead after pushing v33.0."
+  },
+  {
+    "date": "v34.0",
+    "title": "Switched the hub to a white theme - light sidebar, white page background",
+    "desc": "The sidebar was dark green/black with light text; it is now white with dark text, at the Lead's request for readability. Every sidebar color that was calibrated for a dark background was updated together, not just the background - text, hover states, the active-document highlight, the search box, the progress bar, and the category-number circles all got new light-theme colors, otherwise text would have gone invisible against the new white background. The whole page background also moved from a warm off-white to pure white. Two places kept a light gray tint on purpose rather than going fully white: the search box and the Reporting Dashboard's progress-bar tracks, both of which need a visible boundary to read correctly - a track with no border-fill contrast would look like a floating colored bar with no context. Content and document data are unchanged; this is a visual/theme change only."
   }
 ]

@@ -136,8 +136,8 @@
     "content_file": "combined-journey.html",
     "cat": "Process Documents",
     "status": "draft",
-    "version": "3.0",
-    "updated": "Merged the retired Partner Journey Map in as two new sections (Referring Partner Lifecycle, Receiving Partner Lifecycle), added a new proposed Startup Lifecycle section, and renamed the document to User Journey Map. Queued to move into Process Documents once the hub-wide recategorization is finalized.",
+    "version": "3.1",
+    "updated": "Merged the retired Partner Journey Map in as two new sections (Referring Partner Lifecycle, Receiving Partner Lifecycle), added a new proposed Startup Lifecycle section, and renamed the document to User Journey Map. Now filed under Process Documents, following the hub-wide recategorization.",
     "type": "Internal",
     "title": "User Journey Map",
     "desc": "One document, four angles on the partner network: the Referral Timeline (startup, referring partner, and receiving partner on one shared timeline), the Referring and Receiving Partner account lifecycles, and a proposed Startup lifecycle. Absorbs the former Partner Journey Map."
