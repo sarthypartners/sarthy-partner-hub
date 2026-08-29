@@ -45,6 +45,7 @@
 <li>The system must flag any receiving partner with 4 or more consecutive consent refusals to admin for manual review</li>
 <li>The system must allow a lead to be re-requested an unlimited number of times after a refusal</li>
 <li>The system must show, not block, same-service-type overlap - flagging the receiving partner when a startup already has another open request or active engagement with a similar-type partner, rather than preventing the new request outright. <strong>Not yet answered:</strong> whether one request converting to Acknowledged should auto-close the startup's other open requests to similar-type partners - needs a decision before this is built, see the Connection Request Flow page</li>
+<li><strong>Resolved:</strong> every state-changing action on a lead - a status change, a consent decision, a conversion, a dispute update - must automatically email every party connected to that lead, plus admin. This is a blanket requirement across the system, not decided case by case</li>
 <li>The system must let a startup browse the list of vetted partners and request one directly (direction B), without requiring a specific partner to have referred them first</li>
 <li>The system must let a receiving partner browse the full startup list and propose a connection directly, with a business proposal (direction C)</li>
 <li>The system must track which partner (if any) originally brought a given startup into Sarthy's ecosystem (originating_partner_id), separately from which partner the startup ultimately engages with - these can be different partners in any of the 3 directions</li>
@@ -93,6 +94,8 @@
 <li>The system must track the date of a partner's last shared lead</li>
 <li>The system must automatically mark a partner dormant after 3 consecutive months with no lead shared</li>
 <li>The system must remove a dormant partner from the public portal listing and block them from receiving new leads until they resume activity</li>
+<li><strong>Resolved:</strong> the system must send an automated reminder message to every dormant partner on a weekly basis, not a rotating subset - separate from the Associate's own manual call queue, which still works through dormant partners on a rotating weekly quota because of team bandwidth</li>
+<li><strong>Resolved:</strong> reactivation has no formal gatekeeping - a dormant partner who resumes activity (e.g. sends a lead) simply returns to Active (or At-Risk/Frozen if those conditions independently apply), picking up from their last state and next step</li>
 <li><strong>Resolved - high priority:</strong> gamification elements (leaderboards, streaks, recognition) to encourage consistent giving. This is to be designed and built alongside the rest of the MVP features, not deferred. The specific mechanics still need a real design pass.</li>
 </ul>
 
@@ -102,6 +105,7 @@
 <li>The system must allow a partner's balance to run negative down to -2,997 credits</li>
 <li>The system must automatically freeze a partner's ability to receive new leads once their balance hits -2,997</li>
 <li>The system must support a top-up payment (4x the entry fee - ₹3,996 or $196) that adds 3,996 credits back to a frozen wallet, bringing the balance from -2,997 to exactly +999</li>
+<li><strong>Resolved:</strong> a Frozen partner must still be able to submit/refer a lead to someone else - the freeze only blocks receiving. A referral from a Frozen partner must route to admin for an extra validation step before it's shown to the receiving partner</li>
 </ul>
 
 <h2>11. Trust and evidence - the dispute-reversal mechanism <span class="status-pill badge-draft">MVP - discretion confirmed, contact form still needs design</span></h2>
@@ -119,6 +123,7 @@
 <li>The system must give admin visibility into referral patterns across the whole network, to spot suspicious coordination between just one or two partners</li>
 <li>The system must flag partners with consistently low conversion rates for admin review</li>
 <li>The system must support admin manually freezing or exiting a partner's account in cases of confirmed abuse</li>
+<li><strong>Resolved:</strong> the system must automatically restrict likely misuse of the browse-and-request feature, based on a defined rule set, rather than relying on admin's manual judgment alone. <em>[Note: the specific rules still need to be written and filled in.]</em></li>
 </ul>
 
 <h2>13. Reporting <span class="status-pill badge-pending">Phase 2</span></h2>
@@ -135,7 +140,7 @@
 <li>A payment gateway - for collecting the ₹999/$49 entry fee and processing withdrawal payouts. Selection pending.</li>
 <li>A digital-signature provider - for the referral agreement (Section 3) and conversion confirmation (Section 6). Selection pending.</li>
 <li>A notification channel (email and/or WhatsApp) - for every trigger in the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>. Specific provider not yet chosen.</li>
-<li>An exchange-rate data source - for converting credits to real currency at withdrawal (SOP Section 10). Which source counts as official is still open.</li>
+<li>An exchange-rate data source - for converting credits to real currency at withdrawal (SOP Section 10). <strong>Resolved:</strong> the RBI reference rate, per SOP Section 10 - what's left here is picking/confirming the actual integration, not deciding which source counts as official.</li>
 <li>An SSO provider - for the startup-facing self-service product (Section 5). Selection pending.</li>
 </ul>
 

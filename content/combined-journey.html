@@ -105,19 +105,19 @@ Before this timeline starts, both partners have already been through their own a
 <h2>What this reveals</h2>
 <p>Looking at any one lane alone, the design holds together. Lining up all three at once surfaces three findings worth confirming with Sarthy before designing engagement fixes:</p>
 
-<div class="example-box">
-<strong>Finding 1 (narrower since the connection-flow rewrite) - a consent decision, once made, still isn't communicated to the referring partner.</strong>
-<p style="margin:8px 0 0;">This finding has changed since Partnership SOP v1.0 Section 7 and the Lead state machine were rewritten around the confirmed <a href="#" onclick="showDoc('connection-request-flow');return false;" class="xlink">Connection Request Flow</a>. The failure mode this finding originally centered on - a lead quietly timing out with no message to anyone - no longer exists: there's no more auto-expiry of any kind, and every request now becomes visible to all relevant parties immediately, as a faded, FYI-only "Introduced" entry (see that document for why the visibility is deliberately inactive rather than full notice). What's left, checked directly against the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>'s message triggers, is smaller but still real: once admin's consent conversation concludes - whether the receiving partner (or, in directions A and C, the startup) gives or refuses consent - only template 3 exists, and it's addressed to the receiving partner only. Nobody currently tells the referring partner which way it went, or that it resolved at all, beyond the faded FYI entry they could already see for themselves. (The existing internal Associate nudge, template 4, remains wired to a separate, later stall point - a lead that's been Acknowledged and then goes quiet during the actual work - and is unaffected by any of this.)</p>
+<div class="example-box" style="border-color:var(--green);background:var(--green-bg);">
+<strong>Finding 1 - resolved: yes, every connected party gets told.</strong>
+<p style="margin:8px 0 0;">The open question here was: once admin's consent conversation concludes, does anyone besides the receiving partner (or, in directions A and C, the startup) get told which way it went? <strong>Resolved directly with the Lead: yes.</strong> Every party connected to a request - including the referring partner - now gets updated on its outcome, not just the party admin actually spoke with. This is part of a broader rule, confirmed at the same time: any status update admin makes on a lead reflects to every one of its connected parties, and every such action on the portal sends an automatic email to those parties and to admin (see <a href="#" onclick="showDoc('playbook');return false;" class="xlink">Partnership SOP v1.0, Section 7</a>). The exact wording for the referring partner's own notification still needs drafting - tracked in the <a href="#" onclick="showDoc('engagement-strategy');return false;" class="xlink">Engagement Strategy Framework</a> and the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>.</p>
 </div>
 
-<div class="example-box">
-<strong>Finding 2 - there's no message for the moment a referral actually pays off.</strong>
-<p style="margin:8px 0 0;">The Communication Template Library has a reminder before the acknowledgment window closes (template 2) and an annual referral-fee payout notice many months later (template 10). Nothing sits between them. The moment a referring partner's lead actually converts and 909 credits land in their wallet - arguably the single most motivating event in the whole credit system - currently has no defined message of its own.</p>
+<div class="example-box" style="border-color:var(--green);background:var(--green-bg);">
+<strong>Finding 2 - resolved by the same general notification rule as Finding 1.</strong>
+<p style="margin:8px 0 0;">Confirming a conversion is itself an action admin takes on a lead, so the rule resolved above covers this moment too: the referring partner (and admin) now gets an automatic email the instant the 909 credits land, closing the gap that used to sit between the pre-acknowledgment reminder (template 2) and the much-later annual payout notice (template 10). A dedicated, warmer template for this specific moment - rather than a generic system email - is still worth drafting, since this is arguably the single most motivating event in the whole credit system; tracked as a next step in the Engagement Strategy Framework.</p>
 </div>
 
-<div class="example-box">
-<strong>Finding 3 - the startup's own repeat engagement isn't tracked anywhere.</strong>
-<p style="margin:8px 0 0;">The <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> tracks a partner's activity in detail - <code>giving_pattern</code>, <code>last_lead_shared_date</code>, dormancy status. Nothing equivalent exists for a startup. If a startup that came through once needs a different kind of service later, whether it comes back through the same referring partner, self-serves again through Path B, or just leaves the ecosystem entirely isn't something any document currently answers or measures. Section D below is a first, deliberately unconfirmed attempt at naming what that would even look like.</p>
+<div class="example-box" style="border-color:var(--amber);background:var(--amber-bg);">
+<strong>Finding 3 - partly resolved: a startup never really leaves, but nothing tracks that yet.</strong>
+<p style="margin:8px 0 0;"><strong>Resolved directly with the Lead:</strong> once a startup signs up with Sarthy, it stays in the ecosystem indefinitely - it can go dormant, with no expiry, but there's no "leaves for good" state the way a partner can be Exited. If a startup arrives with no referring partner at all, Sarthy is its referring partner by default - the same principle Partnership SOP v1.0 Section 7 already applies to origination rewards. What's still missing is the tracking itself: the <a href="#" onclick="showDoc('data-dictionary');return false;" class="xlink">Data Dictionary</a> tracks a partner's activity in detail - <code>giving_pattern</code>, <code>last_lead_shared_date</code>, dormancy status - and nothing equivalent exists yet for a startup, so this resolved rule isn't measurable anywhere today. Section D below now reflects the resolved rule, but the field or signal to actually track it still needs designing.</p>
 </div>
 
 <p style="font-size:12.5px;color:var(--ink-faint);">These are observations from lining up existing, already-confirmed rules against each other - not new rules, and not confirmed defects. Worth raising with Sarthy directly rather than assumed either way.</p>
@@ -137,19 +137,19 @@ Before this timeline starts, both partners have already been through their own a
 <td>Sees the request the moment it's Introduced, as a faded, FYI-only entry - visible, but nothing to act on yet. No visibility into admin's validation step behind it, and no clock or deadline exists to watch</td>
 <td>Can still cancel any time before Acknowledged; after that, sees the same faded FYI entry everyone else does, with no further defined update</td>
 <td>Sees the same faded, FYI-only Introduced entry immediately; admin validates in the background, then reaches out directly - no clock, no deadline</td>
-<td>No clocks exist anymore to have visibility into. The gap now is narrower: none of the three parties gets a message confirming when validation finished or when admin reached out (see Finding 1)</td>
+<td>Resolved along with Finding 1: every step admin takes, including finishing validation and reaching out, now emails the relevant parties automatically - not just the final consent outcome</td>
 </tr>
 <tr>
 <td>3. Validate &amp; Acknowledge</td>
 <td>In directions A and C, is asked directly for its own consent by admin - a real, required approval, not just notice. Has no way to tell from the outside when that conversation happens, only that it eventually resolves to Acknowledged or Rejected</td>
 <td>Gets nothing either way once admin's consent conversation concludes - not on approval, not on refusal (see Finding 1, now narrower)</td>
 <td>Gives or refuses consent when admin reaches out - no self-service, no deadline. Consent given moves the lead to Acknowledged (999 deducted); consent refused moves it to Rejected (nothing deducted). Nothing here times out on its own</td>
-<td>Finding 1 (narrower than before) - the referring partner still gets no message on the outcome. The old silent-timeout failure mode this finding also described no longer exists, since nothing auto-finalizes anymore</td>
+<td>Resolved (Finding 1) - the referring partner now gets an automatic email either way, same as the receiving partner and the startup</td>
 </tr>
 <tr>
 <td>4. In Progress &amp; Converted</td>
 <td>Working directly with the receiving partner; Sarthy is largely out of the picture except for the eventual conversion confirmation</td>
-<td>No update during the work itself, and no message exists for the moment conversion is confirmed and 909 credits land (see Finding 2)</td>
+<td>Resolved (Finding 2) - an automatic email now fires the moment conversion is confirmed and 909 credits land, even though a dedicated warmer template is still worth drafting</td>
 <td>Does the actual work; must supply proof - a signed agreement plus first payment - before Sarthy will confirm the conversion</td>
 <td>Finding 2 - the single most motivating moment in the credit system has no message of its own</td>
 </tr>
@@ -228,13 +228,13 @@ Sections B and C describe the same underlying partner account lifecycle - the sa
     <line x1="245" y1="145" x2="150" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
     <line x1="325" y1="145" x2="420" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-refer)"/>
 
-    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
     <text x="150" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8a. Reactivation</text>
-    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no process exists yet</text>
+    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no gatekeeping - resume where you left off</text>
 
-    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
     <text x="530" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8b. Formal Dormancy</text>
-    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">whether it's communicated clearly is untested</text>
+    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">weekly reminder now sent automatically</text>
 
     <text x="150" y="248" text-anchor="middle" fill="var(--green)" font-size="10.5">&#8634; re-engages &#8594; back to Stage 5</text>
 
@@ -251,8 +251,8 @@ Sections B and C describe the same underlying partner account lifecycle - the sa
 <tr><td>5. Active Participation</td><td>Regularly submitting leads to other partners, wallet moving outward, Sarthy team checking in per SOP #15</td><td>Even the few partners who do submit show infrequent activity, not sustained habit</td></tr>
 <tr><td>6. Steady State</td><td>Partner settles into a Giver, Balanced, or Taker pattern (see Segmentation Framework) - a partner mostly in the referring role tends toward Giver, though the role played on one deal and the giving_pattern trend read across many deals aren't the same thing</td><td>No current data on how long this takes or what triggers the split</td></tr>
 <tr><td>7. Risk Zone</td><td>Wallet trending negative, declines mounting, or activity slowing toward the 3-month dormancy line</td><td>This is exactly where At-Risk-status outreach (Segmentation Framework) needs to intervene, before Stage 8</td></tr>
-<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages, usually after direct outreach</td><td>No process exists yet - this is SOP #17's remaining open piece</td></tr>
-<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Whether this actually gets communicated clearly to the partner, or just happens silently, is untested</td></tr>
+<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages</td><td>Resolved: no formal gatekeeping. They simply reconnect and resume from their last state and next step - e.g. a partner who went dormant while Frozen at -2,997 replenishes the wallet first, then carries on as before</td></tr>
+<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Resolved: a weekly reminder message now goes out automatically to every dormant partner (SOP #17), separate from - and not limited by - the Associate's own rotating call quota, which only covers the manual outreach a two-person team can actually make</td></tr>
 </table>
 
 <h2>C. Receiving Partner Lifecycle</h2>
@@ -306,13 +306,13 @@ Sections B and C describe the same underlying partner account lifecycle - the sa
     <line x1="245" y1="145" x2="150" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
     <line x1="325" y1="145" x2="420" y2="180" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowJM-receive)"/>
 
-    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--red-bg)" stroke="var(--red)"/>
+    <rect x="55" y="182" width="190" height="50" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
     <text x="150" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8a. Reactivation</text>
-    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no process exists yet</text>
+    <text x="150" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">no gatekeeping - resume where you left off</text>
 
-    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <rect x="425" y="182" width="210" height="50" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
     <text x="530" y="203" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11.5">8b. Formal Dormancy</text>
-    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">whether it's communicated clearly is untested</text>
+    <text x="530" y="218" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">weekly reminder now sent automatically</text>
 
     <text x="150" y="248" text-anchor="middle" fill="var(--green)" font-size="10.5">&#8634; re-engages &#8594; back to Stage 5</text>
 
@@ -329,16 +329,16 @@ Sections B and C describe the same underlying partner account lifecycle - the sa
 <tr><td>5. Active Participation</td><td>Regularly receiving and working leads from other partners, wallet moving inward, Sarthy team checking in per SOP #15</td><td>Even the few partners who do receive show infrequent activity, not sustained habit</td></tr>
 <tr><td>6. Steady State</td><td>Partner settles into a Giver, Balanced, or Taker pattern (see Segmentation Framework) - a partner mostly in the receiving role tends toward Taker, though the role played on one deal and the giving_pattern trend read across many deals aren't the same thing</td><td>No current data on how long this takes or what triggers the split</td></tr>
 <tr><td>7. Risk Zone</td><td>Wallet trending negative, declines mounting, or activity slowing toward the 3-month dormancy line</td><td>This is exactly where At-Risk-status outreach (Segmentation Framework) needs to intervene, before Stage 8</td></tr>
-<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages, usually after direct outreach</td><td>No process exists yet - this is SOP #17's remaining open piece</td></tr>
-<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Whether this actually gets communicated clearly to the partner, or just happens silently, is untested</td></tr>
+<tr><td>8a. Reactivation</td><td>A partner who went quiet re-engages</td><td>Resolved: no formal gatekeeping. They simply reconnect and resume from their last state and next step - e.g. a partner who went dormant while Frozen at -2,997 replenishes the wallet first, then carries on as before</td></tr>
+<tr><td>8b. Formal Dormancy</td><td>3 months with no shared lead - removed from public listing, blocked from receiving new leads (SOP #21)</td><td>Resolved: a weekly reminder message now goes out automatically to every dormant partner (SOP #17), separate from - and not limited by - the Associate's own rotating call quota, which only covers the manual outreach a two-person team can actually make</td></tr>
 </table>
 
 <h2>What the interview guide should validate</h2>
 <p>Sections B and C are built from documented rules, not direct partner testimony. The <a href="#" onclick="showDoc('interview-guide');return false;" class="xlink">Alpha Partner Interview Guide</a> exists specifically to check whether Stage 4 and 5 actually feel this way to a real partner, or whether the friction sits somewhere these sections haven't captured yet.</p>
 
-<h2>D. Startup Lifecycle <span class="status-pill badge-pending">Proposed - not yet validated</span></h2>
+<h2>D. Startup Lifecycle <span class="status-pill badge-draft">Partly confirmed - core rule resolved, tracking still to be designed</span></h2>
 <div class="pending-box" style="text-align:left;">
-<strong>This section is new content, not migrated from any existing hub document.</strong> Nothing in the hub today defines a startup's own lifecycle across time, separate from any single referral - Section A only follows one startup through one referral. The four stages below are reasoned by analogy to Section A and to the Referring/Receiving Partner Lifecycles, directly answering Finding 3 ("the startup's own repeat engagement isn't tracked anywhere") - they are not sourced from a confirmed Sarthy rule, and shouldn't be treated as fact until checked against real startup behaviour or confirmed with Sarthy.
+<strong>This section started as new content, not migrated from any existing hub document.</strong> Nothing in the hub previously defined a startup's own lifecycle across time, separate from any single referral - Section A only follows one startup through one referral. Stages 1-3 below are still reasoned by analogy to Section A and to the Referring/Receiving Partner Lifecycles, and haven't been checked against real startup behaviour. Stage 4 is different: the Lead has now resolved the underlying question directly (see Finding 3 above) - a startup never really leaves the ecosystem, it can only go dormant, with no expiry, and a self-introduced startup defaults to Sarthy as its own referring partner. What's still missing is how that gets tracked and measured - no field for it exists yet in the Data Dictionary.
 </div>
 
 <table class="dtable">
@@ -346,6 +346,6 @@ Sections B and C describe the same underlying partner account lifecycle - the sa
 <tr><td>1. First Contact</td><td>The startup is introduced into the ecosystem for the first time, through any of the 3 directions described in Section A</td><td>Matches Section A, Stage 1 - well defined</td></tr>
 <tr><td>2. Engaged</td><td>Actively working with a receiving partner on this specific need</td><td>Matches Section A, Stages 3-4 - well defined</td></tr>
 <tr><td>3. Converted</td><td>The deal closes; the startup becomes the receiving partner's own client</td><td>Matches Section A, Stage 5 - well defined</td></tr>
-<tr><td>4. Open Question - what happens next</td><td>Does the startup return through the same referring partner for a future need? Self-serve again through Path B? Get referred elsewhere? Leave the ecosystem entirely? No hub document currently answers or measures any of this</td><td><span class="status-pill badge-pending">Untracked - see Finding 3</span></td></tr>
+<tr><td>4. Dormant, never Exited</td><td>Once engaged, a startup stays in Sarthy's ecosystem indefinitely. With no further activity it can go dormant - with no expiry - but there's no "leaves for good" state the way a partner can be Exited. If it arrived with no referring partner, Sarthy is its referring partner by default (same principle as Partnership SOP v1.0 Section 7's originating-partner rule)</td><td><span class="status-pill badge-draft">Resolved as policy - the field to track it still needs designing</span></td></tr>
 </table>
-<p style="font-size:12.5px;color:var(--ink-faint);">If this gets developed further, Finding 3 in Section A is the natural anchor - once there's a real answer to Stage 4, this section should stop being "proposed" and start citing whatever mechanism actually answers it.</p>
+<p style="font-size:12.5px;color:var(--ink-faint);">The open part of this now is the Data Dictionary change, not the rule itself: once a <code>last_lead_shared_date</code>-style signal exists for a startup the way it does for a partner, this row should stop citing Finding 3 and instead cite whatever field actually measures it.</p>
