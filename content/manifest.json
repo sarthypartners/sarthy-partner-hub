@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "3.6",
-    "updated": "Dependency table updated: Migration Wave Plan / Graduation Criteria gates are now tied together, not flagged as mismatched.",
+    "version": "3.7",
+    "updated": "Updated the User Journey Map dependency row to reflect Findings 1/2 moving to Design History & Decisions and Finding 3 now also living in the Gap & Risk Register.",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -114,8 +114,8 @@
     "content_file": "gap-register.html",
     "cat": "Reference Materials",
     "status": "draft",
-    "version": "1.8",
-    "updated": "Closed the Frozen-partner-can-refer-leads finding, resolved in the v35.0 open-questions round but missed here at the time.",
+    "version": "1.9",
+    "updated": "Added Finding 3 (a startup's own repeat engagement isn't tracked) as a tracked row. Widened the page's own stated scope to include things the User Journey Map surfaces, not just Current-State Assessment and the SOP.",
     "type": "Internal",
     "title": "Gap & Risk Register",
     "desc": "A list of problems we found, each with a suggested fix"
@@ -136,8 +136,8 @@
     "content_file": "combined-journey.html",
     "cat": "Process Documents",
     "status": "draft",
-    "version": "3.2",
-    "updated": "Findings 1-3 resolved or partly resolved per the Lead's answers - notification policy, and the startup never-leaves/dormant rule. Section D updated to reflect the resolved Stage 4 rule. Sections B/C's Reactivation and Formal Dormancy stages resolved (no gatekeeping; weekly reminder).",
+    "version": "3.3",
+    "updated": "Findings 1 and 2 shrunk to one-line pointers, at the Lead's request - their full backstory moved to Design History & Decisions so this page stays focused on what's true today. Finding 3 stays here in full and is now also tracked in the Gap & Risk Register.",
     "type": "Internal",
     "title": "User Journey Map",
     "desc": "One document, four angles on the partner network: the Referral Timeline (startup, referring partner, and receiving partner on one shared timeline), the Referring and Receiving Partner account lifecycles, and a proposed Startup lifecycle. Absorbs the former Partner Journey Map."
@@ -224,8 +224,8 @@
     "content_file": "history.html",
     "cat": "Archives",
     "status": "draft",
-    "version": "1.9",
-    "updated": "Updated the Migration Wave Plan / Graduation Criteria mismatch note - the Lead has since tied the two gates together.",
+    "version": "2.0",
+    "updated": "Added the full backstory for User Journey Map Findings 1 and 2, moved here from the Journey Map itself.",
     "type": "Internal",
     "title": "Design History & Decisions",
     "desc": "The why and the used-to-be behind decisions in the hub - kept separate so other pages can stay focused on what is true today"
