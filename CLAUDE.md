@@ -4,21 +4,22 @@ This is a hosted documentation hub for a Sarthy Strategic Partners consulting en
 
 ## Before doing anything else
 
-Read these two files in full - they are not optional background reading, they are the actual operating rules for this repo:
+Read these three files in full - they are not optional background reading, they are the actual operating rules for this repo:
 
 1. `meta/update-protocol.md` - the exact steps required before any edit counts as "done"
 2. `meta/dependency-map.md` - which document depends on which; check this before treating any change as complete
+3. `meta/style-guide.md` - the writing rules; each one exists because something specific went wrong without it
 
 ## What this repo is
 
-- `content/` - every document's actual content, plus `manifest.json` (drafted docs), `queued.json` (not yet written), `categories.json`, `changelog.json`
-- `meta/` - the two files above, plus `custom-domain.txt`
+- `content/` - every document's actual content, plus `manifest.json` (drafted docs), `queued.json` (not yet written - currently empty, all 24 originally planned documents are drafted), `categories.json`, `changelog.json`
+- `meta/` - the three files above, plus `custom-domain.txt`
 - `build.py` - reads everything in `content/` and generates `dist/index.html`, the actual hub. **Never hand-edit `dist/index.html` directly** - it's overwritten on every build.
-- `wrangler.jsonc` - Cloudflare Pages config; deploys `dist/` as static assets. This replaced the old GitHub Pages workflow.
+- Hosting is **Cloudflare Pages**, connected directly to this GitHub repo - it watches for pushes to `main` and rebuilds automatically. There is no GitHub Actions workflow involved; an earlier one existed and was deliberately removed when the project switched away from GitHub Pages.
 
 ## Standing rules
 
-- Every document has a `status` of `pending`, `draft`, or `done` in `manifest.json` - reflect this honestly, don't mark something `done` just because text exists for it.
+- Every document has a `status` of `draft` or `done` in `manifest.json` - reflect this honestly, don't mark something `done` just because text exists for it.
 - Internal cross-references between documents use real links: `<a href="#" onclick="showDoc('doc-id');return false;" class="xlink">text</a>` - not plain text mentions of a document's name.
 - Run `python3 build.py` after any content change, before considering the change complete.
 - Bump the relevant document's `version` and `updated` fields in `manifest.json` when its content changes.
@@ -27,4 +28,4 @@ Read these two files in full - they are not optional background reading, they ar
 
 ## Style
 
-Plain, everyday English throughout - this hub is written so a non-technical reader understands it without a second guess. Avoid jargon; where a technical term is unavoidable, explain it in the same sentence.
+See `meta/style-guide.md` for the full rules. In short: plain English, short but connected sentences, no first or second person outside literal message templates, and current-state content kept separate from historical rationale (which lives on the Design History & Decisions page).
