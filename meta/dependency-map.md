@@ -10,23 +10,19 @@ This is the authoritative source for "if you change X, check Y." Both the human 
 | Current-State Assessment | Gap & Risk Register, Partner Segmentation Framework, Partner Journey Map |
 | Gap & Risk Register | Partnership SOP's problem-related sections, Master Execution Sequence priority order, Action Item & Blocker Tracker (critical findings now live in both — keep them in sync, not duplicated) |
 | Data Dictionary | Interim Operating System (uses these exact field definitions, and points to the Data Dictionary's entity-relationship diagram instead of redrawing it), Partner Segmentation Framework (the `giving_pattern` field is defined jointly across both), Combined Journey Map (its entity relationships underpin the Stage 1 and Stage 6 lanes) |
-| Partner Segmentation Framework | Partnership SOP #11 (Giver/Taker/Balanced — summarize, don't copy in full), #17 (Winning back inactive partners), Migration Wave Plan (once drafted), Interim Operating System (call queue logic), Engagement Strategy Framework (its Stage 6 rows cite this framework's outreach-priority table directly) |
+| Partner Segmentation Framework | Partnership SOP #11 (Giver/Taker/Balanced — summarize, don't copy in full), #17 (Winning back inactive partners), Interim Operating System (call queue logic), Engagement Strategy Framework (its Stage 6 rows cite this framework's outreach-priority table directly) |
 | Partner Journey Map | Partnership SOP #14 (summarize, don't copy in full), Communication Template Library, Combined Journey Map (its Stage 6 feeds directly into this map's Active Participation, Risk Zone, and Dormancy stages) |
 | Communication Template Library | Partnership SOP #16 (the link, not the content), #17 (Reactivation), Combined Journey Map (Findings 1 and 2 cite specific message triggers directly - re-check both findings if any of the 11 triggers change), Engagement Strategy Framework (its matrix cites the same 11 triggers directly - re-check every row marked "Existing" if a template's audience or trigger changes) |
 | Any section of Partnership SOP — any change, not just when it becomes confirmed | Business Requirements Document — it cites specific SOP sections directly; check it didn't just go stale |
 | Business Requirements Document | Low-Level System Specification (once drafted), Action Item & Blocker Tracker (integration requirement items reference BRD section numbers) |
-| Alpha to Beta Graduation Criteria | Migration Wave Plan, Partnership SOP #18 |
+| Alpha to Beta Graduation Criteria | Partnership SOP #18 |
 | Interim Operating System | Action Item & Blocker Tracker (the data migration section links here) |
-| Action Item & Blocker Tracker | Gap & Risk Register, Business Requirements Document, Project Plan (Gantt View) - all three reference or link to it |
-| Project Plan (Gantt View) | Roadmap (phase definitions must stay consistent), Action Item & Blocker Tracker |
+| Action Item & Blocker Tracker | Gap & Risk Register, Business Requirements Document - both reference or link to it |
 | Glossary | Whichever document actually changed the definition - Partnership SOP, Data Dictionary, or Segmentation Framework are the most common sources; the Glossary should never be the source of truth for a term's meaning, only a pointer to it |
 | Master Execution Sequence (reordered) | This file - if the reorder changes which document feeds which |
 | Partnership SOP §2 (origin story) or §10 (withdrawal/cycle rules) | Design History & Decisions - both sections point here for the full story. If the current-design facts in either section change again, check the History page hasn't gone stale by comparison |
 | Master Execution Sequence's item 11, or its note on unnumbered documents | Design History & Decisions - both explanations live there now |
 | Design History & Decisions, if edited | Partnership SOP §2 and §10, and Master Execution Sequence - confirm their pointer links still make sense given what History now says |
-| Migration Wave Plan | Graduation Criteria (Wave 2 gate), Segmentation Framework (wave-candidate criteria), Action Item & Blocker Tracker (readiness gates) |
-| Alpha to Beta Graduation Criteria, if the target changes | Migration Wave Plan's Wave 2 gate references this document's criteria directly |
-
 | Business Requirements Document, any MVP/Phase 2 tag or requirement change | Low-Level System Specification and Replit Build Brief - both were built directly from the BRD's current state |
 | Low-Level System Specification (state machines, formulas, operations) | Replit Build Brief - references it directly rather than duplicating; keep both in sync. Combined Journey Map - its Lead state machine underpins every stage of that map |
 | Partnership SOP §19 (KPI measures), if changed | Reporting Dashboard and BRD §13 - both cite the measures directly, not their own copy |

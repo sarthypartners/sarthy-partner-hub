@@ -4,8 +4,8 @@
     "content_file": "guide.html",
     "cat": "Start Here",
     "status": "done",
-    "version": "3.2",
-    "updated": "Dependency table corrected - Combined Journey Map and Engagement Strategy Framework are now updated to match the confirmed 3-direction connection flow (no longer flagged stale); added a missing Interview Guide dependency row.",
+    "version": "3.4",
+    "updated": "Removed all Gantt and Migration Wave Plan references from the dependency table - both documents were decommissioned.",
     "type": "Both",
     "title": "How to use this hub",
     "desc": "Read this first - how to navigate, and how updates are meant to flow through the other pages"
@@ -15,8 +15,8 @@
     "content_file": "roadmap.html",
     "cat": "Strategic Planning",
     "status": "done",
-    "version": "1.4",
-    "updated": "Fixed 4 instances of we",
+    "version": "1.5",
+    "updated": "Absorbed the Gantt view's role as the single timeline - added a Status column (Done/In Progress/Not started) and the What Done Means note, following Gantt's decommissioning.",
     "type": "Internal",
     "title": "Project Roadmap",
     "desc": "The full project plan - each phase, who owns it, and rough timing"
@@ -26,8 +26,8 @@
     "content_file": "sequence.html",
     "cat": "Strategic Planning",
     "status": "done",
-    "version": "1.8",
-    "updated": "Updated for Reporting Dashboard drafting",
+    "version": "1.5",
+    "updated": "Updated item 14 - Migration Wave Plan was drafted then retired; pointed to Design History & Decisions.",
     "type": "Internal",
     "title": "Master Execution Sequence",
     "desc": "The to-do list in order - what gets done next, and why"
@@ -70,8 +70,8 @@
     "content_file": "deliverables.html",
     "cat": "Tracking & Governance",
     "status": "done",
-    "version": "1.6",
-    "updated": "Added 5 missing documents to the inventory (Connection Request Flow, Combined Journey Map, Engagement Strategy Framework, History, Replit Build Brief) and linked 2 previously unlinked bullets (Low-Level Spec, Migration Wave Plan).",
+    "version": "1.7",
+    "updated": "Re-linked the visual project plan bullet to Roadmap now that Gantt is decommissioned.",
     "type": "Internal",
     "title": "Deliverables Register",
     "desc": "A list of every document in this project and what each one is for"
@@ -125,8 +125,8 @@
     "content_file": "segmentation.html",
     "cat": "Operational Tools",
     "status": "draft",
-    "version": "2.8",
-    "updated": "Fixed an SVG coordinate glitch - the Active-to-Frozen dashed arrow now starts from the Active box instead of a stray x-coordinate.",
+    "version": "2.9",
+    "updated": "Removed the Migration Wave Plan bullet from Feeds Directly Into, following its decommissioning.",
     "type": "Internal",
     "title": "Partner Segmentation Framework",
     "desc": "A way to group partners so we know who to focus on first"
@@ -169,8 +169,8 @@
     "content_file": "graduation-criteria.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.5",
-    "updated": "Fixed a reference to the retired acknowledgment-window mechanics - now points to the admin-mediated consent mechanics.",
+    "version": "1.7",
+    "updated": "Rewrote Feeds Into - Migration Wave Plan was decommissioned; migration itself is now a deferred, post-build activity.",
     "type": "Internal",
     "title": "Alpha to Beta Graduation Criteria",
     "desc": "The targets we need to hit before opening the app to more partners"
@@ -220,23 +220,12 @@
     "desc": "Quick definitions for terms used across the hub - the 999-credit meanings, status vs giving_pattern, the two reward tracks"
   },
   {
-    "id": "gantt",
-    "content_file": "gantt.html",
-    "cat": "Strategic Planning",
-    "status": "draft",
-    "version": "1.5",
-    "updated": "Updated for Reporting Dashboard drafting",
-    "type": "Both",
-    "title": "Project Plan (Gantt View)",
-    "desc": "Visual timeline of the roadmap phases - for discussion with Sarthy leadership"
-  },
-  {
     "id": "action-tracker",
     "content_file": "action-tracker.html",
     "cat": "Tracking & Governance",
     "status": "draft",
-    "version": "1.7",
-    "updated": "Fixed the critical-path diagram to match its own table - added the missing Payment gateway + e-sign outgoing arrow, removed an unsupported Regulatory-review-to-data-migration arrow, and labeled what Regulatory review actually blocks.",
+    "version": "1.8",
+    "updated": "Removed the Migration Wave Plan row and updated the critical-path diagram box to just Low-Level System Spec, following its decommissioning.",
     "type": "Both",
     "title": "Action Item & Blocker Tracker",
     "desc": "Real-world action items blocking progress, with a dependency chain showing what unlocks what"
@@ -246,22 +235,11 @@
     "content_file": "history.html",
     "cat": "Start Here",
     "status": "draft",
-    "version": "1.6",
-    "updated": "Fixed the stale page count - 18 pages to 26 pages (27 total hub documents, minus this one).",
+    "version": "1.7",
+    "updated": "Added a section explaining why the Gantt view and Migration Wave Plan were retired outright, not just rewritten; fixed a stale document count in the unnumbered-documents note.",
     "type": "Internal",
     "title": "Design History & Decisions",
     "desc": "The why and the used-to-be behind decisions in the hub - kept separate so other pages can stay focused on what is true today"
-  },
-  {
-    "id": "migration-wave-plan",
-    "content_file": "migration-wave-plan.html",
-    "cat": "Tracking & Governance",
-    "status": "draft",
-    "version": "1.0",
-    "updated": "Initial version",
-    "type": "Both",
-    "title": "Migration Wave Plan",
-    "desc": "The order in which partner groups move onto the platform"
   },
   {
     "id": "low-level-spec",
