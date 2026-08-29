@@ -37,8 +37,8 @@
     "content_file": "playbook.html",
     "cat": "Partnership SOP v1.0",
     "status": "draft",
-    "version": "7.5",
-    "updated": "Added supporting diagrams: wallet-threshold gauge (Section 8), Path A/B flow (Section 7), referral-fee timeline (Section 20); linked out to the full Lead state machine",
+    "version": "7.6",
+    "updated": "Fixed Section 7's diagram - Rejected and Unresolved now correctly branch from Introduced, before any deduction, matching the Low-Level Spec",
     "type": "Both",
     "title": "Partnership SOP v1.0",
     "desc": "The complete rulebook - fully absorbs Sarthy's original Playbook 2.0, nothing lives outside this anymore"
@@ -136,8 +136,8 @@
     "content_file": "combined-journey.html",
     "cat": "Evidence & Assessment",
     "status": "draft",
-    "version": "1.0",
-    "updated": "Initial version",
+    "version": "1.1",
+    "updated": "Corrected Finding 1 - template 3 goes to the receiving partner, not the referring partner; the referring partner gets no message on either decline or timeout",
     "type": "Internal",
     "title": "Combined Journey Map",
     "desc": "Startup, referring partner, and receiving partner lined up against the same shared timeline - built to spot where partner engagement quietly breaks down, before designing any fix"

@@ -51,8 +51,8 @@ Before this timeline starts, both partners have already been through their own o
     <text x="362" y="168" text-anchor="middle" fill="var(--ink-soft)" font-size="9">just waiting on the receiver</text>
     <rect x="435" y="135" width="135" height="55" rx="6" fill="var(--red-bg)" stroke="var(--red)"/>
     <text x="502" y="152" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="9">See finding 1</text>
-    <text x="502" y="164" text-anchor="middle" fill="var(--ink-soft)" font-size="9">silence tells them nothing</text>
-    <text x="502" y="175" text-anchor="middle" fill="var(--ink-soft)" font-size="9">either &#8212; not even internally</text>
+    <text x="502" y="164" text-anchor="middle" fill="var(--ink-soft)" font-size="9">nothing either way &#8212;</text>
+    <text x="502" y="175" text-anchor="middle" fill="var(--ink-soft)" font-size="9">decline or silence alike</text>
     <rect x="575" y="135" width="135" height="55" rx="6" fill="var(--red-bg)" stroke="var(--red)"/>
     <text x="642" y="152" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="9">See finding 2</text>
     <text x="642" y="164" text-anchor="middle" fill="var(--ink-soft)" font-size="9">no message exists for the</text>
@@ -100,8 +100,8 @@ Before this timeline starts, both partners have already been through their own o
 <p>Looking at any one lane alone, the design holds together. Lining up all three at once surfaces three findings worth confirming with Sarthy before designing engagement fixes:</p>
 
 <div class="example-box">
-<strong>Finding 1 - a lead that quietly times out tells nobody anything.</strong>
-<p style="margin:8px 0 0;">Checked directly against the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>'s 11 message triggers. An explicit decline within the 7-day window at least sends the referring partner a polite "not a fit" message (template 3). But if the receiving partner simply lets the 7-day window lapse without acting - the lead closes as Unresolved - no message is defined for that moment at all. Not to the startup. Not to the referring partner. Not even the internal Associate nudge, which is wired to a different, later stall point (a lead that's been Acknowledged and then goes quiet during the actual work, template 4) - not to this earlier one. Silence and an explicit decline cost the same in credits, but they don't feel the same, and right now only one of them is acknowledged to anyone.</p>
+<strong>Finding 1 - a lead that quietly times out tells nobody anything, and an explicit decline tells only one side.</strong>
+<p style="margin:8px 0 0;">Checked directly against the <a href="#" onclick="showDoc('comms-library');return false;" class="xlink">Communication Template Library</a>'s 11 message triggers and the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level Spec</a>'s Lead state machine. An explicit decline within the 7-day window does trigger a message (template 3) - but it goes to the receiving partner, confirming they weren't charged for declining. It says nothing to the referring partner about what happened to the lead they submitted. And if the receiving partner instead simply lets the 7-day window lapse without acting - the lead closes as Unresolved - no message is defined for that moment at all, to anyone: not the startup, not the referring partner, and not even an internal nudge (the existing internal Associate nudge, template 4, is wired to a different, later stall point - a lead that's been Acknowledged and then goes quiet during the actual work - not this earlier one). Either way, the referring partner who actually submitted the lead has no visibility into what happened to it until it converts or doesn't.</p>
 </div>
 
 <div class="example-box">
@@ -136,9 +136,9 @@ Before this timeline starts, both partners have already been through their own o
 <tr>
 <td>3. Acknowledge (accept / decline / silent)</td>
 <td>Has no way to tell, from the outside, whether the receiving partner is actively considering it, has declined it, or has just let it lapse</td>
-<td>Gets a courteous message on an explicit decline (template 3). Gets nothing if the window simply lapses (see Finding 1)</td>
+<td>Gets nothing either way - not on an explicit decline, not on a silent timeout (see Finding 1)</td>
 <td>The only party who actually acts here - accepts (999 deducted), explicitly declines (nothing deducted), or lets it expire (nothing deducted, closes Unresolved)</td>
-<td>Finding 1 - the silent-timeout outcome has no defined message to anyone</td>
+<td>Finding 1 - the referring partner gets no message either way; the silent-timeout outcome has no defined message to anyone at all</td>
 </tr>
 <tr>
 <td>4. In Progress &amp; Converted</td>
