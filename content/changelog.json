@@ -223,5 +223,10 @@
     "date": "v27.0",
     "title": "Reporting Dashboard drafted - all 24 planned documents complete, 0 queued",
     "desc": "Built directly on SOP Section 19's already-defined KPI measures - a visual scorecard mockup of Sarthy's 20/40/30/10 weights, then a full table mapping every measure to its actual data source. Found a real gap while drafting: BRD Section 13's reporting requirement only ever covered Match-Making, despite SOP #19 defining measures for all 4 categories - fixed to cover all 4, and flagged that 2 of the 4 categories need something built before they can report real numbers (a startup-contact log, a contact-date field on the Partner record). This closes out the entire originally-planned document set - all 24 documents now drafted, nothing left queued."
+  },
+  {
+    "date": "v27.1",
+    "title": "Added supporting diagrams across 6 documents",
+    "desc": "New diagrams: the Journey Map's full partner lifecycle, the Low-Level Spec's complete Lead state machine, three new Playbook diagrams (wallet-threshold gauge in Section 8, Path A/B flow in Section 7, referral-fee timeline in Section 20), the Data Dictionary's entity-relationship map, and the Segmentation Framework's Giver/Balanced/Taker trend sparkline. The BRD and Interim Operating System each got a cross-link to the relevant new diagram instead of a duplicate copy. No facts or numbers changed - this round is visual support for what the text already said."
   }
 ]

@@ -143,6 +143,7 @@
     <text x="10" y="205" fill="var(--ink-faint)" font-size="10.5">A rejected lead is freed to be re-referred elsewhere. A lead with no resolution can still be disputed past the window - see the note below.</text>
   </g>
 </svg>
+<p style="font-size:12.5px;color:var(--ink-faint);margin:-0.75rem 0 1.25rem;">This shows the common path. For every transition, including cancellations and the late-reversal case, see the full Lead state machine in the <a href="#" onclick="showDoc('low-level-spec');return false;" class="xlink">Low-Level System Specification</a>.</p>
 <p>All referrals go through Sarthy. Two partners privately swapping leads outside the system doesn't count, and won't be honoured at settlement.</p>
 <p>A valid lead is a real prospect with an actual need and a real point of contact. It also can't be a lead that's already been referred through the system, or one that's already working with that partner.</p>
 <ul>
@@ -162,6 +163,53 @@
 <p>In both paths, the chosen receiving partner's acknowledgment is still mandatory - it's what triggers the formal agreement, the engagement itself, and the 999-credit deduction. Path B doesn't skip this step; the startup picking a partner isn't the same as that partner accepting the work.</p>
 <p>In both paths, the partner who originally brought the startup into Sarthy's ecosystem is the one who earns the rewards - the 999-credit lead-share reward on conversion, and the 10% deal-closure referral fee (Section 20) if it becomes a real deal. This is true even in Path B, where that partner didn't personally choose which partner the startup ended up picking.</p>
 <p><strong>If a startup signs up with no originating partner at all</strong> - arriving directly, not through any partner - Sarthy itself is treated as the originating partner for that startup. Every reward that would normally go to a partner (the lead-share credit, the deal-closure fee) applies to Sarthy the same way, tracked through the same mechanics as any other partner's activity.</p>
+<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:800px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrowPB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink-faint)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="10.5">
+    <rect x="10" y="15" width="220" height="46" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="120" y="35" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Path A</text>
+    <text x="120" y="50" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">partner picks the receiving partner directly</text>
+
+    <line x1="230" y1="38" x2="255" y2="38" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+
+    <rect x="10" y="105" width="220" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="120" y="123" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Path B</text>
+    <text x="120" y="138" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">partner brings startup in, doesn't</text>
+    <text x="120" y="150" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">choose who it goes to</text>
+
+    <line x1="230" y1="130" x2="255" y2="130" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+
+    <rect x="260" y="105" width="230" height="50" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="375" y="123" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Startup self-selects via SSO</text>
+    <text x="375" y="138" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">picks any vetted partner from the list</text>
+
+    <line x1="490" y1="130" x2="510" y2="130" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="255" y1="38" x2="510" y2="38" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="510" y1="38" x2="510" y2="115" stroke="var(--ink-faint)" stroke-width="1.5"/>
+    <line x1="510" y1="115" x2="530" y2="115" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+    <line x1="510" y1="130" x2="530" y2="130" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+
+    <rect x="535" y="90" width="190" height="70" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <text x="630" y="115" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">Chosen partner</text>
+    <text x="630" y="130" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">acknowledges</text>
+    <text x="630" y="147" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">mandatory either way</text>
+
+    <line x1="725" y1="125" x2="750" y2="125" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arrowPB)"/>
+
+    <rect x="755" y="95" width="135" height="60" rx="7" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="822" y="115" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">Originating</text>
+    <text x="822" y="128" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10.5">partner earns</text>
+    <text x="822" y="143" text-anchor="middle" fill="var(--ink-soft)" font-size="9">999-credit + 10% fee</text>
+
+    <text x="450" y="180" text-anchor="middle" fill="var(--ink-soft)" font-size="10">In Path B, the originating partner is whoever brought the startup in &#8212; not necessarily the partner the startup ended up choosing.</text>
+
+    <rect x="10" y="200" width="620" height="40" rx="7" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <text x="320" y="216" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">No partner brought the startup in at all?</text>
+    <text x="320" y="231" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">Sarthy is treated as the originating partner &#8212; same rewards, same mechanics.</text>
+  </g>
+</svg>
 <p><strong>Resolved:</strong> a disputed lead past the 1-week window is handled at admin's discretion, backed by a direct check-in with the startup to confirm what actually happened. The startup's response is one input the admin weighs, not a mandatory requirement - and if the startup doesn't respond either, that's also left to admin's judgment, with no fixed default favoring either partner. Full detail in the <a href="#" onclick="showDoc('brd');return false;" class="xlink">BRD, Section 11</a>.</p>
 <p>Separately, a backend "catalyst" that surfaces good matches to partners is a real direction - but it isn't designed yet. One thing is already clear: the system may <em>suggest</em> a match, but it can never <em>assign</em> one. The referring partner always makes the final choice, even when a suggestion is shown.</p>
 
@@ -179,6 +227,44 @@
 <strong>Worked example - hitting the freeze and recovering:</strong>
 <p style="margin:8px 0 0;">Vikram's balance is at <span class="amt-neg">-1,998</span> after receiving two leads with no conversions yet. He receives a third lead and acknowledges it: <span class="amt-neg">-999</span> credits takes him to exactly <span class="amt-neg">-2,997</span> - the floor. His account is now frozen; he can't receive any further leads until he tops up. He pays ₹3,996, adding <span class="amt-pos">+3,996</span> credits: his balance moves from -2,997 to <span class="amt-pos">+999</span>, clearing the freeze, and he's active again.</p>
 </div>
+<svg viewBox="0 0 700 205" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto 1.5rem;">
+  <defs>
+    <marker id="arrowW" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--amber)"/></marker>
+  </defs>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <line x1="260" y1="30" x2="260" y2="70" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="260" y1="30" x2="630" y2="30" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="630" y1="30" x2="630" y2="70" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowW)"/>
+    <text x="335" y="23" text-anchor="middle" fill="var(--amber)" font-weight="600" font-size="10.5">Top-up: pay 4&#215; entry fee (&#8377;3,996 / $196) &#8594; +3,996 credits, lands exactly on +999</text>
+
+    <rect x="40" y="70" width="220" height="34" fill="var(--red-bg)" stroke="var(--red)"/>
+    <rect x="260" y="70" width="200" height="34" fill="var(--amber-bg)" stroke="var(--amber)"/>
+    <rect x="460" y="70" width="200" height="34" fill="var(--green-bg)" stroke="var(--green)"/>
+
+    <line x1="260" y1="65" x2="260" y2="109" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="260" y="122" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">-2,997</text>
+
+    <line x1="460" y1="65" x2="460" y2="109" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="460" y="122" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">-1,500</text>
+
+    <line x1="560" y1="70" x2="560" y2="104" stroke="var(--ink-faint)" stroke-width="1"/>
+    <text x="560" y="122" text-anchor="middle" fill="var(--ink-faint)" font-size="10">0</text>
+
+    <line x1="630" y1="70" x2="630" y2="104" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="630" y="140" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="11">+999</text>
+
+    <text x="150" y="88" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">Frozen</text>
+    <text x="150" y="150" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">blocked from receiving leads</text>
+
+    <text x="360" y="88" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">At-Risk flag</text>
+    <text x="360" y="150" text-anchor="middle" fill="var(--ink-soft)" font-size="9.5">still fully Active, just flagged</text>
+
+    <text x="545" y="88" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="10">Healthy Active range</text>
+
+    <text x="10" y="172" fill="var(--ink-faint)" font-size="9.5">Not to scale &#8212; spacing is illustrative, not proportional to the credit values.</text>
+    <text x="10" y="186" fill="var(--ink-faint)" font-size="9.5">Dormant is a separate, time-based trigger, not part of this balance scale &#8212; see the status diagram in the Segmentation Framework.</text>
+  </g>
+</svg>
 
 <h2 id="s9">9. How conversion gets confirmed, and what happens if someone disagrees <span class="status-pill badge-done">confirmed for now</span></h2>
 <p>Sarthy has the final say on whether a lead converted. The same conversion standard applies across every service category for now: first payment, plus a digitally signed agreement completed through the platform. This means the platform needs real digital-signature capability - not just an uploaded PDF.</p>
@@ -295,6 +381,21 @@
 
     <text x="380" y="105" text-anchor="middle" fill="var(--green)" font-weight="600" font-size="11.5">91% - Priya's net payout</text>
     <text x="380" y="120" text-anchor="middle" fill="var(--ink-faint)" font-size="10">₹45,500 - paid annually, March 31st</text>
+  </g>
+</svg>
+<svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto 1.5rem;">
+  <g font-family="Inter,sans-serif" font-size="11">
+    <text x="40" y="30" fill="var(--ink)" font-weight="600" font-size="11">First engagement date</text>
+    <text x="600" y="30" text-anchor="end" fill="var(--ink)" font-weight="600" font-size="11">+12 months &#8212; window closes</text>
+
+    <rect x="40" y="60" width="560" height="30" fill="var(--green-bg)" stroke="var(--green)"/>
+    <text x="320" y="80" text-anchor="middle" fill="var(--ink)" font-size="10">value invoiced in here counts toward the 10% fee</text>
+
+    <line x1="320" y1="42" x2="320" y2="102" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="320" y="118" text-anchor="middle" fill="var(--amber)" font-weight="600" font-size="10.5">March 31</text>
+    <text x="320" y="132" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">fixed annual payout date</text>
+
+    <text x="10" y="152" fill="var(--ink-faint)" font-size="9.5">The 12-month window floats with each deal's own start date. The payout date doesn't &#8212; it's always March 31, whatever point the window happens to be at.</text>
   </g>
 </svg>
 <p>If the same startup later engages a different partner, that counts as a genuinely separate referral - not a continuation. It's a fresh, independent deal with its own 12-month entitlement clock, unrelated to any prior engagement.</p>

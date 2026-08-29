@@ -47,6 +47,29 @@
 <li><strong>Balanced:</strong> wallet roughly stable - giving and receiving in reasonable proportion. This is the default state for most partners most of the time, not an edge case.</li>
 <li><strong>Taker:</strong> wallet balance trending downward over time - receiving regularly, referring rarely or never. This is a <em>pattern</em>, read from the trend over several transactions, not a specific number - deliberately different from the account status At-Risk, which fires at a specific balance (-1,500) or a specific decline count (4+), regardless of longer-term pattern.</li>
 </ul>
+<svg viewBox="0 0 660 165" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:600px;display:block;margin:0 auto 1.25rem;">
+  <g font-family="Inter,sans-serif" font-size="11">
+    <rect x="10" y="10" width="195" height="90" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <polyline points="35,80 75,66 115,52 155,38 185,26" fill="none" stroke="var(--green)" stroke-width="2"/>
+    <circle cx="185" cy="26" r="3" fill="var(--green)"/>
+    <text x="107" y="122" text-anchor="middle" fill="var(--green)" font-weight="600" font-size="11">Giver</text>
+    <text x="107" y="137" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">wallet trending up over time</text>
+
+    <rect x="230" y="10" width="195" height="90" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <polyline points="255,55 295,45 335,62 375,48 405,55" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="405" cy="55" r="3" fill="var(--accent)"/>
+    <text x="327" y="122" text-anchor="middle" fill="var(--accent)" font-weight="600" font-size="11">Balanced</text>
+    <text x="327" y="137" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">roughly stable &#8212; the default for most</text>
+
+    <rect x="450" y="10" width="195" height="90" rx="7" fill="var(--panel)" stroke="var(--line-strong)"/>
+    <polyline points="475,25 515,40 555,55 595,68 625,80" fill="none" stroke="var(--red)" stroke-width="2"/>
+    <circle cx="625" cy="80" r="3" fill="var(--red)"/>
+    <text x="547" y="122" text-anchor="middle" fill="var(--red)" font-weight="600" font-size="11">Taker</text>
+    <text x="547" y="137" text-anchor="middle" fill="var(--ink-faint)" font-size="9.5">wallet trending down over time</text>
+
+    <text x="10" y="158" fill="var(--ink-faint)" font-size="9.5">Illustrative shape of the trend, not real wallet data &#8212; the actual signal is read from several transactions, not a single dip or rise.</text>
+  </g>
+</svg>
 <p>Giving pattern only means something for an Active account. A Dormant or Frozen account doesn't get a giving pattern - its status already says everything that matters for how to handle it.</p>
 
 <div class="example-box">
